@@ -30,6 +30,7 @@ date_default_timezone_set('America/Sao_Paulo');
                 }
             }
             ?>
+        <?php include_once 'footer.php'; ?>
     </div>
     <?php include_once 'scripts.php'; ?>
 </body>

@@ -17,23 +17,42 @@
         </div>
 
         <div class="nav-links">
-            <a href="#ctner-home-landing" onclick="transferirClasseActive(event)" class="active">Home</a>
-            <a href="#bellow-home" onclick="transferirClasseActive(event)">About Me</a>
-            <a href="#" onclick="transferirClasseActive(event)">Projects</a>
-            <a class="action-button" href="#">Contact Me!</a>
-            <ion-icon name="moon-outline"></ion-icon>
+            <a href="?p=home#ctner-home-landing" onclick="transferirClasseActive(event)" class="active">Home</a>
+            <a href="?p=home#bellow-home" onclick="transferirClasseActive(event)">About Me</a>
+            <a href="?p=home#services" onclick="transferirClasseActive(event)">Services</a>
+            <a href="?p=home#projects" onclick="transferirClasseActive(event)">Projects</a>
+            <a class="action-button mb-2" href="?p=home#contact">Contact Me!</a>
         </div>
     </div>
 </nav>
 
 <script>
-    function transferirClasseActive(event) {
-        const linkClicado = event.target;
+function transferirClasseActive(event) {
+    const linkClicado = event.target;
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.classList.remove('active');
-        });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+    });
 
-        linkClicado.classList.add('active');
+    linkClicado.classList.add('active');
+}
+
+function handleScroll() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) { // Adjust the scroll distance as needed
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
+}
+
+// Attach scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+// Function to transfer active class on click
+function transferirClasseActive(event) {
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => link.classList.remove('active'));
+    event.target.classList.add('active');
+}
 </script>
