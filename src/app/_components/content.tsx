@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import img1 from "../_assets/img/img1.png";
 
 const services = [
   {
@@ -42,7 +44,7 @@ const Content = () => {
             {services.map((service) => (
               <div key={service.id} className="service-card">
                 <div className="card-icon">
-                <i className={`${service.icon} icon-card`}></i>
+                  <i className={`${service.icon} icon-card`}></i>
                 </div>
                 <div className="card-infos">
                   <h1 className="title-card">{service.title}</h1>
@@ -50,6 +52,45 @@ const Content = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+      </main>
+
+      <main className="aboutMe">
+        <section className="about">
+          <div className="about-content">
+            <div className="about-image">
+              <Image src={img1} alt="Minha foto" className="image-style" />
+            </div>
+            <div className="about-header">
+              <h1 className="about-title">
+                Um pouco sobre <span className="span-color">mim...</span>
+              </h1>
+              <div className="about-text">
+                <p>
+                  Olá! Sou Yuri, tenho 17 anos e estou cursando o terceiro ano
+                  do ensino médio integrado ao técnico em desenvolvimento de
+                  sistemas na Etec Itu.
+                </p>
+                <p>
+                  Ao longo da minha trajetória, atuei como designer gráfico para
+                  diversas páginas focadas em futebol. Durante esse tempo,
+                  desenvolvi conteúdos visuais atrativos, utilizando Photoshop
+                  para criar designs criativos e estratégicos.
+                </p>
+                <p>
+                  Atualmente, busco aprimorar minhas habilidades como
+                  desenvolvedor front-end e expandir meus conhecimentos para
+                  novas áreas da tecnologia, sempre com o objetivo de criar
+                  soluções inovadoras e funcionais.
+                </p>
+              </div>
+              <div className="aboutFooter">
+                <a href="https://github.com/yurizzxz" className="aboutLink" target="_blank"><i className="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yurizzxz/" className="aboutLink" target="_blank"><i className="fab fa-linkedin"></i></a>
+                <a href="https://git"  className="aboutLink"target="_blank"><i className="fab fa-behance"></i></a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

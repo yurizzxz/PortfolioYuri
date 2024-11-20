@@ -319,3 +319,73 @@ body {
   font-size: 3rem;
   color: var(--spancolor);
 }
+
+/*about me*/
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  max-width: 350;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-header {
+  padding-inline: 7rem 12rem;
+  max-width: 980px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+  object-position: 25%;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  
+}
+
+.aboutFooter {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.aboutLink {
+  font-size: 1.8rem;
+  transition: .2s ease-in-out;
+}
+
+.aboutLink:hover {
+  color: var(--spancolor);
+  transition: .2s ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    display: none;
+  }
+}
