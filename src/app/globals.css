@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,6 +14,7 @@
     --foreground: #ededed;
     --textcolor: #fff;
     --spancolor: #31C473;
+    --spanhover: #25a55f;
   }
 }
 
@@ -23,7 +25,17 @@
   color: var(--textcolor) !important;
   padding: 10px 27px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 8px;
+  transition: .3s ease-in-out;
+}
+
+.greenButton:hover {
+  background-color: var(--spanhover)!important;
+  color: var(--textcolor) !important;
+  padding: 10px 27px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: .3s ease-in-out;
 }
 
 body {
@@ -58,6 +70,7 @@ body {
 
 .span-color {
   color: var(--spancolor) !important;
+  transition: .3s ease-in-out;
 }
 
 .navbar-links {
@@ -75,12 +88,13 @@ body {
   text-decoration: none;
   font-size: 1rem;
   position: relative;
+  transition: .3s ease-in-out;
 }
 
 .navbar-links a::before {
   content: '';
   position: absolute;
-  height: 2px;
+  height: 3px;
   background-color: var(--spancolor);
   width: 0%;
   top: 30px;
@@ -388,4 +402,94 @@ body {
     max-width: 100%;
     display: none;
   }
+}
+
+/*projects section*/
+
+.projects-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8rem 1rem;
+  align-items: center;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.projects-title {
+  margin-bottom: .8rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.projects-cards {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.projects-card {
+  background-color: #151414;
+  height: 26rem;
+  width: 19rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 3rem;
+}
+
+.projects-card .title-card {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.projects-card .card-infos {
+  padding-inline: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.card-icon .image-card {
+  font-size: 3rem;
+  padding: 0;
+  color: var(--spancolor);
+}
+
+.picks {
+  margin-top: 1rem;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.pickFilter {
+  padding: 10px 25px;
+  border: 1px solid var(--spancolor);
+  border-radius: 25px;
+  font-weight: bold;
+  transition: .2s ease-in-out;
+}
+
+.pickFilter.active {
+  background-color: var(--spancolor);
+  font-weight: bold;
+}
+
+.pickFilter:hover {
+  background-color: var(--spanhover);
+  transition: .2s ease-in-out;
+}
+
+.projectsCta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
