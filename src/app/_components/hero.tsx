@@ -3,6 +3,8 @@
 import React from "react";
 import HeroFooter from './heroFooter';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Image from "next/image";
+import Foto from "../_assets/img/fotoperfil.jpg";
 
 const Hero = () => {
   return (
@@ -40,10 +42,10 @@ const Hero = () => {
         </div>
 
         <figure>
-          <img
+          <Image
             className="hero-image"
-            src="https://via.placeholder.com/600x600"
-            alt="Imagem representando o produto"
+            src={Foto}
+            alt="aa"
           />
         </figure>
       </section>

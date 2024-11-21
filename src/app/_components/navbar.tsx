@@ -28,6 +28,7 @@ const Navbar = () => {
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Contato</a></li>
+            <li><a href='#' className="greenButton mobile-button">Download CV</a></li>
           </ul>
           <a href='#' className="greenButton CV">Download CV</a>
         </nav>

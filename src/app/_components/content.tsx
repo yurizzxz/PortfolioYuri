@@ -56,7 +56,7 @@ const Content = () => {
         </section>
       </main>
 
-      <main className="aboutMe" hidden>
+      <main className="aboutMe">
         <section className="about">
           <div className="about-content">
             <div className="about-image">
