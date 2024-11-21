@@ -62,7 +62,7 @@ body {
   padding: 1.5rem 10rem;
 }
 
-.logo h1 {
+.navbar-container .logo h1 {
   font-weight: bold;
   margin: 0;
   font-size: 1.5rem;
@@ -80,7 +80,6 @@ body {
   display: flex;
   gap: 50px;
 }
-
 
 .navbar-links a {
   font-weight: bold;
@@ -295,7 +294,7 @@ body {
 }
 
 .services-desc {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .services-cards {
@@ -468,6 +467,7 @@ body {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .pickFilter {
@@ -492,4 +492,123 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*form*/
+
+.contact-section {
+  background-color: var(--background);
+  width: 100%;
+  padding: 5rem 10rem;
+}
+
+.contact-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.email-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.email-icon i {
+  top: 1px;
+  position: relative;
+  color: var(--spancolor);
+  font-size: 25px;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 50%;
+}
+
+.contact-info h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+
+}
+
+.form-container {
+  flex: 1;
+  max-width: 50rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 75vh;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1.2rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #151414;
+}
+
+.message {
+  resize: none;
+}
+
+.form-button {
+  padding: 15px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-section{
+    padding: 0rem;
+  }
+  .contact-hero {
+    flex-direction: column;
+    padding: 0rem;
+  }
+
+  .contact-info,
+  .form-container {
+    max-width: 25rem;
+    width: 100%;
+  }
+
+  .contact-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 0rem;
+  }
+
+  .name-container {
+    flex-direction: column;
+  }
+
+  .name-field {
+    flex: none;
+    width: 100%;
+  }
 }
