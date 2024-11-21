@@ -5,27 +5,57 @@ import HeroFooter from './heroFooter';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
 import Foto from "../_assets/img/fotoperfil.jpg";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="hero-section">
-      <section className="hero">
-        <div className="hero-text">
+    <motion.div
+      className="hero-section"
+      initial={{ opacity: 0, scale: 1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }} 
+    >
+      <section className="hero" id="home">
+        <motion.div
+          className="hero-text"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
           <header>
-            <h2 className="hero-mini">
+            <motion.h2
+              className="hero-mini"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+            >
               <span className="span-color">Olá!</span> Meu nome é
-            </h2>
-            <h1>
+            </motion.h2>
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
               Yuri <span className="span-color">Alves</span>
-            </h1>
+            </motion.h1>
           </header>
 
-          <p className="hero-desc">
+          <motion.p
+            className="hero-desc"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
             Sou um Desenvolvedor Front-End e Designer Gráfico apaixonado pela
             tecnologia.
-          </p>
+          </motion.p>
 
-          <div className="icons">
+          <motion.div
+            className="icons"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
             <div className="icon-content">
               <i className="fas fa-check-circle icon"></i>
               <p>Text</p>
@@ -34,22 +64,25 @@ const Hero = () => {
               <i className="fas fa-check-circle icon"></i>
               <p>Text</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* footer */}
           <HeroFooter />
+        </motion.div>
 
-        </div>
-
-        <figure>
+        <motion.figure
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
           <Image
             className="hero-image"
             src={Foto}
-            alt="aa"
+            alt="Foto de Perfil"
           />
-        </figure>
+        </motion.figure>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

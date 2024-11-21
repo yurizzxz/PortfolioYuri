@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import img1 from "../_assets/img/img1.png";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -29,20 +30,87 @@ const services = [
 ];
 
 const Content = () => {
+  const [isVisibleServices, setIsVisibleServices] = useState(false);
+  const [isVisibleAbout, setIsVisibleAbout] = useState(false);
+  const servicesRef = useRef(null);
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observerServices = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisibleServices(true);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    if (servicesRef.current) {
+      observerServices.observe(servicesRef.current);
+    }
+
+    return () => {
+      if (servicesRef.current) {
+        observerServices.unobserve(servicesRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerAbout = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisibleAbout(true);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    if (aboutRef.current) {
+      observerAbout.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observerAbout.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <main className="services-section">
+      <main className="services-section" id="services" ref={servicesRef}>
         <section className="services">
-          <div className="services-header">
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.8 }}
+            animate={isVisibleServices ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 1 }}
+            className="services-header"
+          >
             <h1 className="services-title">Meus serviços</h1>
             <p className="services-desc">
               Descubra como posso ajudar a transformar sua marca e presença
               digital com serviços sob medida para suas necessidades!
             </p>
-          </div>
+          </motion.div>
           <div className="services-cards">
-            {services.map((service) => (
-              <div key={service.id} className="service-card">
+            {services.map((service, index) => (
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={isVisibleServices ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.3,
+                }}
+                key={service.id}
+                className="service-card"
+              >
                 <div className="card-icon">
                   <i className={`${service.icon} icon-card`}></i>
                 </div>
@@ -50,19 +118,33 @@ const Content = () => {
                   <h1 className="title-card">{service.title}</h1>
                   <p>{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
       </main>
 
-      <main className="aboutMe">
+      <main className="aboutMe" id="about" ref={aboutRef}>
         <section className="about">
           <div className="about-content">
-            <div className="about-image">
+            <motion.div
+              initial={{ opacity: 0, x: -100, scale: 0.8 }}
+              animate={isVisibleAbout ? { opacity: 1, x: 0, scale: 1 } : {}}
+              transition={{
+                duration: 1,
+              }}
+              className="about-image"
+            >
               <Image src={img1} alt="Minha foto" className="image-style" />
-            </div>
-            <div className="about-header">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100, scale: 0.8 }}
+              animate={isVisibleAbout ? { opacity: 1, x: 0, scale: 1 } : {}}
+              transition={{
+                duration: 1,
+              }}
+              className="about-header"
+            >
               <h1 className="about-title">
                 Um pouco sobre <span className="span-color">mim...</span>
               </h1>
@@ -86,11 +168,50 @@ const Content = () => {
                 </p>
               </div>
               <div className="aboutFooter">
-                <a href="https://github.com/yurizzxz" className="aboutLink" target="_blank"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/yurizzxz/" className="aboutLink" target="_blank"><i className="fab fa-linkedin"></i></a>
-                <a href="https://git"  className="aboutLink"target="_blank"><i className="fab fa-behance"></i></a>
+                <motion.a
+                  href="https://github.com/yurizzxz"
+                  className="aboutLink"
+                  target="_blank"
+                  transition={{
+                    delay: 0,
+                  }}
+                  whileHover={{
+                    y: -3,
+                    scale: 1.1,
+                  }}
+                >
+                  <i className="fab fa-github"></i>
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/yurizzxz/"
+                  className="aboutLink"
+                  target="_blank"
+                  transition={{
+                    delay: 0,
+                  }}
+                  whileHover={{
+                    y: -5,
+                    scale: 1.1,
+                  }}
+                >
+                  <i className="fab fa-linkedin"></i>
+                </motion.a>
+                <motion.a
+                  href="https://behance.net/yurizzxz"
+                  className="aboutLink"
+                  target="_blank"
+                  transition={{
+                    delay: 0,
+                  }}
+                  whileHover={{
+                    y: -5,
+                    scale: 1.1,
+                  }}
+                >
+                  <i className="fab fa-behance"></i>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

@@ -464,11 +464,12 @@ body {
 .about-content {
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: space-between;
 }
 
 .about-header {
-  padding-inline: 7rem;
+  padding-inline: 6rem;
   max-width: 880px;
 }
 

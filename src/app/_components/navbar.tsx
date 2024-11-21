@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,20 +16,28 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         <nav className="navbar-container">
-          <div className="logo">
-            <h1>Yuri <span className='span-color'>Alves</span></h1>
-          </div>
+          <motion.div
+            className="logo"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1>
+              Yuri <span className="span-color">Alves</span>
+            </h1>
+          </motion.div>
+
           <button
             className="toggle-btn"
             onClick={toggleMobileMenu}
@@ -36,14 +45,69 @@ const Navbar = () => {
           >
             &#9776;
           </button>
-          <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`} role="navigation">
-            <li><a className='active' href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-            <li><a href='#' className="greenButton mobile-button">Download CV</a></li>
-          </ul>
-          <a href='#' className="greenButton CV">Download CV</a>
+
+          <motion.ul
+            className={`navbar-links ${mobileMenuOpen ? "active" : ""}`}
+            role="navigation"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a className="active" href="#home">
+                Home
+              </a>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#about">Sobre</a>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#services">Serviços</a>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#projects">Projetos</a>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#contact">Contato</a>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <a href="#" className="greenButton mobile-button">
+                Download CV
+              </a>
+            </motion.li>
+          </motion.ul>
+
+          <motion.a
+            href="#"
+            className="greenButton CV"
+            initial={{ opacity: 0, x: 8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{
+              y: -2,
+              scale: 1.03,
+            }}
+          >
+            Download CV
+          </motion.a>
         </nav>
       </header>
     </>

@@ -1,15 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Form = () => {
+  const [isVisible, setIsVisible] = useState(false); 
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        root: null, 
+        threshold: 0.1,
+      }
+    );
+
+    if (formRef.current) {
+      observer.observe(formRef.current);
+    }
+
+    return () => {
+      if (formRef.current) {
+        observer.unobserve(formRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <main className="contact-section">
+    <main className="contact-section" id="contact" ref={formRef}>
       <section className="contact-hero">
-        <div className="contact-info">
+        <motion.div
+          initial={{ opacity: 0, x: -100, scale: 1 }}
+          animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
+          transition={{ duration: 1 }}
+          className="contact-info"
+        >
           <h1>Vamos Conversar!</h1>
           <p>
-            Gostou do meu trabalho? <span className="span-color">Vamos conversar!</span> Preencha o formulário ao lado e eu entrarei em contato o mais breve possível.
+            Gostou do meu trabalho?{" "}
+            <span className="span-color">Vamos conversar!</span> Preencha o
+            formulário ao lado e eu entrarei em contato o mais breve possível.
           </p>
           <div className="email-icon">
             <i className="fas fa-envelope"></i>
@@ -17,24 +52,90 @@ const Form = () => {
           </div>
           <div className="email-icon">
             <i className="fab fa-instagram"></i>
-            <a href="#" target="_blank">@yurinsights</a>
+            <a href="#" target="_blank">
+              @yurinsights
+            </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="form-container">
+        <motion.div
+          className="form-container"
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
+          transition={{ duration: 1 }}
+        >
           <form className="contact-form">
-            <label htmlFor="name">Nome</label>
-            <input type="text" className="form-row" id="name" name="name" placeholder="Seu nome" required />
+            <motion.label
+              htmlFor="name"
+              initial={{ opacity: 0, x: -100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Nome
+            </motion.label>
+            <motion.input
+              type="text"
+              className="form-row"
+              id="name"
+              name="name"
+              placeholder="Seu nome"
+              required
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            />
 
-            <label htmlFor="email">Email</label>
-            <input type="email" className="form-row" id="email" name="email" placeholder="Seu email" required />
+            <motion.label
+              htmlFor="email"
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Email
+            </motion.label>
+            <motion.input
+              type="email"
+              className="form-row"
+              id="email"
+              name="email"
+              placeholder="Seu email"
+              required
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            />
 
-            <label htmlFor="message">Mensagem</label>
-            <textarea id="message" className="form-row message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+            <motion.label
+              htmlFor="message"
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              Mensagem
+            </motion.label>
+            <motion.textarea
+              id="message"
+              className="form-row message"
+              name="message"
+              placeholder="Sua mensagem"
+              rows="5"
+              required
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            ></motion.textarea>
 
-            <button type="submit" className="greenButton form-button">Enviar</button>
+            <motion.button
+              type="submit"
+              className="greenButton form-button"
+              initial={{ opacity: 0, x: 100 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              Enviar
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </section>
     </main>
   );
