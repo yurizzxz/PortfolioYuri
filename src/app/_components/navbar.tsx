@@ -6,9 +6,14 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home"); 
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
   };
 
   useEffect(() => {
@@ -53,38 +58,27 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <a className="active" href="#home">
-                Home
-              </a>
-            </motion.li>
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <a href="#about">Sobre</a>
-            </motion.li>
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <a href="#services">Serviços</a>
-            </motion.li>
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <a href="#projects">Projetos</a>
-            </motion.li>
-            <motion.li
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <a href="#contact">Contato</a>
-            </motion.li>
+            {[
+              { href: "#home", label: "Home" },
+              { href: "#about", label: "Sobre" },
+              { href: "#services", label: "Serviços" },
+              { href: "#projects", label: "Projetos" },
+              { href: "#contact", label: "Contato" },
+            ].map(({ href, label }) => (
+              <motion.li
+                key={href}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <a
+                  href={href}
+                  className={activeLink === href ? "active" : ""}
+                  onClick={() => handleLinkClick(href)}
+                >
+                  {label}
+                </a>
+              </motion.li>
+            ))}
             <motion.li
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2 }}
