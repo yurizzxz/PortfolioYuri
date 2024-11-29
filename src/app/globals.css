@@ -235,7 +235,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 17rem;
+  padding: 3rem 13rem;
   color: var(--textcolor);
   width: 100%;
   gap: 30px;
@@ -319,9 +319,7 @@ body {
   .hero {
     padding-inline: 7rem;
   }
-}
 
-@media (max-width: 1180) {
   .hero h1 {
     font-size: 4rem;
   }
@@ -409,6 +407,12 @@ body {
     font-size: .952rem;
   }
 }
+
+@media (max-width: 360px) and (max-height: 760px) {
+  .hero-text {
+    height: 480px;
+  }
+} 
 
 
 /*section service*/
@@ -734,22 +738,48 @@ body {
   max-width: 75vh;
   padding: 1.5rem;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.contact-form label {
-  display: block;
-  margin: 0.5rem 0;
-  font-size: 1rem;
+.form-group {
+  position: relative;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1.2rem 1.3rem;
+  padding: 2.2rem 1.3rem 1rem;
   border-radius: 8px;
   font-size: 1rem;
   background-color: #151414;
+  transform: translateY(-50%);
 }
+
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  left: 1.3rem;
+  font-size: 1rem;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: 20%;
+  font-size: .8rem;
+}
+
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: 8%;
+  font-size: .8rem;
+}
+
 
 .message {
   resize: none;

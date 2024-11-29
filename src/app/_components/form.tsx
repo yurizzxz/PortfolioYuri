@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const Form = () => {
-  const [isVisible, setIsVisible] = useState(false); 
+  const [isVisible, setIsVisible] = useState(false);
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Form = () => {
         }
       },
       {
-        root: null, 
+        root: null,
         threshold: 0.1,
       }
     );
@@ -65,65 +65,68 @@ const Form = () => {
           transition={{ duration: 1 }}
         >
           <form className="contact-form">
-            <motion.label
-              htmlFor="name"
-              initial={{ opacity: 0, x: -100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Nome
-            </motion.label>
-            <motion.input
-              type="text"
-              className="form-row"
-              id="name"
-              name="name"
-              placeholder="Seu nome"
-              required
-              initial={{ opacity: 0, x: 100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            />
+            <div className="form-group">
+              <motion.input
+                type="text"
+                className="form-row"
+                id="name"
+                name="name"
+                required
+                initial={{ opacity: 0, x: 100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
+              <motion.label
+                htmlFor="name"
+                initial={{ opacity: 0, x: -100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Nome
+              </motion.label>
+            </div>
 
-            <motion.label
-              htmlFor="email"
-              initial={{ opacity: 0, x: 100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Email
-            </motion.label>
-            <motion.input
-              type="email"
-              className="form-row"
-              id="email"
-              name="email"
-              placeholder="Seu email"
-              required
-              initial={{ opacity: 0, x: 100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            />
+            <div className="form-group">
+              <motion.input
+                type="email"
+                className="form-row"
+                id="email"
+                name="email"
+                required
+                initial={{ opacity: 0, x: 100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              />
+              <motion.label
+                htmlFor="email"
+                initial={{ opacity: 0, x: 100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Email
+              </motion.label>
+            </div>
 
-            <motion.label
-              htmlFor="message"
-              initial={{ opacity: 0, x: 100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              Mensagem
-            </motion.label>
-            <motion.textarea
-              id="message"
-              className="form-row message"
-              name="message"
-              placeholder="Sua mensagem"
-              rows="5"
-              required
-              initial={{ opacity: 0, x: 100 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.7 }}
-            ></motion.textarea>
+            <div className="form-group">
+              <motion.textarea
+                id="message"
+                className="form-row message"
+                name="message"
+                rows="5"
+                required
+                initial={{ opacity: 0, x: 100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              ></motion.textarea>
+              <motion.label
+                htmlFor="message"
+                initial={{ opacity: 0, x: 100 }}
+                animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Mensagem
+              </motion.label>
+            </div>
 
             <motion.button
               type="submit"

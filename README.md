@@ -25,6 +25,7 @@ O sistema foi desenvolvido utilizando:
 
 - **Next.js**: Framework React que permite a renderização no lado do servidor e a criação de páginas estáticas, garantindo uma melhor performance e otimização para SEO.
 - **React**: Biblioteca JavaScript que facilita a criação de interfaces de usuário dinâmicas e reutilizáveis.
+- **Framer Motion**: Framer Motion é uma biblioteca de animação para React que facilita a criação de animações e transições fluidas e interativas em interfaces de usuário.
 - **TypeScript**: Superset do JavaScript que adiciona tipagem estática, ajudando a prevenir erros no código e melhorando a escalabilidade e manutenção do projeto.
 - **CSS**: Para estilização do layout e a criação de um design responsivo e atraente.
 - **Vercel**: Plataforma de deploy contínuo, ideal para hospedar projetos Next.js diretamente do GitHub.

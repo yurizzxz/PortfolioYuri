@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const HeroFooter = () => {
   return (
-    <motion.div
+    <motion.footer
       className="hero-footer"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -86,7 +86,7 @@ const HeroFooter = () => {
           height={50}
         />
       </motion.div>
-    </motion.div>
+    </motion.footer>
   );
 };
 
