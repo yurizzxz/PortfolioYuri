@@ -235,7 +235,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 13rem;
+  padding: 2.5rem 13rem;
   color: var(--textcolor);
   width: 100%;
   gap: 30px;
@@ -600,17 +600,18 @@ body {
 
 .projects-card {
   background-color: #151414;
-  height: 26.5rem;
+  height: 32rem;
   width: 22rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 3rem;
+  flex-shrink: 0; 
 }
 
 .projects-card .title-card {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
@@ -619,13 +620,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: .5rem;
+  flex-grow: 1;
 }
 
 .card-icon .image-card {
   max-width: 100%;
-  padding: .2rem;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
+  height: 100%;
 }
 
 .picks {
@@ -655,16 +658,15 @@ body {
 }
 
 .projectCta {
-  margin-top: .5rem;
+  margin-top: auto !important;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .projectsCta {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 450px) {
