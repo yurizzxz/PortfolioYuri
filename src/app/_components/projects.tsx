@@ -6,9 +6,7 @@ import { motion } from "framer-motion";
 import { db } from "../firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-// URL base do Supabase Storage
-const SUPABASE_STORAGE_URL =
-  "https://hakzttyrnyjeldmcjxpw.supabase.co/storage/v1/object/public/project-images/";
+const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_STORAGE;
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -114,7 +112,11 @@ const Projects = () => {
               >
                 <div className="card-icon">
                   <Image
-                    src={project.imagemUrl ? project.imagemUrl : '/default-image.jpg'}
+                    src={
+                      project.imagemUrl
+                        ? project.imagemUrl
+                        : "/default-image.jpg"
+                    }
                     alt={project.titulo}
                     className="image-card"
                     width={510}
@@ -148,7 +150,7 @@ const Projects = () => {
               </motion.div>
             ))
           ) : (
-            <p style={ { marginBottom: 30 }}>Carregando projetos... Aguarde.</p>
+            <p style={{ marginBottom: 30 }}>Carregando projetos... Aguarde.</p>
           )}
         </div>
 

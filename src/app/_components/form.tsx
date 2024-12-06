@@ -2,9 +2,15 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { form } from "framer-motion/client";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -30,6 +36,43 @@ const Form = () => {
       }
     };
   }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+  
+    const formData = new FormData(event.target as HTMLFormElement);
+    const formValues = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+  
+    console.log("Dados do formulário enviados:", formValues); 
+  
+    try {
+      const response = await fetch("http://localhost:4000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+  
+      if (response.ok) {
+        alert("E-mail enviado com sucesso!");
+      } else {
+        alert("Erro ao enviar o e-mail.");
+      }
+    } catch (error) {
+      alert("Erro ao enviar o e-mail.");
+    }
+  };
+  
+  
 
   return (
     <main className="contact-section" id="contact" ref={formRef}>
@@ -64,13 +107,15 @@ const Form = () => {
           animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
           transition={{ duration: 1 }}
         >
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <motion.input
                 type="text"
                 className="form-row"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
                 initial={{ opacity: 0, x: 100 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
@@ -92,6 +137,8 @@ const Form = () => {
                 className="form-row"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
                 initial={{ opacity: 0, x: 100 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
@@ -113,6 +160,8 @@ const Form = () => {
                 className="form-row message"
                 name="message"
                 rows="5"
+                value={formData.message}
+                onChange={handleChange}
                 required
                 initial={{ opacity: 0, x: 100 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
