@@ -24,17 +24,20 @@ const Form = () => {
         threshold: 0.1,
       }
     );
-
-    if (formRef.current) {
-      observer.observe(formRef.current);
+  
+    const formElement = formRef.current;
+  
+    if (formElement) {
+      observer.observe(formElement);
     }
-
+  
     return () => {
-      if (formRef.current) {
-        observer.unobserve(formRef.current);
+      if (formElement) {
+        observer.unobserve(formElement);
       }
     };
   }, []);
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
