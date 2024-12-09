@@ -1,15 +1,21 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { db } from "../firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
+interface Project {
+  id: string;
+  titulo: string;
+  descricao: string;
+  imagemUrl?: string;
+  link: string;
+}
+
 const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_STORAGE;
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [isVisibleProjects, setIsVisibleProjects] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
@@ -29,7 +35,7 @@ const Projects = () => {
       const projectsData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }));
+      })) as Project[];
       console.log(projectsData);
       setProjects(projectsData);
     } catch (error) {
@@ -39,7 +45,7 @@ const Projects = () => {
 
   useEffect(() => {
     fetchProjects();
-
+  
     const observerProjects = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -51,11 +57,17 @@ const Projects = () => {
         threshold: 0.1,
       }
     );
-
-    observerProjects.observe(document.querySelector("#projects"));
-
+  
+    const element = document.querySelector("#projects");
+    if (element) {
+      observerProjects.observe(element);
+    } else {
+      console.error('Elemento com id "projects" não encontrado.');
+    }
+  
     return () => observerProjects.disconnect();
   }, []);
+  
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
