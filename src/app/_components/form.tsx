@@ -43,11 +43,12 @@ const Form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/send-email`, {
+       const response = await fetch(`${apiUrl}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -37,7 +37,6 @@ const Projects = () => {
         id: doc.id,
         ...doc.data(),
       })) as Project[];
-      console.log(projectsData);
       setProjects(projectsData);
     } catch (error) {
       console.error("Erro ao buscar projetos:", error);
@@ -136,13 +135,7 @@ const Projects = () => {
                     height={0}
                     priority
                     onLoadingComplete={() =>
-                      console.log(
-                        `Imagem carregada: ${
-                          project.imagemUrl
-                            ? `${SUPABASE_STORAGE_URL}${project.imagemUrl}`
-                            : "/default-image.jpg"
-                        }`
-                      )
+                      console.log("imagem carregada")
                     }
                   />
                 </div>
