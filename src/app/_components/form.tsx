@@ -63,6 +63,7 @@ const Form = () => {
       }
     } catch (error) {
       alert("Erro ao enviar o e-mail.");
+      console.error(error);
     }
   };
 
