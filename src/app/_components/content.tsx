@@ -48,13 +48,14 @@ const Content = () => {
       }
     );
 
-    if (servicesRef.current) {
-      observerServices.observe(servicesRef.current);
+    const servicesElement = servicesRef.current;
+    if (servicesElement) {
+      observerServices.observe(servicesElement);
     }
 
     return () => {
-      if (servicesRef.current) {
-        observerServices.unobserve(servicesRef.current);
+      if (servicesElement) {
+        observerServices.unobserve(servicesElement);
       }
     };
   }, []);
@@ -72,13 +73,14 @@ const Content = () => {
       }
     );
 
-    if (aboutRef.current) {
-      observerAbout.observe(aboutRef.current);
+    const aboutElement = aboutRef.current;
+    if (aboutElement) {
+      observerAbout.observe(aboutElement);
     }
 
     return () => {
-      if (aboutRef.current) {
-        observerAbout.unobserve(aboutRef.current);
+      if (aboutElement) {
+        observerAbout.unobserve(aboutElement);
       }
     };
   }, []);

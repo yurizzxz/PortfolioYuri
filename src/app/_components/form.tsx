@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { form } from "framer-motion/client";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +10,7 @@ const Form = () => {
     email: "",
     message: "",
   });
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,33 +36,25 @@ const Form = () => {
     };
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-  
-    const formData = new FormData(event.target as HTMLFormElement);
-    const formValues = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-  
-    console.log("Dados do formulário enviados:", formValues); 
-  
+
     try {
       const response = await fetch("http://localhost:4000/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         alert("E-mail enviado com sucesso!");
+        setFormData({ name: "", email: "", message: "" });
       } else {
         alert("Erro ao enviar o e-mail.");
       }
@@ -71,8 +62,6 @@ const Form = () => {
       alert("Erro ao enviar o e-mail.");
     }
   };
-  
-  
 
   return (
     <main className="contact-section" id="contact" ref={formRef}>
