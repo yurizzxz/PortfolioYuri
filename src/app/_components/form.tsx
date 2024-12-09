@@ -152,7 +152,6 @@ const Form = () => {
                 id="message"
                 className="form-row message"
                 name="message"
-                rows="5"
                 value={formData.message}
                 onChange={handleChange}
                 required
