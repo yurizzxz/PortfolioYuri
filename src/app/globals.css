@@ -482,13 +482,21 @@ body {
 .service-card {
   padding: 1.3rem;
   background-color: #151414;
-  height: 22rem;
-  width: 19rem;
-  border-radius: 15px;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
+  transition: .3s ease-in-out;
+  border: 1px solid transparent;
+  cursor: default
+}
+
+.service-card:hover{
+  border-color: #165a34;
+  transition: .3s ease-in-out;
 }
 
 .title-card {
@@ -499,7 +507,7 @@ body {
 .card-infos {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .card-icon .icon-card {
@@ -638,6 +646,13 @@ body {
   gap: 20px;
   margin-bottom: 3rem;
   flex-shrink: 0; 
+  transition: .3s ease-in-out;
+}
+
+.projects-card:hover {
+  transition: .3s ease-in-out;
+  height: 32.2rem;
+  width: 22.1rem;
 }
 
 .projects-card .title-card {
@@ -646,7 +661,7 @@ body {
 }
 
 .projects-card .card-infos {
-  padding-inline: 1.3rem;
+  padding-inline: 1rem;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -658,7 +673,7 @@ body {
   max-width: 100%;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
-  height: 100%;
+  height: 14rem;
 }
 
 .picks {
@@ -691,7 +706,7 @@ body {
   margin-top: auto !important;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .projectsCta {
