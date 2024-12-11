@@ -143,14 +143,14 @@ const Projects = () => {
                   <h1 className="title-card">{project.titulo}</h1>
                   <p>{project.descricao}</p>
                   <motion.a
-                    whileHover={{ y: -2, scale: 1.03 }}
+                    whileHover={{ y: -1, scale: 1.01 }}
                     transition={{ duration: 0.1 }}
                     href={project.link}
                     className="greenButton projectCta"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Acesse o projeto
+                    Acessar Projeto
                   </motion.a>
                 </div>
               </motion.div>
@@ -162,7 +162,7 @@ const Projects = () => {
 
         <motion.div
           whileHover={{ y: -2, scale: 1.03 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: .5 }}
           initial={{ opacity: 0, y: -100 }}
           animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
           className="projectsCta"

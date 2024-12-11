@@ -262,6 +262,31 @@ body {
   font-weight: bold;
 }
 
+.hero h1  {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--spanhover);
+  width: 4.3ch; 
+  animation: typing 3s steps(10) infinite, blink-caret 0.55s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 4.3ch; 
+  }
+  100% {
+    width: 11ch;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
 .hero .hero-desc {
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
@@ -489,9 +514,10 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  transition: .3s ease-in-out;
   border: 1px solid transparent;
-  cursor: default
+  cursor: default;
+  transition: border-color 0.3s ease-in-out;
+  
 }
 
 .service-card:hover{
@@ -525,8 +551,33 @@ body {
 .about-title {
   font-size: 3rem;
   font-weight: bold;
-  max-width: 350;
   margin-bottom: 1rem;
+  
+}
+
+.about-title span{
+  display: inline-block;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--spanhover);
+  width: 0ch; 
+  animation: typinG 3s steps(10) infinite, blink-careT 0.5s step-end infinite;
+}
+
+@keyframes typinG {
+  0% {
+    width: 0; 
+  }
+  100% {
+    width: 7ch;
+  }
+}
+
+@keyframes blink-careT {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .about-content {
@@ -646,14 +697,8 @@ body {
   gap: 20px;
   margin-bottom: 3rem;
   flex-shrink: 0; 
-  transition: .3s ease-in-out;
 }
 
-.projects-card:hover {
-  transition: .3s ease-in-out;
-  height: 32.2rem;
-  width: 22.1rem;
-}
 
 .projects-card .title-card {
   font-size: 1.3rem;

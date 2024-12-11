@@ -94,7 +94,7 @@ const Navbar = () => {
         </motion.ul>
 
         <motion.a
-          href="#"
+          href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view?usp=sharing"
           className="greenButton CV"
           initial={{ opacity: 0, x: 8 }}
           animate={{ opacity: 1, x: 0 }}
@@ -103,6 +103,7 @@ const Navbar = () => {
             y: -2,
             scale: 1.03,
           }}
+          target="_blank"
         >
           Download CV
         </motion.a>

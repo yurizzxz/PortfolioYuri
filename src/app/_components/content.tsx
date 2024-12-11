@@ -175,7 +175,7 @@ const Content = () => {
                   className="aboutLink"
                   target="_blank"
                   transition={{
-                    delay: 0,
+                    delay: -1,
                   }}
                   whileHover={{
                     y: -3,
@@ -189,7 +189,7 @@ const Content = () => {
                   className="aboutLink"
                   target="_blank"
                   transition={{
-                    delay: 0,
+                    delay: -1,
                   }}
                   whileHover={{
                     y: -5,
@@ -203,7 +203,7 @@ const Content = () => {
                   className="aboutLink"
                   target="_blank"
                   transition={{
-                    delay: 0,
+                    delay: -1,
                   }}
                   whileHover={{
                     y: -5,
