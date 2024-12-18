@@ -161,7 +161,7 @@ const Projects = () => {
         </div>
 
         <motion.div
-          whileHover={{ y: -2, scale: 1.03 }}
+          whileHover={{ y: -1, scale: 1.06 }}
           transition={{ duration: .5 }}
           initial={{ opacity: 0, y: -100 }}
           animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}

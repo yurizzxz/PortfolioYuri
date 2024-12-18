@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,22 +25,23 @@ const Form = () => {
         threshold: 0.1,
       }
     );
-  
+
     const formElement = formRef.current;
-  
+
     if (formElement) {
       observer.observe(formElement);
     }
-  
+
     return () => {
       if (formElement) {
         observer.unobserve(formElement);
       }
     };
   }, []);
-  
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -47,13 +49,16 @@ const Form = () => {
     event.preventDefault();
 
     try {
-       const response = await fetch(`https://backendportfolioyuri.onrender.com/send-email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://backendportfolioyuri.onrender.com/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         alert("E-mail enviado com sucesso!");
@@ -84,7 +89,9 @@ const Form = () => {
           </p>
           <div className="email-icon">
             <i className="fas fa-envelope"></i>
-            <span>yuri.designer.07@gmail.com</span>
+            <Link href="mailto:yuri.designer.07@gmail.com">
+              yuri.designer.07@gmail.com
+            </Link>
           </div>
           <div className="email-icon">
             <i className="fab fa-instagram"></i>
