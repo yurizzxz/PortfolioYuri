@@ -4,7 +4,7 @@ import React from "react";
 import HeroFooter from './heroFooter';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
-import Foto from "../_assets/img/fotoperfil.jpg";
+import Foto from "../_assets/img/foto.png";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Sou um Desenvolvedor Front-End e Designer Gráfico apaixonado pela
+            Sou um <span className="span-color">Desenvolvedor Front-End</span> e <span className="span-color">Designer Gráfico</span> apaixonado pela
             tecnologia.
           </motion.p>
 

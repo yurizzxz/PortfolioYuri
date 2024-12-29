@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --spancolor: #9215f8;
+  --spanhover: #8725a5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,8 +14,8 @@
     --background: #060606;
     --foreground: #ededed;
     --textcolor: #fff;
-    --spancolor: #31c473;
-    --spanhover: #25a55f;
+    --spancolor: #d31111;
+    --spanhover: #a52525;
   }
 }
 
@@ -31,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #28a864;
+  background: var(--spanhover);
 }
 
 /*elements*/
@@ -514,13 +516,13 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  border: 1px solid transparent;
+  border: 1px solid #222222;
   cursor: default;
   transition: border-color 0.3s ease-in-out, scale 0.3s ease-in-out;
 }
 
 .service-card:hover{
-  border-color: #165a34;
+  border-color: var(--spanhover);
   transition: .3s ease-in-out;
   scale: 1.05;
 }
