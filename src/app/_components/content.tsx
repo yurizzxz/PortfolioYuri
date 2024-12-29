@@ -137,7 +137,7 @@ const Content = () => {
               }}
               className="about-image"
             >
-              <Image src={img1} alt="Minha foto" className="image-style" />
+              <Image src={img1} alt="Minha foto" loading="lazy" className="image-style" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 100, scale: 0.8 }}

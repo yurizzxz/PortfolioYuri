@@ -133,7 +133,7 @@ const Projects = () => {
                     className="image-card"
                     width={510}
                     height={0}
-                    priority
+                    loading="lazy"
                     onLoadingComplete={() =>
                       console.log("imagem carregada")
                     }

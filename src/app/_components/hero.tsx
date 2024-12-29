@@ -79,6 +79,7 @@ const Hero = () => {
             className="hero-image"
             src={Foto}
             alt="Foto de Perfil"
+            loading="lazy"
           />
         </motion.figure>
       </section>

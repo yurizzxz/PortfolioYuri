@@ -87,7 +87,7 @@ const Navbar = () => {
             </motion.li>
           ))}
           <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
-            <a href="#" className="greenButton mobile-button">
+            <a href="#" className="greenButton mobile-button" rel="noopener noreferrer">
               Download CV
             </a>
           </motion.li>
