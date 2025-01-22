@@ -6,7 +6,10 @@
   --background: #ffffff;
   --foreground: #171717;
   --spancolor: #9215f8;
-  --spanhover: #8725a5;
+  --spanhover: #8700e0;
+  --heroBg: #f9f9f9;
+  --secondBackground: #f7f7f7;
+  --cardColor: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +18,10 @@
     --foreground: #ededed;
     --textcolor: #fff;
     --spancolor: #9215f8;
-    --spanhover: #8725a5;
+    --spanhover: #8700e0;
+    --heroBg: #080808;
+    --secondBackground: #080808;
+    --cardColor: #101010;
   }
 }
 
@@ -40,7 +46,7 @@
 
 .greenButton {
   background-color: var(--spancolor) !important;
-  color: var(--textcolor) !important;
+  color: #fff !important;
   padding: 10px 27px;
   font-weight: bold;
   border-radius: 8px;
@@ -49,7 +55,7 @@
 
 .greenButton:hover {
   background-color: var(--spanhover) !important;
-  color: var(--textcolor) !important;
+  color: #fff !important;
   padding: 10px 27px;
   font-weight: bold;
   border-radius: 8px;
@@ -68,7 +74,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;  z-index: 1000;
+  width: 100%;
+  z-index: 1000;
   transition: 0.3s ease-in-out;
 }
 
@@ -166,13 +173,12 @@ body {
   }
 }
 
-
 @media (max-width: 990px) {
   .navbar {
     background-color: var(--background);
   }
   .navbar-container {
-    padding: .8rem 1.3rem;
+    padding: 0.8rem 1.3rem;
   }
   .navbar-links {
     display: none;
@@ -218,7 +224,6 @@ body {
   }
 }
 
-
 .navbar-links.active {
   animation: slideUp 0.3s ease-out forwards;
 }
@@ -251,7 +256,7 @@ body {
   max-width: 40rem;
   height: 580px;
   border-radius: 30px;
-  background-color: #0c0c0c;
+  background-color: var(--heroBg);
 }
 
 .hero h2 {
@@ -264,18 +269,18 @@ body {
   font-weight: bold;
 }
 
-.hero h1  {
+.hero h1 {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid var(--spanhover);
-  width: 4.3ch; 
+  width: 4.3ch;
   animation: typing 3s steps(10) infinite, blink-caret 0.55s step-end infinite;
 }
 
 @keyframes typing {
   0% {
-    width: 4.3ch; 
+    width: 4.3ch;
   }
   100% {
     width: 11ch;
@@ -287,7 +292,6 @@ body {
     border-color: transparent;
   }
 }
-
 
 .hero .hero-desc {
   font-size: 1.2rem;
@@ -336,14 +340,13 @@ body {
   align-items: center;
 }
 
-@media (max-width: 1655px){
+@media (max-width: 1655px) {
   .hero {
     padding-inline: 14rem;
   }
 }
 
-
-@media (max-width: 1505px){
+@media (max-width: 1505px) {
   .hero {
     padding-inline: 7rem;
   }
@@ -410,7 +413,7 @@ body {
   .hero-footer {
     display: flex;
     gap: 20px;
-    margin-block: 1rem .7rem;
+    margin-block: 1rem 0.7rem;
   }
 
   .hero .hero-desc {
@@ -426,17 +429,17 @@ body {
   .hero-footer {
     display: flex;
     gap: 1rem;
-    margin-block: 1rem .7rem;
+    margin-block: 1rem 0.7rem;
   }
 
   .hero h1 {
     font-size: 3rem;
     line-height: 3.7rem;
-    margin-block: .5rem 1rem;
+    margin-block: 0.5rem 1rem;
   }
 
   .hero .hero-desc {
-    font-size: .952rem;
+    font-size: 0.952rem;
   }
 }
 
@@ -444,7 +447,7 @@ body {
   .hero-text {
     height: 500px;
   }
-} 
+}
 
 @media (max-width: 360px) {
   .hero-text {
@@ -454,28 +457,28 @@ body {
   .hero-footer {
     display: flex;
     gap: 1rem;
-    margin-block: 1rem .7rem;
+    margin-block: 1rem 0.7rem;
   }
 
   .hero h1 {
     font-size: 2.7rem;
     line-height: 3.7rem;
-    margin-block: .5rem 1rem;
+    margin-block: 0.5rem 1rem;
   }
 
   .hero .hero-desc {
-    font-size: .952rem;
+    font-size: 0.952rem;
   }
 
   .hero .icon-content p {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
 /*section service*/
 
 .services-section {
-  background-color: #080808;
+  background-color: var(--secondBackground);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -508,7 +511,7 @@ body {
 
 .service-card {
   padding: 1.3rem;
-  background-color: #151414;
+  background-color: var(--cardColor);
   height: 20rem;
   width: 20rem;
   border-radius: 3px;
@@ -521,9 +524,9 @@ body {
   transition: border-color 0.3s ease-in-out, scale 0.3s ease-in-out;
 }
 
-.service-card:hover{
+.service-card:hover {
   border-color: var(--spanhover);
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   scale: 1.05;
 }
 
@@ -554,22 +557,21 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  
 }
 
-.about-title span{
+.about-title span {
   display: inline-block;
   display: block;
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid var(--spanhover);
-  width: 0ch; 
+  width: 0ch;
   animation: typinG 3s steps(10) infinite, blink-careT 0.5s step-end infinite;
 }
 
 @keyframes typinG {
   0% {
-    width: 0; 
+    width: 0;
   }
   100% {
     width: 7ch;
@@ -585,7 +587,7 @@ body {
 .about-content {
   display: flex;
   align-items: center;
-    overflow: hidden;
+  overflow: hidden;
   justify-content: space-between;
 }
 
@@ -606,7 +608,7 @@ body {
   flex-direction: column;
   gap: 25px;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: var(--textcolor);
 }
 
 .aboutFooter {
@@ -663,7 +665,7 @@ body {
 
 .projects-section {
   display: flex;
-  background-color: #080808;
+  background-color: var(--secondBackground);
   flex-direction: row;
   justify-content: center;
   padding: 8rem 1rem;
@@ -690,7 +692,7 @@ body {
 }
 
 .projects-card {
-  background-color: #151414;
+  background-color: var(--cardColor);
   height: 32rem;
   width: 22rem;
   border-radius: 15px;
@@ -698,8 +700,8 @@ body {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 3rem;
-  flex-shrink: 0; 
-  transition: scale .3s ease-in-out;
+  flex-shrink: 0;
+  transition: scale 0.3s ease-in-out;
 }
 
 .projects-card:hover {
@@ -716,7 +718,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   flex-grow: 1;
 }
 
@@ -746,11 +748,13 @@ body {
 .pickFilter.active {
   background-color: var(--spancolor);
   font-weight: bold;
+  color: #fff;
 }
 
 .pickFilter:hover {
   background-color: var(--spanhover);
   transition: 0.2s ease-in-out;
+  color: #fff;
 }
 
 .projectCta {
@@ -851,10 +855,9 @@ body {
   padding: 2.2rem 1.3rem 1rem;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #151414;
+  background-color: var(--cardColor);
   transform: translateY(-50%);
 }
-
 
 .form-group label {
   display: block;
@@ -869,15 +872,14 @@ body {
 .form-group input:focus ~ label,
 .form-group input:valid ~ label {
   top: 20%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .form-group textarea:focus ~ label,
 .form-group textarea:valid ~ label {
   top: 8%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-
 
 .message {
   resize: none;
