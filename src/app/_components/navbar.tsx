@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import RedirectButton from "./Button";
 
 const Navbar = () => {
   const [navbarState, setNavbarState] = useState({
@@ -87,27 +88,20 @@ const Navbar = () => {
               </Link>
             </motion.li>
           ))}
-          <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
-            <a href="#" className="greenButton mobile-button" target="_blank" rel="noopener noreferrer">
-              Download CV
-            </a>
+          <motion.li className="md:hidden" whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
+             <RedirectButton href="#" children="Download CV" target="_blank" rel="noopener noreferrer" />
           </motion.li>
         </motion.ul>
 
-        <motion.a
-          href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view?usp=sharing"
-          className="greenButton CV"
+        <motion.div
+          className="hidden md:block rounded-md transition-all duration-300 hover:scale-105"
           initial={{ opacity: 0, x: 8 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          whileHover={{
-            y: -2,
-            scale: 1.03,
-          }}
-          target="_blank"
+          whileHover={{ y: -2 }}
         >
-          Download CV
-        </motion.a>
+          <RedirectButton href="#" children="Download CV" target="_blank" rel="noopener noreferrer" />
+        </motion.div>
       </nav>
     </header>
   );

@@ -9,7 +9,6 @@ import { redirect } from "next/dist/server/api-utils";
 export default function App() {
   return (
     <>
-      <Navbar></Navbar>
       <Hero></Hero>
       <Content></Content>
       <Projects></Projects>

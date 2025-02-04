@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
+import Navbar from "../_components/navbar";
 
 export const metadata: Metadata = {
   title: "Yuri Alves // Desenvolvedor Front-End",
@@ -60,7 +61,12 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#000000" />
       </head>
-      <body>{children}</body>
+      <body>
+        <div>
+          <Navbar />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

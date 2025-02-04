@@ -1,3 +1,4 @@
+import { span } from "framer-motion/client";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,9 +9,14 @@ export default {
   ],
   theme: {
     extend: {
+      height: {
+        '128': '32rem', 
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        spancolor: "var(--spancolor)",
+        spanhover: "var(--spanhover)",
       },
     },
   },
