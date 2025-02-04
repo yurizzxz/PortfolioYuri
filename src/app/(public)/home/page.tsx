@@ -48,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
           >
             Sou um <span className="span-color">Desenvolvedor Front-End</span> e <span className="span-color">Designer Gráfico</span> apaixonado pela
-            tecnologia. Tenho cerca de 2 anos no desenvolvimento web e mobile e sempre estou em busca de aprender cada vez mais!
+            tecnologia. Tenho cerca de 2 anos no desenvolvimento web e mobile e sempre estou em busca de aprender cada vez
           </motion.p>
 
           <motion.div

@@ -1,5 +1,5 @@
 .hero-section {
-    @apply flex flex-col items-center min-h-screen justify-center;
+    @apply flex flex-col  min-h-screen justify-center;
   }
   
   .hero {
@@ -10,6 +10,7 @@
     padding: 0 11.5rem;
     color: var(--textcolor);
     width: 100%;
+    gap: 30px;
   }
   
   .hero-text {
