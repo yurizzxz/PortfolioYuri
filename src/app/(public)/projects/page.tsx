@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { db } from "@/app/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import "./projects.css";
+import RedirectButton from "@/app/_components/Button";
 
 interface Project {
   id: string;
@@ -46,7 +47,7 @@ const Projects = () => {
 
   useEffect(() => {
     fetchProjects();
-  
+
     const observerProjects = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -58,17 +59,16 @@ const Projects = () => {
         threshold: 0.1,
       }
     );
-  
+
     const element = document.querySelector("#projects");
     if (element) {
       observerProjects.observe(element);
     } else {
       console.error('Elemento com id "projects" não encontrado.');
     }
-  
+
     return () => observerProjects.disconnect();
   }, []);
-  
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -135,24 +135,23 @@ const Projects = () => {
                     width={510}
                     height={0}
                     loading="lazy"
-                    onLoadingComplete={() =>
-                      console.log("imagem carregada")
-                    }
+                    onLoadingComplete={() => console.log("imagem carregada")}
                   />
                 </div>
                 <div className="card-infos">
                   <h1 className="title-card">{project.titulo}</h1>
                   <p>{project.descricao}</p>
-                  <motion.a
+                  <motion.div
                     whileHover={{ y: -1, scale: 1.01 }}
                     transition={{ duration: 0.1 }}
-                    href={project.link}
-                    className="greenButton projectCta"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
-                    Acessar Projeto
-                  </motion.a>
+                    <RedirectButton
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      children="Acessar"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             ))
@@ -163,7 +162,7 @@ const Projects = () => {
 
         <motion.div
           whileHover={{ y: -1, scale: 1.06 }}
-          transition={{ duration: .5 }}
+          transition={{ duration: 0.5 }}
           initial={{ opacity: 0, y: -100 }}
           animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
           className="projectsCta"

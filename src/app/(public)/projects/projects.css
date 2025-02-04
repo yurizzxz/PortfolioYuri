@@ -1,13 +1,13 @@
 .projects-section {
-    @apply flex bg-[var(--background)] flex-row justify-center py-32 px-4 items-center;
+    @apply flex bg-[var(--background)] flex-row justify-center min-h-screen px-4 items-center;
   }
   
   .projects-header {
-    @apply text-center mb-12;
+    @apply mb-12;
   }
   
   .projects-title {
-    @apply mb-3 text-3xl font-bold;
+    @apply  text-4xl font-bold;
   }
   
   .projects-cards {
@@ -35,7 +35,7 @@
   }
   
   .picks {
-    @apply mt-4 flex gap-5 justify-center flex-wrap;
+    @apply mt-8 flex gap-5  flex-wrap;
   }
   
   .pickFilter {

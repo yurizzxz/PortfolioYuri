@@ -1,6 +1,5 @@
 .about {
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col items-center min-h-screen justify-center ;
   }
   
   .about-title {
@@ -48,7 +47,7 @@
   
   .about-image img {
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     object-fit: cover;
     object-position: 25%;
   }

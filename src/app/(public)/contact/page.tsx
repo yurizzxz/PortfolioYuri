@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import "./contact.css"
+import RedirectButton from "@/app/_components/Button";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -179,7 +180,7 @@ const Form = () => {
 
             <motion.button
               type="submit"
-              className="greenButton form-button"
+              className="bg-spancolor hover:bg-spanhover text-white font-bold py-4 px-7 transition-all rounded-lg"
               initial={{ opacity: 0, x: 100 }}
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}

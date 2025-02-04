@@ -1,9 +1,9 @@
 .services-section {
-    @apply bg-[var(--background)] flex flex-row justify-center py-32 px-4 items-center;
+    @apply bg-[var(--background)] flex flex-row justify-center py-6 md:py-0 min-h-screen px-4 items-center;
   }
   
   .services-header {
-    @apply text-center mb-10;
+    @apply  mb-10;
   }
   
   .services-title {

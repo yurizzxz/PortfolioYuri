@@ -1,8 +1,5 @@
 .hero-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 10rem;
+    @apply flex flex-col items-center min-h-screen justify-center;
   }
   
   .hero {
@@ -10,10 +7,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem 12rem;
+    padding: 0 11.5rem;
     color: var(--textcolor);
     width: 100%;
-    gap: 30px;
   }
   
   .hero-text {
@@ -28,12 +24,12 @@
   }
   
   .hero h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
   
   .hero h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
   }
   
@@ -62,7 +58,7 @@
   }
   
   .hero .hero-desc {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     margin-bottom: 2.5rem;
   }
   
@@ -76,7 +72,7 @@
   .hero .icons {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     margin-bottom: 2rem;
     font-size: 20px;
   }
@@ -84,11 +80,11 @@
   .hero .icon-content {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 15px;
   }
   
   .hero .icon-content p {
-    margin-top: -4px;
     font-size: 1rem;
   }
   

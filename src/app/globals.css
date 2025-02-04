@@ -8,7 +8,6 @@
   --spancolor: #7f15f8;
   --spanhover: #8700e0;
   --heroBg: #f9f9f9;
-  --secondBackground: #f7f7f7;
   --cardColor: #fafafa;
   --border: #e5e5e5;
 }
@@ -21,7 +20,6 @@
     --spancolor: #7f15f8;
     --spanhover: #8320f5;
     --heroBg: #080808;
-    --secondBackground: #080808;
     --cardColor: #101010;
     --border: #222222;
   }
@@ -45,26 +43,8 @@
 }
 
 body {
-  padding-top: 8rem;
   color: var(--foreground);
   box-sizing: border-box;
   background: var(--background);
   font-family: consolas;
 }
-
-
-
-/*hero*/
-
-
-
-/*section service*/
-
-
-/*about me*/
-
-/*projects section*/
-
-
-
-/*form*/

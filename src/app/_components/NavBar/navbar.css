@@ -7,16 +7,13 @@
     transition: 0.3s ease-in-out;
   }
   
-  .navbar.scrolled {
-    background-color: var(--background);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
   .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10rem;
+    padding: 1rem 11.5rem;
+    background-color: var(--background);
+    transition: 0.3s ease-in-out;
   }
   
   .navbar-container .logo h1 {
@@ -39,13 +36,11 @@
   }
   
   .navbar-links a {
-    font-weight: bold;
     color: var(--textcolor);
     text-decoration: none;
     font-size: 1rem;
     position: relative;
     transition: 0.3s ease-in-out;
-    letter-spacing: 1px;
   }
   
   .navbar-links a::before {
@@ -81,13 +76,13 @@
       background-color: var(--background);
     }
     .navbar-container {
-      padding: 1.5rem 4rem;
+      padding: 1.5rem 1rem;
     }
   }
   
   @media (max-width: 1150px) {
     .navbar-container {
-      padding: 1rem 2rem;
+      padding: 1.2rem 1rem;
     }
   
     .navbar-links {
@@ -100,7 +95,7 @@
       background-color: var(--background);
     }
     .navbar-container {
-      padding: 0.8rem 1.3rem;
+      padding: 1.2rem 1rem;
     }
     .navbar-links {
       display: none;

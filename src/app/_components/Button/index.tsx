@@ -4,6 +4,7 @@ import React from "react";
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   children: React.ReactNode;
+  
 }
 
 export default function RedirectButton({ children, href, ...props }: ButtonProps) {

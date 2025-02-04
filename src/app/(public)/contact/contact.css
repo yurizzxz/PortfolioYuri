@@ -1,5 +1,5 @@
 .contact-section {
-    @apply flex flex-col items-center justify-center pt-16;
+    @apply flex flex-col items-center min-h-screen justify-center ;
    }
    
    .contact-hero {
