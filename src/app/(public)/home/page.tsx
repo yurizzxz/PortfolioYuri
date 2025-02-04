@@ -10,12 +10,12 @@ import "./home.css";
 
 const Hero = () => {
   return (
-    <main className="container">
+    <main className="container overflow-hidden">
       <motion.div
         className="hero-section"
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <section className="hero" id="home">
           <motion.div
@@ -36,7 +36,7 @@ const Hero = () => {
               <motion.h1
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
+                transition={{ duration: 1 }}
               >
                 Yuri <span className="span-color">Alves</span>
               </motion.h1>
@@ -46,7 +46,7 @@ const Hero = () => {
               className="hero-desc"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              transition={{ duration: 1 }}
             >
               Sou um <span className="span-color">Desenvolvedor Front-End</span>{" "}
               e <span className="span-color">Designer Gráfico</span> apaixonado
@@ -58,7 +58,7 @@ const Hero = () => {
               className="icons"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
+              transition={{ duration: 1 }}
             >
               <div className="icon-content">
                 <i className="fas fa-check-circle icon"></i>
@@ -81,7 +81,7 @@ const Hero = () => {
           <motion.figure
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1 }}
           >
             <Image
               className="hero-image"

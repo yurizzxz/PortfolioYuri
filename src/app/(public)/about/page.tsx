@@ -40,11 +40,9 @@ const AboutSection = () => {
       <section className="about">
         <div className="about-content">
           <motion.div
-            initial={{ opacity: 0, x: -100, scale: 0.8 }}
-            animate={isVisibleAbout ? { opacity: 1, x: 0, scale: 1 } : {}}
-            transition={{
-              duration: 1,
-            }}
+             initial={{ opacity: 0, y: 100 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
             className="about-image"
           >
             <Image

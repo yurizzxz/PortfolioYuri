@@ -1,5 +1,5 @@
 .services-section {
-  @apply bg-[var(--background)] flex flex-row justify-center py-6 md:py-0 min-h-screen px-4 items-center;
+  @apply bg-[var(--background)] flex flex-row py-6 md:py-0 min-h-screen w-full px-4 md:px-0 items-center;
 }
 
 .services-header {
@@ -11,7 +11,7 @@
 }
 
 .services-cards {
-  @apply grid gap-5 justify-center;
+  @apply grid gap-5 ml-1;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   max-width: 1200px;
@@ -22,11 +22,12 @@
 }
 
 .service-card:hover {
-  @apply border-[var(--spanhover)] scale-105 transition-all ease-in-out;
+  @apply border-[var(--spanhover)] transition-all ease-in-out;
+  scale: 1.01;
 }
 
 .title-card {
-  @apply text-xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 .card-infos {
@@ -34,7 +35,7 @@
 }
 
 .card-icon .icon-card {
-  @apply text-5xl text-[var(--spancolor)];
+  @apply text-6xl text-[var(--spancolor)];
 }
 
 @media (max-width: 768px) {

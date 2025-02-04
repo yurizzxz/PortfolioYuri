@@ -79,9 +79,9 @@ const Form = () => {
       <section className="contact-section" id="contact" ref={formRef}>
         <div className="contact-hero">
           <motion.div
-            initial={{ opacity: 0, x: -100, scale: 1 }}
-            animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
-            transition={{ duration: 1 }}
+           initial={{ opacity: 0, y: 100 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
             className="contact-info"
           >
             <h1>Vamos Conversar!</h1>

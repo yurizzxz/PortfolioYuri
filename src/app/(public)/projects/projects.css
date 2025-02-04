@@ -1,5 +1,5 @@
 .projects-section {
-    @apply flex bg-[var(--background)] flex-row justify-center min-h-screen px-4 items-center;
+    @apply flex bg-[var(--background)] flex-row  min-h-screen px-4 md:px-0 pt-28;
   }
   
   .projects-header {
@@ -11,35 +11,35 @@
   }
   
   .projects-cards {
-    @apply flex gap-6 flex-wrap flex-row justify-center;
+    @apply flex gap-6 flex-wrap flex-row ;
   }
   
   .projects-card {
-    @apply bg-[var(--cardColor)] h-128 w-96 rounded-xl flex flex-col gap-5 mb-12 flex-shrink-0 transition-all duration-300 ease-in-out;
+    @apply bg-[var(--cardColor)] border border-[var(--border)] h-96 w-80 rounded-t-2xl rounded-lg flex flex-col gap-5 mb-12 flex-shrink-0 transition-all duration-300 ease-in-out;
   }
   
   .projects-card:hover {
-    @apply scale-105;
+    scale: 1.02;
   }
   
   .projects-card .title-card {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold mb-2.5 mt-5;
   }
   
   .projects-card .card-infos {
-    @apply px-4 flex flex-col gap-2 pt-2 flex-grow;
+    @apply px-4 flex flex-col gap-2 flex-grow;
   }
   
   .card-icon .image-card {
-    @apply max-w-full rounded-t-xl object-cover h-56;
+    @apply max-w-full rounded-2xl object-cover h-48;
   }
   
   .picks {
-    @apply mt-8 flex gap-5  flex-wrap;
+    @apply mt-8 flex gap-3  flex-wrap;
   }
   
   .pickFilter {
-    @apply px-6 py-2 border border-[var(--spancolor)] rounded-full font-bold transition-all duration-200 ease-in-out;
+    @apply px-6 py-2 border border-[var(--spancolor)] rounded-lg font-bold transition-all duration-200 ease-in-out;
   }
   
   .pickFilter.active {
@@ -61,10 +61,6 @@
   @media (max-width: 450px) {
     .projects-card {
       @apply w-full mb-4;
-    }
-  
-    .projectsCta {
-      @apply mt-4;
     }
   }
   

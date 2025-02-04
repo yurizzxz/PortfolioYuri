@@ -65,13 +65,20 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <main className="container">
-      <main className="services-section" id="services" ref={servicesRef}>
+    <main className="container overflow-hidden">
+      <motion.main
+        className="services-section"
+        id="services"
+        ref={servicesRef}
+        initial={{ opacity: 0, y: 100 }}
+        animate={isVisibleServices ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
         <section className="services">
           <motion.div
-            initial={{ opacity: 0, y: -50, scale: 0.8 }}
-            animate={isVisibleServices ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="services-header"
           >
             <h1 className="services-title">Habilidades e Serviços</h1>
@@ -81,16 +88,13 @@ const ServicesSection = () => {
             </p>
           </motion.div>
           <div className="services-cards">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
-                initial={{ opacity: 0, y: -50 }}
-                animate={isVisibleServices ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 1,
-                  delay: index * 0.3,
-                }}
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
                 key={service.id}
                 className="service-card"
+                transition={{ duration: 0.8 }}
               >
                 <div className="card-icon">
                   <span className="material-icons icon-card">
@@ -105,7 +109,7 @@ const ServicesSection = () => {
             ))}
           </div>
         </section>
-      </main>
+      </motion.main>
     </main>
   );
 };

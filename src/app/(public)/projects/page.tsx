@@ -6,6 +6,7 @@ import { db } from "@/app/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import "./projects.css";
 import RedirectButton from "@/app/_components/Button";
+import Link from "next/link";
 
 interface Project {
   id: string;
@@ -78,11 +79,15 @@ const Projects = () => {
   return (
     <main className="container">
       <div className="projects-section" id="projects">
-        <section className="projects">
+        <motion.section
+          className="projects"
+          initial={{ opacity: 0, y: 100 }}
+          animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <motion.div
-            initial={{ opacity: 0, y: -50, scale: 0.8 }}
-            animate={isVisibleProjects ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
+            animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
             className="projects-header"
           >
             <h1 className="projects-title">Meus Projetos</h1>
@@ -103,7 +108,6 @@ const Projects = () => {
               >
                 Front-End
               </button>
-
             </div>
           </motion.div>
 
@@ -112,68 +116,53 @@ const Projects = () => {
               projects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 0.5 }}
                   animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 1, delay: index * 0.3 }}
                   className="projects-card"
                 >
-                  <div className="card-icon">
-                    <Image
-                      src={
-                        project.imagemUrl
-                          ? project.imagemUrl
-                          : "/default-image.jpg"
-                      }
-                      alt={project.titulo}
-                      className="image-card"
-                      width={510}
-                      height={0}
-                      loading="lazy"
-                      onLoadingComplete={() => console.log("imagem carregada")}
-                    />
-                  </div>
-                  <div className="card-infos">
-                    <div>
-                      <h1 className="title-card">{project.titulo}</h1>
-                      <p>{project.descricao}</p>
-                    </div>
-                    <motion.div
-                      whileHover={{ y: -1, scale: 1.01 }}
-                      transition={{ duration: 0.1 }}
-                    >
-                      <RedirectButton
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        children="Acessar"
+                  <Link href={project.link} target="_blank" rel="noreferrer">
+                    <div className="card-icon">
+                      <Image
+                        src={project.imagemUrl ? project.imagemUrl : ""}
+                        alt={project.titulo}
+                        className="image-card"
+                        width={510}
+                        height={0}
+                        loading="lazy"
+                        onLoadingComplete={() =>
+                          console.log("imagem carregada")
+                        }
                       />
-                    </motion.div>
-                  </div>
+                    </div>
+                    <div className="card-infos">
+                      <div>
+                        <h1 className="title-card">{project.titulo}</h1>
+                        <p>{project.descricao.length > 50 ? `${project.descricao.slice(0, 75)}...` : project.descricao}</p>
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               ))
             ) : (
-              <p style={{ marginBottom: 30 }}>
-                Carregando projetos... Aguarde.
-              </p>
+              <p>Carregando...</p>
             )}
           </div>
+          
 
           <motion.div
-            whileHover={{ y: -1, scale: 1.06 }}
             transition={{ duration: 0.5 }}
             initial={{ opacity: 0, y: -100 }}
-            animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
             className="projectsCta"
           >
-            <a
+            <Link
               href="https://github.com/yurizzxz?tab=repositories"
               target="_blank"
               className="greenButton"
             >
               Acesse meu GitHub
-            </a>
+            </Link>
           </motion.div>
-        </section>
+        </motion.section>
       </div>
     </main>
   );

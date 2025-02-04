@@ -38,7 +38,7 @@
   white-space: nowrap;
   border-right: 3px solid var(--spanhover);
   width: 4.3ch;
-  animation: typing 3s steps(10) infinite, blink-caret 0.55s step-end infinite;
+  animation: typing 3s steps(4) infinite, blink-caret 0.55s step-end infinite;
 }
 
 @keyframes typing {

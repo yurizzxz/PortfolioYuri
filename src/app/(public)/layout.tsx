@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Yuri Alves // Desenvolvedor Front-End",
     description:
-      "Veja o portfólio de Yuri Dev, com projetos de front-end e back-end.",
+      "Meu nome é Yuri Alves! Veja meu portfólio, com projetos de front-end e back-end.",
     url: "https://www.yuridev.com",
     siteName: "Yuri Dev",
     images: [
