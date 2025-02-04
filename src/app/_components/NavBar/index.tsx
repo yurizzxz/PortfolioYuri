@@ -98,10 +98,11 @@ const Navbar = () => {
             >
               <RedirectButton
                 href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
-                children="Download CV"
                 target="_blank"
                 rel="noopener noreferrer"
-              />
+              >
+                Download CV
+              </RedirectButton>
             </motion.li>
           </motion.ul>
         </div>

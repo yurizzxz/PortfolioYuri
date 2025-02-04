@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import "./contact.css";
-import RedirectButton from "@/app/_components/Button";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);

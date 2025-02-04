@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { db } from "@/app/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import "./projects.css";
-import RedirectButton from "@/app/_components/Button";
 import Link from "next/link";
 
 interface Project {
