@@ -1,0 +1,59 @@
+.services-section {
+    @apply bg-[var(--background)] flex flex-row justify-center py-32 px-4 items-center;
+  }
+  
+  .services-header {
+    @apply text-center mb-10;
+  }
+  
+  .services-title {
+    @apply mb-3 text-4xl font-bold;
+  }
+  
+  
+  .services-cards {
+    @apply flex gap-5 flex-wrap flex-row justify-center;
+  }
+  
+  .service-card {
+    @apply p-5 bg-[var(--cardColor)] h-80 w-80 rounded-lg flex flex-col justify-center gap-10 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-gray-500;
+  }
+  
+  .service-card:hover {
+    @apply border-[var(--spanhover)] scale-105 transition-all ease-in-out;
+  }
+  
+  .title-card {
+    @apply text-xl font-bold;
+  }
+  
+  .card-infos {
+    @apply flex flex-col gap-1;
+  }
+  
+  .card-icon .icon-card {
+    @apply text-5xl text-[var(--spancolor)];
+  }
+  
+  @media (max-width: 768px) {
+    .services-title {
+      @apply mb-3 text-4xl font-bold;
+    }
+  
+    .services-cards {
+      @apply gap-4;
+    }
+    .services-header {
+      @apply mb-8 text-left;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .services-cards {
+      @apply gap-5 w-full justify-start;
+    }
+    .service-card {
+      @apply w-full;
+    }
+  }
+  

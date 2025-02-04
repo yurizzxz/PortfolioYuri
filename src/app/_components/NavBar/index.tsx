@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import RedirectButton from "./Button";
+import RedirectButton from "../Button";
+import "./navbar.css";
 
 const Navbar = () => {
   const [navbarState, setNavbarState] = useState({
@@ -91,7 +92,6 @@ const Navbar = () => {
             </motion.li>
           ))}
           <motion.li
-            className="md:hidden"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
@@ -104,20 +104,6 @@ const Navbar = () => {
           </motion.li>
         </motion.ul>
 
-        <motion.div
-          className="hidden md:block rounded-md transition-all duration-300 hover:scale-105"
-          initial={{ opacity: 0, x: 8 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ y: -2 }}
-        >
-          <RedirectButton
-            href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
-            children="Download CV"
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-        </motion.div>
       </nav>
     </header>
   );

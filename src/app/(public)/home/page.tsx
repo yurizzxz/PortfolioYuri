@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
 import Foto from "@/app/_assets/img/foto.png";
 import { motion } from "framer-motion";
+import "./home.css";
 
 const Hero = () => {
   return (

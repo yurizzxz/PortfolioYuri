@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import Navbar from "../_components/navbar";
+import Navbar from "../_components/NavBar";
 
 export const metadata: Metadata = {
   title: "Yuri Alves // Desenvolvedor Front-End",
@@ -60,6 +60,8 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#000000" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
       </head>
       <body>
         <div>

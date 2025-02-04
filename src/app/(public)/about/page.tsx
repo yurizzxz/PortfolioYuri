@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import img1 from "@/app/_assets/img/img1.png";
 import { motion } from "framer-motion";
+import "./about.css";
 
 const AboutSection = () => {
   const [isVisibleAbout, setIsVisibleAbout] = useState(false);

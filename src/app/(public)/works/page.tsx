@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import "./works.css";
 
 const services = [
   {
@@ -9,28 +10,28 @@ const services = [
     title: "Identidade Visual",
     description:
       "Desenvolvo identidades visuais únicas e marcantes que comunicam os valores e a essência da sua marca.",
-    icon: "fas fa-palette",
+    icon: "palette",
   },
   {
     id: 2,
     title: "Sistemas Web",
     description:
       "Crio sistemas web com visuais modernos e responsivos, garantindo uma experiência fluida em qualquer dispositivo.",
-    icon: "fas fa-laptop-code",
+    icon: "desktop_windows",
   },
   {
     id: 3,
     title: "UI/UX Design",
     description:
-      "Desenvolvo interfaces atraentes e experiências intuitivas que tornam a navegação fluida entrada no usuário.",
-    icon: "fas fa-pencil-ruler",
+      "Desenvolvo interfaces atraentes e experiências intuitivas que tornam a navegação fluida e intuitiva para o usuário.",
+    icon: "touch_app",
   },
   {
     id: 4,
     title: "Apps Modernos",
     description:
       "Crio interfaces de aplicativos modernas e intuitivas, garantindo uma experiência visual atraente e funcional.",
-    icon: "fas fa-mobile-alt",
+    icon: "smartphone",
   },
 ];
 
@@ -91,7 +92,7 @@ const ServicesSection = () => {
               className="service-card"
             >
               <div className="card-icon">
-                <i className={`${service.icon} icon-card`}></i>
+                <span className="material-icons icon-card">{service.icon}</span>
               </div>
               <div className="card-infos">
                 <h1 className="title-card">{service.title}</h1>

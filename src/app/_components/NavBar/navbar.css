@@ -1,0 +1,151 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .navbar.scrolled {
+    background-color: var(--background);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10rem;
+  }
+  
+  .navbar-container .logo h1 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .span-color {
+    color: var(--spancolor) !important;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar-links a {
+    font-weight: bold;
+    color: var(--textcolor);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-links a::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: var(--spancolor);
+    width: 0%;
+    top: 30px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  .navbar-links a:hover::before,
+  .navbar-links a.active::before {
+    width: 100%;
+  }
+  
+  .toggle-btn {
+    display: none;
+    background-color: transparent;
+    color: var(--textcolor);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .mobile-button {
+    display: none;
+  }
+  
+  @media (max-width: 1300px) {
+    .navbar {
+      background-color: var(--background);
+    }
+    .navbar-container {
+      padding: 1.5rem 4rem;
+    }
+  }
+  
+  @media (max-width: 1150px) {
+    .navbar-container {
+      padding: 1rem 2rem;
+    }
+  
+    .navbar-links {
+      margin-left: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 990px) {
+    .navbar {
+      background-color: var(--background);
+    }
+    .navbar-container {
+      padding: 0.8rem 1.3rem;
+    }
+    .navbar-links {
+      display: none;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background-color: var(--background);
+      text-align: center;
+      margin: 0;
+    }
+  
+    .navbar-links li {
+      padding: 15px 15px;
+      margin: 0;
+    }
+  
+    .toggle-btn {
+      display: block;
+    }
+  
+    .navbar-links.active {
+      display: block;
+    }
+  
+    body {
+      padding-top: 5rem;
+    }
+    .mobile-button {
+      display: block;
+    }
+    .CV {
+      display: none;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(1%);
+    }
+  }
+  
+  .navbar-links.active {
+    animation: slideUp 0.3s ease-out forwards;
+  }

@@ -1,0 +1,145 @@
+.contact-section {
+    @apply flex flex-col items-center justify-center pt-16;
+   }
+   
+   .contact-hero {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 2rem;
+     padding: 4rem 2rem;
+     flex-wrap: wrap;
+   }
+   
+   .email-icon {
+     display: flex;
+     flex-direction: row;
+     gap: 10px;
+     margin-bottom: 2rem;
+   }
+   
+   .email-icon i {
+     top: 1px;
+     position: relative;
+     color: var(--spancolor);
+     font-size: 25px;
+   }
+   
+   .contact-info {
+     flex: 1;
+     max-width: 50%;
+   }
+   
+   .contact-info h1 {
+     font-weight: bold;
+     font-size: 3rem;
+     margin-bottom: 1rem;
+   }
+   
+   .contact-info p {
+     font-size: 1rem;
+     margin-bottom: 3rem;
+   }
+   
+   .form-container {
+     flex: 1;
+     max-width: 50rem;
+     display: flex;
+     justify-content: center;
+   }
+   
+   .contact-form {
+     width: 100%;
+     max-width: 75vh;
+     padding: 1.5rem;
+     border-radius: 8px;
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+   }
+   
+   .form-group {
+     position: relative;
+   }
+   
+   .contact-form input,
+   .contact-form textarea {
+     width: 100%;
+     padding: 2.2rem 1.3rem 1rem;
+     border-radius: 8px;
+     font-size: 1rem;
+     background-color: var(--cardColor);
+     transform: translateY(-50%);
+   }
+   
+   .form-group label {
+     display: block;
+     font-size: 1rem;
+     position: absolute;
+     top: 35%;
+     transform: translateY(-50%);
+     left: 1.3rem;
+     font-size: 1rem;
+   }
+   
+   .form-group input:focus ~ label,
+   .form-group input:valid ~ label {
+     top: 20%;
+     font-size: 0.8rem;
+   }
+   
+   .form-group textarea:focus ~ label,
+   .form-group textarea:valid ~ label {
+     top: 8%;
+     font-size: 0.8rem;
+   }
+   
+   .message {
+     resize: none;
+   }
+   
+   .form-button {
+     padding: 15px;
+     width: 100%;
+     margin-bottom: 2rem;
+   }
+   
+   @media (max-width: 900px) and (max-height: 1300px) {
+     .contact-section {
+       padding-inline: 1rem;
+     }
+   }
+   
+   @media (max-width: 768px) {
+     .contact-section {
+       padding: 1rem;
+     }
+     .contact-hero {
+       flex-direction: column;
+       padding: 0rem;
+     }
+   
+     .contact-info,
+     .form-container {
+       max-width: 25rem;
+       width: 100%;
+     }
+   
+     .contact-info h1 {
+       font-size: 3rem;
+     }
+   
+     .contact-form {
+       padding: 0rem;
+     }
+   
+     .name-container {
+       flex-direction: column;
+     }
+   
+     .name-field {
+       flex: none;
+       width: 100%;
+     }
+   }
+   

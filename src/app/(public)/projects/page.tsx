@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { db } from "@/app/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import "./projects.css";
 
 interface Project {
   id: string;

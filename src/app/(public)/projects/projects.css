@@ -1,0 +1,70 @@
+.projects-section {
+    @apply flex bg-[var(--background)] flex-row justify-center py-32 px-4 items-center;
+  }
+  
+  .projects-header {
+    @apply text-center mb-12;
+  }
+  
+  .projects-title {
+    @apply mb-3 text-3xl font-bold;
+  }
+  
+  .projects-cards {
+    @apply flex gap-6 flex-wrap flex-row justify-center;
+  }
+  
+  .projects-card {
+    @apply bg-[var(--cardColor)] h-128 w-96 rounded-xl flex flex-col gap-5 mb-12 flex-shrink-0 transition-all duration-300 ease-in-out;
+  }
+  
+  .projects-card:hover {
+    @apply scale-105;
+  }
+  
+  .projects-card .title-card {
+    @apply text-xl font-bold;
+  }
+  
+  .projects-card .card-infos {
+    @apply px-4 flex flex-col gap-2 pt-2 flex-grow;
+  }
+  
+  .card-icon .image-card {
+    @apply max-w-full rounded-t-xl object-cover h-56;
+  }
+  
+  .picks {
+    @apply mt-4 flex gap-5 justify-center flex-wrap;
+  }
+  
+  .pickFilter {
+    @apply px-6 py-2 border border-[var(--spancolor)] rounded-full font-bold transition-all duration-200 ease-in-out;
+  }
+  
+  .pickFilter.active {
+    @apply bg-[var(--spancolor)] font-bold text-white;
+  }
+  
+  .pickFilter:hover {
+    @apply bg-[var(--spanhover)] text-white;
+  }
+  
+  .projectCta {
+    @apply mt-auto flex justify-center mb-8;
+  }
+  
+  .projectsCta {
+    @apply flex justify-center;
+  }
+  
+  @media (max-width: 450px) {
+    .projects-card {
+      @apply w-full mb-4;
+    }
+  
+    .projectsCta {
+      @apply mt-4;
+    }
+  }
+  
