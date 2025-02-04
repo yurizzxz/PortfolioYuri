@@ -65,43 +65,47 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <main className="services-section" id="services" ref={servicesRef}>
-      <section className="services">
-        <motion.div
-          initial={{ opacity: 0, y: -50, scale: 0.8 }}
-          animate={isVisibleServices ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{ duration: 1 }}
-          className="services-header"
-        >
-          <h1 className="services-title">Habilidades e Serviços</h1>
-          <p className="services-desc">
-            Descubra como posso ajudar a transformar sua marca e presença
-            digital com serviços sob medida para suas necessidades!
-          </p>
-        </motion.div>
-        <div className="services-cards">
-          {services.map((service, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              animate={isVisibleServices ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 1,
-                delay: index * 0.3,
-              }}
-              key={service.id}
-              className="service-card"
-            >
-              <div className="card-icon">
-                <span className="material-icons icon-card">{service.icon}</span>
-              </div>
-              <div className="card-infos">
-                <h1 className="title-card">{service.title}</h1>
-                <p>{service.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+    <main className="container">
+      <main className="services-section" id="services" ref={servicesRef}>
+        <section className="services">
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.8 }}
+            animate={isVisibleServices ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 1 }}
+            className="services-header"
+          >
+            <h1 className="services-title">Habilidades e Serviços</h1>
+            <p className="services-desc">
+              Descubra como posso ajudar a transformar sua marca e presença
+              digital com serviços sob medida para suas necessidades!
+            </p>
+          </motion.div>
+          <div className="services-cards">
+            {services.map((service, index) => (
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={isVisibleServices ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.3,
+                }}
+                key={service.id}
+                className="service-card"
+              >
+                <div className="card-icon">
+                  <span className="material-icons icon-card">
+                    {service.icon}
+                  </span>
+                </div>
+                <div className="card-infos">
+                  <h1 className="title-card">{service.title}</h1>
+                  <p>{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </main>
     </main>
   );
 };

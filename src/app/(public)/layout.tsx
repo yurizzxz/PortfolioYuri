@@ -59,14 +59,18 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#000000" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <div>
           <Navbar />
         </div>
-        {children}
+        <div className="flex justify-center">
+          {children}
+        </div>
       </body>
     </html>
   );

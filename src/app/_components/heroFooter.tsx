@@ -26,8 +26,8 @@ const HeroFooter = () => {
         <Image
           src={htmlIcon}
           alt="HTML"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
         />
       </motion.div>
 
@@ -40,7 +40,7 @@ const HeroFooter = () => {
         <Image
           src={cssIcon}
           alt="CSS"
-          width={55}
+          width={45}
           height={50}
         />
       </motion.div>
@@ -54,7 +54,7 @@ const HeroFooter = () => {
         <Image
           src={jsIcon}
           alt="JavaScript"
-          width={48}
+          width={38}
           height={50}
         />
       </motion.div>
@@ -68,7 +68,7 @@ const HeroFooter = () => {
         <Image
           src={reactIcon}
           alt="React"
-          width={50}
+          width={40}
           height={50}
         />
       </motion.div>
@@ -82,7 +82,7 @@ const HeroFooter = () => {
         <Image
           src={photoshopIcon}
           alt="Photoshop"
-          width={50}
+          width={40}
           height={50}
         />
       </motion.div>

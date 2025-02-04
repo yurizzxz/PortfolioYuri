@@ -9,9 +9,10 @@
   
   .navbar-container {
     display: flex;
-    justify-content: space-between;
+    padding: 1.2rem 1rem;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 11.5rem;
+    width: 100%;
     background-color: var(--background);
     transition: 0.3s ease-in-out;
   }
@@ -71,32 +72,7 @@
     display: none;
   }
   
-  @media (max-width: 1300px) {
-    .navbar {
-      background-color: var(--background);
-    }
-    .navbar-container {
-      padding: 1.5rem 1rem;
-    }
-  }
-  
-  @media (max-width: 1150px) {
-    .navbar-container {
-      padding: 1.2rem 1rem;
-    }
-  
-    .navbar-links {
-      margin-left: 1.5rem;
-    }
-  }
-  
   @media (max-width: 990px) {
-    .navbar {
-      background-color: var(--background);
-    }
-    .navbar-container {
-      padding: 1.2rem 1rem;
-    }
     .navbar-links {
       display: none;
       position: absolute;
@@ -106,10 +82,11 @@
       background-color: var(--background);
       text-align: center;
       margin: 0;
+      padding-bottom: 1rem;
     }
   
     .navbar-links li {
-      padding: 15px 15px;
+      padding: 15px 0;
       margin: 0;
     }
   
