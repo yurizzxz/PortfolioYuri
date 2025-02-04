@@ -61,18 +61,20 @@ const Navbar = () => {
         </button>
 
         <motion.ul
-          className={`navbar-links ${navbarState.mobileMenuOpen ? "active" : ""}`}
+          className={`navbar-links ${
+            navbarState.mobileMenuOpen ? "active" : ""
+          }`}
           role="navigation"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           {[
-            { href: "#home", label: "Home" },
-            { href: "#about", label: "Sobre" },
-            { href: "#services", label: "Serviços" },
-            { href: "#projects", label: "Projetos" },
-            { href: "#contact", label: "Contato" },
+            { href: "/home", label: "Home" },
+            { href: "/about", label: "Sobre" },
+            { href: "/works", label: "Serviços" },
+            { href: "/projects", label: "Projetos" },
+            { href: "/contact", label: "Contato" },
           ].map(({ href, label }) => (
             <motion.li
               key={href}
@@ -88,8 +90,17 @@ const Navbar = () => {
               </Link>
             </motion.li>
           ))}
-          <motion.li className="md:hidden" whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
-             <RedirectButton href="#" children="Download CV" target="_blank" rel="noopener noreferrer" />
+          <motion.li
+            className="md:hidden"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <RedirectButton
+              href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
+              children="Download CV"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
           </motion.li>
         </motion.ul>
 
@@ -100,7 +111,12 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
           whileHover={{ y: -2 }}
         >
-          <RedirectButton href="#" children="Download CV" target="_blank" rel="noopener noreferrer" />
+          <RedirectButton
+            href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
+            children="Download CV"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
         </motion.div>
       </nav>
     </header>
