@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
   const [navbarState, setNavbarState] = useState({
@@ -77,17 +78,17 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2 }}
             >
-              <a
+              <Link
                 href={href}
                 className={navbarState.activeLink === href ? "active" : ""}
                 onClick={() => handleLinkClick(href)}
               >
                 {label}
-              </a>
+              </Link>
             </motion.li>
           ))}
           <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
-            <a href="#" className="greenButton mobile-button" rel="noopener noreferrer">
+            <a href="#" className="greenButton mobile-button" target="_blank" rel="noopener noreferrer">
               Download CV
             </a>
           </motion.li>

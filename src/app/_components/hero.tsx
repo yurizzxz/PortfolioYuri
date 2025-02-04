@@ -58,11 +58,11 @@ const Hero = () => {
           >
             <div className="icon-content">
               <i className="fas fa-check-circle icon"></i>
-              <p>Técnico em Desenvolvimento de Sistemas na ETEC Itu.</p>
+              <p className="text-sm">Técnico em Desenvolvimento de Sistemas na ETEC Itu.</p>
             </div>
             <div className="icon-content">
               <i className="fas fa-check-circle icon"></i>
-              <p>Transformo conceitos em soluções eficientes.</p>
+              <p className="text-sm">Transformo conceitos em soluções eficientes.</p>
             </div>
           </motion.div>
 

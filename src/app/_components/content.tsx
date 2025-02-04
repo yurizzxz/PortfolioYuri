@@ -15,17 +15,25 @@ const services = [
   },
   {
     id: 2,
-    title: "Sites Responsivos",
+    title: "Sistemas Web",
     description:
-      "Crio sites modernos e responsivos, garantindo uma experiência fluida em qualquer dispositivo.",
+      "Crio sistemas web com visuais modernos e responsivos, garantindo uma experiência fluida em qualquer dispositivo.",
     icon: "fas fa-laptop-code",
   },
   {
     id: 3,
-    title: "UI Design",
+    title: "UI/UX Design",
     description:
-      "Desenvolvo designs atrativos que tornam a navegação intuitiva e engajante.",
+      "Desenvolvo interfaces atraentes e experiências intuitivas que tornam a navegação fluida entrada no usuário.",
     icon: "fas fa-pencil-ruler",
+  },
+
+  {
+    id: 4,
+    title: "Apps Modernos",
+    description:
+      "Crio interfaces de aplicativos modernas e intuitivas, garantindo uma experiência visual atraente e funcional.",
+    icon: "fas fa-mobile-alt",
   },
 ];
 
@@ -95,7 +103,7 @@ const Content = () => {
             transition={{ duration: 1 }}
             className="services-header"
           >
-            <h1 className="services-title">Serviços</h1>
+            <h1 className="services-title">Habilidades e Serviços</h1>
             <p className="services-desc">
               Descubra como posso ajudar a transformar sua marca e presença
               digital com serviços sob medida para suas necessidades!
@@ -137,7 +145,12 @@ const Content = () => {
               }}
               className="about-image"
             >
-              <Image src={img1} alt="Minha foto" loading="lazy" className="image-style" />
+              <Image
+                src={img1}
+                alt="Minha foto"
+                loading="lazy"
+                className="image-style"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 100, scale: 0.8 }}
@@ -152,9 +165,10 @@ const Content = () => {
               </h1>
               <div className="about-text">
                 <p>
-                  Olá! Sou Yuri, tenho 17 anos e estou cursando o terceiro ano
-                  do ensino médio integrado ao técnico em desenvolvimento de
-                  sistemas na Etec Itu.
+                  Olá! Sou Yuri, tenho 17 anos e sou formado no Ensino Médio
+                  integrado ao técnico em desenvolvimento de sistemas na Etec
+                  Itu. Atualmente estou cursando o 1° semestre de Analise e
+                  Desenvolvimento de Sistemas na FATEC Itu.
                 </p>
                 <p>
                   Ao longo da minha trajetória, atuei como designer gráfico para

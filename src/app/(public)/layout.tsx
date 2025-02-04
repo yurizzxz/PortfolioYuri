@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-  display: "swap",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-  display: "swap",
-});
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Yuri Alves // Desenvolvedor Front-End",
@@ -57,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfólio - Dev Yuri",
     description: "Yuri Alves, desenvolvedor front-end e back-end.",
-    images: ["/logoTwitter.png"], 
+    images: ["/logoTwitter.png"],
   },
 };
 
@@ -73,11 +60,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#000000" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

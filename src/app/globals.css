@@ -88,7 +88,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 10rem;
+  padding: 1rem 10rem;
 }
 
 .navbar-container .logo h1 {
@@ -503,7 +503,7 @@ body {
 
 .services-cards {
   display: flex;
-  gap: 50px;
+  gap: 1.2rem;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
@@ -544,6 +544,16 @@ body {
 .card-icon .icon-card {
   font-size: 3rem;
   color: var(--spancolor);
+}
+
+@media (max-width: 768px) {
+  .services-cards { 
+    gap: 1rem;
+  }
+  .services-header {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
 }
 
 /*about me*/
