@@ -1,66 +1,77 @@
 .projects-section {
-    @apply flex bg-[var(--background)] flex-row  min-h-screen px-4 md:px-0 pt-28;
-  }
-  
-  .projects-header {
-    @apply mb-12;
-  }
-  
-  .projects-title {
-    @apply  text-4xl font-bold;
-  }
-  
+  @apply flex bg-[var(--background)] flex-row min-h-screen px-4 md:px-0 pt-2 md:pt-28;
+}
+
+.projects-header {
+  @apply mb-12;
+}
+
+.projects-title {
+  @apply text-4xl font-bold;
+}
+
+.projects-cards {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full;
+}
+
+.projects-card {
+  @apply bg-[var(--cardColor)] border border-[var(--border)] h-96 rounded-t-2xl rounded-lg flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;
+}
+
+.projects-card:hover {
+  scale: 1.02;
+}
+
+.projects-card .title-card {
+  @apply text-xl font-bold mb-2.5 mt-5;
+}
+
+.projects-card .card-infos {
+  @apply px-4 flex flex-col gap-2 flex-grow;
+}
+
+.card-icon .image-card {
+  @apply max-w-full rounded-2xl object-cover h-48;
+}
+
+.picks {
+  @apply mt-8 flex gap-3 flex-wrap;
+}
+
+.pickFilter {
+  @apply px-6 py-2 border border-[var(--spancolor)] rounded-lg font-bold transition-all duration-200 ease-in-out;
+}
+
+.pickFilter.active {
+  @apply bg-[var(--spancolor)] font-bold text-white;
+}
+
+.pickFilter:hover {
+  @apply bg-[var(--spanhover)] text-white;
+}
+
+.projectCta {
+  @apply mt-auto flex justify-center mb-8;
+}
+
+.projectsCta {
+  @apply flex justify-center;
+}
+
+@media (max-width: 1024px) {
   .projects-cards {
-    @apply flex gap-6 flex-wrap flex-row ;
+      @apply grid-cols-3;
   }
-  
-  .projects-card {
-    @apply bg-[var(--cardColor)] border border-[var(--border)] h-96 w-80 rounded-t-2xl rounded-lg flex flex-col gap-5 mb-12 flex-shrink-0 transition-all duration-300 ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .projects-cards {
+      @apply grid-cols-2;
   }
-  
-  .projects-card:hover {
-    scale: 1.02;
+}
+
+@media (max-width: 450px) {
+  .projects-cards {
+      @apply grid-cols-1;
   }
-  
-  .projects-card .title-card {
-    @apply text-xl font-bold mb-2.5 mt-5;
-  }
-  
-  .projects-card .card-infos {
-    @apply px-4 flex flex-col gap-2 flex-grow;
-  }
-  
-  .card-icon .image-card {
-    @apply max-w-full rounded-2xl object-cover h-48;
-  }
-  
-  .picks {
-    @apply mt-8 flex gap-3  flex-wrap;
-  }
-  
-  .pickFilter {
-    @apply px-6 py-2 border border-[var(--spancolor)] rounded-lg font-bold transition-all duration-200 ease-in-out;
-  }
-  
-  .pickFilter.active {
-    @apply bg-[var(--spancolor)] font-bold text-white;
-  }
-  
-  .pickFilter:hover {
-    @apply bg-[var(--spanhover)] text-white;
-  }
-  
-  .projectCta {
-    @apply mt-auto flex justify-center mb-8;
-  }
-  
-  .projectsCta {
-    @apply flex justify-center;
-  }
-  
-  @media (max-width: 450px) {
-    .projects-card {
-      @apply w-full mb-4;
-    }
-  }
-  
+}
