@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Yuri Alves // Desenvolvedor Front-End",
     description:
       "Meu nome é Yuri Alves! Veja meu portfólio, com projetos de front-end e back-end.",
-    url: "https://www.yuridev.com",
+    url: "https://yuridev.vercel.app",
     siteName: "Yuri Dev",
     images: [
       {
