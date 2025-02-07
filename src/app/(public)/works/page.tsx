@@ -65,7 +65,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <main className="container overflow-hidden">
+    <main className="container mx-auto max-w-7xl overflow-hidden">
       <motion.main
         className="services-section"
         id="services"
