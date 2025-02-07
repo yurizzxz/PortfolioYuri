@@ -72,7 +72,7 @@ const Navbar = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             {[
-              { href: "/home", label: "Home" },
+              { href: "/", label: "Home" },
               { href: "/about", label: "Sobre" },
               { href: "/works", label: "Serviços" },
               { href: "/projects", label: "Projetos" },
