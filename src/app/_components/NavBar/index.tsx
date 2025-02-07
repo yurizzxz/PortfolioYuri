@@ -93,7 +93,7 @@ const Navbar = () => {
               </motion.li>
             ))}
             <motion.li
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
               <RedirectButton
