@@ -10,7 +10,7 @@ import "./home.css";
 
 const Hero = () => {
   return (
-    <main className="container overflow-hidden">
+    <main className="container max-w-7xl overflow-hidden">
       <motion.div
         className="hero-section"
         initial={{ opacity: 0, y: 100 }}

@@ -14,6 +14,8 @@ const Form = () => {
   });
   const formRef = useRef<HTMLFormElement | null>(null);
 
+  const instaLink = 'https://www.instagram.com/yurinsights/';
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -74,7 +76,7 @@ const Form = () => {
   };
 
   return (
-    <main className="container">
+    <main className="container max-w-7xl">
       <section className="contact-section" id="contact" ref={formRef}>
         <div className="contact-hero">
           <motion.div
@@ -97,9 +99,9 @@ const Form = () => {
             </div>
             <div className="email-icon">
               <i className="fab fa-instagram"></i>
-              <a href="#" target="_blank">
+              <Link href={instaLink} target="_blank" rel="noopener noreferrer">
                 @yurinsights
-              </a>
+              </Link>
             </div>
           </motion.div>
 

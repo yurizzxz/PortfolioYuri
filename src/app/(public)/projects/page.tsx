@@ -76,7 +76,7 @@ const Projects = () => {
   };
 
   return (
-    <main className="container">
+    <main className="container mx-auto max-w-7xl">
       <div className="projects-section" id="projects">
         <motion.section
           className="projects"

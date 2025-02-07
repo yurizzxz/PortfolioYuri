@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <nav className="navbar-container">
-        <div className="container flex flex-row justify-between">
+        <div className="container mx-auto max-w-7xl flex flex-row justify-between">
           <motion.div
             className="logo"
             initial={{ opacity: 0, x: -50 }}

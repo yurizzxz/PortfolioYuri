@@ -17,8 +17,8 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 50px;
-  max-width: 50rem;
-  height: 580px;
+  max-width: 40rem;
+  height: 550px;
   border-radius: 30px;
   background-color: var(--heroBg);
 }
@@ -30,6 +30,7 @@
 .hero h1 {
   @apply text-7xl;
   font-weight: bold;
+  margin-block: 0 1rem;
 }
 
 .hero h1 {
