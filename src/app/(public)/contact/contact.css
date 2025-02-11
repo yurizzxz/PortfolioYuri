@@ -1,5 +1,5 @@
 .contact-section {
-    @apply flex flex-col min-h-screen overflow-hidden w-full justify-center ;
+    @apply flex flex-col md:min-h-screen overflow-hidden w-full justify-center ;
    }
    
    .contact-hero {
@@ -30,9 +30,7 @@
    }
    
    .contact-info h1 {
-     font-weight: bold;
-     font-size: 3rem;
-     margin-bottom: 1rem;
+     @apply text-4xl font-bold leading-none mb-4;
    }
    
    .contact-info p {

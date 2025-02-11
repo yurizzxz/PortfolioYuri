@@ -17,7 +17,7 @@
 }
 
 .service-card {
-  @apply p-5 w-full bg-[var(--cardColor)] h-80 rounded-lg flex flex-col justify-center gap-10 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-gray-500;
+  @apply p-5 w-full bg-[var(--cardColor)] h-80 rounded-lg flex flex-col justify-center gap-12 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-gray-500;
 }
 
 .service-card:hover {
@@ -26,15 +26,15 @@
 }
 
 .title-card {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold mb-3;
 }
 
 .card-infos {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col;
 }
 
 .card-icon .icon-card {
-  @apply text-6xl text-[var(--spancolor)];
+  @apply text-6xl text-[var(--spancolor)] mb-4;
 }
 
 @media (max-width: 768px) {

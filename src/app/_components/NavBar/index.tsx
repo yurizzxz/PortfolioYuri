@@ -42,8 +42,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <nav className="navbar-container">
-        <div className="container mx-auto max-w-7xl flex flex-row justify-between">
-          <motion.div
+        <div className="container mx-auto max-w-7xl flex flex-row justify-between items-center">
+          <motion.a
+            href="/"
             className="logo"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -52,7 +53,7 @@ const Navbar = () => {
             <h1>
               Yuri <span className="span-color">Alves</span>
             </h1>
-          </motion.div>
+          </motion.a>
 
           <button
             className="toggle-btn"

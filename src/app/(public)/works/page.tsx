@@ -89,20 +89,17 @@ const ServicesSection = () => {
           </motion.div>
           <div className="services-cards">
             {services.map((service) => (
-              <div
+              <motion.div
+                animate={{ opacity: 1, y: 0 }}
                 key={service.id}
                 className="service-card"
               >
                 <div className="card-icon">
-                  <span className="material-icons icon-card">
-                    {service.icon}
-                  </span>
-                </div>
-                <div className="card-infos">
+                  <span className="material-icons icon-card">{service.icon}</span>
                   <h1 className="title-card">{service.title}</h1>
                   <p>{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
