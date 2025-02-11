@@ -15,6 +15,20 @@
   --border: #e5e5e5;
 }
 
+/** @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #040404;
+    --foreground: #ededed;
+    --textcolor: #fff;
+    --spancolor: #7f15f8;
+    --spanhover: #8320f5;
+    --heroBg: #060606;
+    --cardColor: #070707;
+    --border: #171717;
+  }
+}
+**/
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #040007;
