@@ -28,6 +28,7 @@ const HeroFooter = () => {
           alt="HTML"
           width={40}
           height={40}
+          loading="lazy"
         />
       </motion.div>
 
@@ -37,12 +38,7 @@ const HeroFooter = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.4 }}
       >
-        <Image
-          src={cssIcon}
-          alt="CSS"
-          width={45}
-          height={50}
-        />
+        <Image src={cssIcon} alt="CSS" width={45} height={50} loading="lazy" />
       </motion.div>
 
       <motion.div
@@ -56,6 +52,7 @@ const HeroFooter = () => {
           alt="JavaScript"
           width={38}
           height={50}
+          loading="lazy"
         />
       </motion.div>
 
@@ -70,6 +67,7 @@ const HeroFooter = () => {
           alt="React"
           width={40}
           height={50}
+          loading="lazy"
         />
       </motion.div>
 
@@ -83,6 +81,7 @@ const HeroFooter = () => {
           src={photoshopIcon}
           alt="Photoshop"
           width={40}
+          loading="lazy"
           height={50}
         />
       </motion.div>

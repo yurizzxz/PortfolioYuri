@@ -78,6 +78,9 @@
   }
   
   @media (max-width: 992px) {
+    .about {
+      @apply flex flex-col items-start min-h-[30vh] justify-start ;
+    }
     .about-content {
       flex-direction: column;
     }

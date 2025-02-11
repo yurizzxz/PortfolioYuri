@@ -17,6 +17,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+
         <section className="hero" id="home">
           <motion.div
             className="hero-text"

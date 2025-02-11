@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --background: #ffffff;
@@ -14,15 +17,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #060606;
+    --background: #040404;
     --foreground: #ededed;
     --textcolor: #fff;
     --spancolor: #7f15f8;
     --spanhover: #8320f5;
-    --heroBg: #080808;
-    --cardColor: #101010;
-    --border: #222222;
+    --heroBg: #060606;
+    --cardColor: #070707;
+    --border: #171717;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -46,4 +53,6 @@ body {
   color: var(--foreground);
   box-sizing: border-box;
   background: var(--background);
+  font-family: space grotesk, sans-serif;
 }
+

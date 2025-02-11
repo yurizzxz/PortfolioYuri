@@ -128,9 +128,6 @@ const Projects = () => {
                         width={510}
                         height={0}
                         loading="lazy"
-                        onLoadingComplete={() =>
-                          console.log("imagem carregada")
-                        }
                       />
                     </div>
                     <div className="card-infos">
