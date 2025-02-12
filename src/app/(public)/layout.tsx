@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "designer gráfico",
   ],
   viewport: "width=device-width, initial-scale=1.0",
+  
   openGraph: {
     title: "Yuri Alves // Desenvolvedor Front-End",
     description:
@@ -46,6 +47,11 @@ export const metadata: Metadata = {
     description: "Yuri Alves, desenvolvedor front-end e back-end.",
     images: ["/logoTwitter.png"],
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

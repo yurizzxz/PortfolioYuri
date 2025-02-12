@@ -12,6 +12,11 @@ interface Project {
   titulo: string;
   descricao: string;
   imagemUrl?: string;
+  stack: string;
+  linguagem1?: string;
+  linguagem2?: string;
+  linguagem3?: string;
+  linguagem4?: string;
   link: string;
 }
 
@@ -21,15 +26,17 @@ const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isVisibleProjects, setIsVisibleProjects] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [openModal, setOpenModal] = useState(false);
+
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
+    null
+  );
 
   const fetchProjects = async (category = "Todos") => {
     try {
       let q;
       if (category !== "Todos") {
-        q = query(
-          collection(db, "colecao"),
-          where("categoria", "==", category)
-        );
+        q = query(collection(db, "colecao"), where("stack", "==", category));
       } else {
         q = collection(db, "colecao");
       }
@@ -75,6 +82,16 @@ const Projects = () => {
     fetchProjects(category);
   };
 
+  const handleOpenModal = (id: string): void => {
+    setSelectedProjectId(id);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedProjectId(null);
+  };
+
   return (
     <main className="container mx-auto max-w-7xl">
       <div className="projects-section" id="projects">
@@ -107,43 +124,109 @@ const Projects = () => {
               >
                 Front-End
               </button>
+              <button
+                className={`pickFilter ${
+                  selectedCategory === "fullstack" ? "active" : ""
+                }`}
+                onClick={() => handleCategoryChange("fullstack")}
+              >
+                FullStack
+              </button>
             </div>
           </motion.div>
 
           <div className="projects-cards">
             {projects.length > 0 ? (
               projects.map((project, index) => (
-                <motion.div
+                <motion.button
                   key={project.id}
                   transition={{ duration: 0.5 }}
                   animate={isVisibleProjects ? { opacity: 1, y: 0 } : {}}
                   className="projects-card"
+                  onClick={() => handleOpenModal(project.id)}
                 >
-                  <Link href={project.link} target="_blank" rel="noreferrer">
-                    <div className="card-icon">
-                      <Image
-                        src={project.imagemUrl ? project.imagemUrl : ""}
-                        alt={project.titulo}
-                        className="image-card"
-                        width={510}
-                        height={0}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="card-infos">
-                      <div>
-                        <h1 className="title-card">{project.titulo}</h1>
-                        <p>{project.descricao.length > 50 ? `${project.descricao.slice(0, 75)}...` : project.descricao}</p>
+                  <div className="card-icon">
+                    <Image
+                      src={project.imagemUrl ? project.imagemUrl : ""}
+                      alt={project.titulo}
+                      className="image-card"
+                      width={510}
+                      height={0}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="card-infos text-left">
+                    <div className="flex flex-col flex-1 h-auto">
+                      <h1 className="title-card">{project.titulo}</h1>
+                      <p className="text-sm mb-2">
+                        {project.descricao.length > 75
+                          ? `${project.descricao.slice(0, 50)}...`
+                          : project.descricao}
+                      </p>
+                      <div className="flex flex-row gap-1 items-center mt-auto mb-5 flex-wrap">
+                        <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                          {project.linguagem1}
+                        </p>
+                        <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                          {project.linguagem2}
+                        </p>
                       </div>
                     </div>
-                  </Link>
-                </motion.div>
+                  </div>
+                </motion.button>
               ))
             ) : (
               <p>Carregando...</p>
             )}
           </div>
-          
+
+          {openModal && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
+              <div className="bg-cardcolor p-6 rounded-lg border-1 shadow-lg w-1/3">
+                <div className="flex justify-between items-center pb-4">
+                  <h2 className="text-2xl font-semibold">Visualizar Projeto</h2>
+                  <button onClick={handleCloseModal}>✕</button>
+                </div>
+                {projects
+                  .filter((project) => project.id === selectedProjectId)
+                  .map((project) => (
+                    <div
+                      key={project.id}
+                      className="flex flex-col justify-center pb-4"
+                    >
+                      <div className="mb-5">
+                        <Image
+                          src={project.imagemUrl ? project.imagemUrl : ""}
+                          alt={project.titulo}
+                          className="image-card w-full h-auto"
+                          width={510}
+                          height={0}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="mb-5">
+                        <h3 className="text-xl font-bold mb-1">{project.titulo}</h3>
+                        <p className="text-sm">{project.descricao}</p>
+                      </div>
+                      <hr className="opacity-5"/>
+                      <div className="flex flex-col gap-3 mt-4">
+                        <p className="text-xl font-bold">
+                          Linguagens Utilizadas
+                        </p>
+                        <div className="flex flex-row gap-2">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                            {project.linguagem1}
+                          </p>
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                            {project.linguagem2}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
 
           <motion.div
             transition={{ duration: 0.5 }}

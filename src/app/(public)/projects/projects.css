@@ -23,11 +23,11 @@
 }
 
 .projects-card .title-card {
-  @apply text-xl font-bold mb-2.5 mt-5;
+  @apply text-xl font-bold mb-2;
 }
 
 .projects-card .card-infos {
-  @apply px-4 flex flex-col gap-2 flex-grow;
+  @apply px-4 flex flex-col gap-1 flex-grow;
 }
 
 .card-icon .image-card {

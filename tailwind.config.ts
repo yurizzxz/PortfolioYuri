@@ -17,6 +17,8 @@ export default {
         foreground: "var(--foreground)",
         spancolor: "var(--spancolor)",
         spanhover: "var(--spanhover)",
+        cardcolor: "var(--cardColor)",
+        bordercolor: "var(--border)",
       },
     },
   },
