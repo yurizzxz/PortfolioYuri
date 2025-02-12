@@ -31,16 +31,7 @@
 .hero h1 {
   @apply text-7xl;
   font-weight: bold;
-  margin-block: 0 1rem;
-}
-
-.hero h1 {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid var(--spanhover);
-  width: 4.3ch;
-  animation: typing 3s steps(4) infinite, blink-caret 0.55s step-end infinite;
+  margin-block: 0 1.3rem;
 }
 
 @keyframes typing {

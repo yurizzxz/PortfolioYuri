@@ -182,10 +182,10 @@ const Projects = () => {
 
           {openModal && (
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-              <div className="bg-cardcolor p-6 rounded-lg border-1 shadow-lg w-1/3">
+              <div className="bg-cardcolor p-6 rounded-lg border-1 shadow-lg">
                 <div className="flex justify-between items-center pb-4">
-                  <h2 className="text-2xl font-semibold">Visualizar Projeto</h2>
-                  <button onClick={handleCloseModal}>✕</button>
+                  <h2 className="text-[1.7rem] font-semibold">Visualizar Projeto</h2>
+                  <button className="text-xl" onClick={handleCloseModal}>✕</button>
                 </div>
                 {projects
                   .filter((project) => project.id === selectedProjectId)
@@ -205,8 +205,8 @@ const Projects = () => {
                         />
                       </div>
                       <div className="mb-5">
-                        <h3 className="text-xl font-bold mb-1">{project.titulo}</h3>
-                        <p className="text-sm">{project.descricao}</p>
+                        <h3 className="text-2xl font-bold mb-1">{project.titulo}</h3>
+                        <p className="text-md">{project.descricao}</p>
                       </div>
                       <hr className="opacity-5"/>
                       <div className="flex flex-col gap-3 mt-4">

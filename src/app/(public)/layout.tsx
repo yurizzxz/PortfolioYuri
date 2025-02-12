@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "designer gráfico",
   ],
   viewport: "width=device-width, initial-scale=1.0",
-  
+
   openGraph: {
     title: "Yuri Alves // Desenvolvedor Front-End",
     description:
@@ -69,14 +69,18 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
+
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body>
         <div>
           <Navbar />
         </div>
-        <div className="flex justify-center">
-          {children}
-        </div>
+        <div className="flex justify-center">{children}</div>
       </body>
     </html>
   );
