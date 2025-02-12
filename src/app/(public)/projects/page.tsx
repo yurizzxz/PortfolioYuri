@@ -163,13 +163,22 @@ const Projects = () => {
                           ? `${project.descricao.slice(0, 50)}...`
                           : project.descricao}
                       </p>
-                      <div className="flex flex-row gap-1 items-center mt-auto mb-5 flex-wrap">
-                        <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
-                          {project.linguagem1}
-                        </p>
-                        <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
-                          {project.linguagem2}
-                        </p>
+                      <div className="flex flex-row justify-between mt-auto mb-5 items-center">
+                        <div className="flex flex-row gap-1 items-center  flex-wrap">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                            {project.linguagem1}
+                          </p>
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                            {project.linguagem2}
+                          </p>
+                        </div>
+                        <Link
+                          href={project.link}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <i className="devicon-github-original text-2xl"></i>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -181,11 +190,25 @@ const Projects = () => {
           </div>
 
           {openModal && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-              <div className="bg-cardcolor p-6 rounded-lg border-1 shadow-lg">
+            <div
+              onClick={handleCloseModal}
+              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50"
+            >
+              <motion.div
+                initial={{ opacity: 0.5, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-cardcolor p-6 rounded-lg shadow-lg  w-full max-w-xl"
+                style={{ border: "1px solid var(--border)" }}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <div className="flex justify-between items-center pb-4">
-                  <h2 className="text-[1.7rem] font-semibold">Visualizar Projeto</h2>
-                  <button className="text-xl" onClick={handleCloseModal}>✕</button>
+                  <h2 className="text-[1.7rem] font-semibold">
+                    Visualizar Projeto
+                  </h2>
+                  <button className="text-xl" onClick={handleCloseModal}>
+                    ✕
+                  </button>
                 </div>
                 {projects
                   .filter((project) => project.id === selectedProjectId)
@@ -194,7 +217,7 @@ const Projects = () => {
                       key={project.id}
                       className="flex flex-col justify-center pb-4"
                     >
-                      <div className="mb-5">
+                      <div className="mb-7 max-w-xl">
                         <Image
                           src={project.imagemUrl ? project.imagemUrl : ""}
                           alt={project.titulo}
@@ -205,26 +228,37 @@ const Projects = () => {
                         />
                       </div>
                       <div className="mb-5">
-                        <h3 className="text-2xl font-bold mb-1">{project.titulo}</h3>
-                        <p className="text-md">{project.descricao}</p>
+                        <div className="flex flex-row justify-between items-center">
+                          <h3 className="text-2xl font-bold mb-1">
+                            {project.titulo}
+                          </h3>
+                          <Link
+                            href={project.link}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <i className="devicon-github-original text-2xl"></i>
+                          </Link>
+                        </div>
+                        <p className="text-md mt-2">{project.descricao}</p>
                       </div>
-                      <hr className="opacity-5"/>
+                      <hr className="opacity-5" />
                       <div className="flex flex-col gap-3 mt-4">
-                        <p className="text-xl font-bold">
+                        <p className="text-xl font-semibold">
                           Linguagens Utilizadas
                         </p>
                         <div className="flex flex-row gap-2">
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
                             {project.linguagem1}
                           </p>
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
                             {project.linguagem2}
                           </p>
                         </div>
                       </div>
                     </div>
                   ))}
-              </div>
+              </motion.div>
             </div>
           )}
 

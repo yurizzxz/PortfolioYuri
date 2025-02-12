@@ -67,6 +67,7 @@
      font-size: 1rem;
      background-color: var(--cardColor);
      transform: translateY(-50%);
+     border: 1px solid var(--border);
    }
    
    .form-group label {
