@@ -23,7 +23,7 @@
 }
 
 .projects-card .title-card {
-  @apply text-xl font-bold mb-2;
+  @apply text-xl font-bold mb-1;
 }
 
 .projects-card .card-infos {

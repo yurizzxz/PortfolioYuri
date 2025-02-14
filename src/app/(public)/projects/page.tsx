@@ -158,13 +158,16 @@ const Projects = () => {
                   <div className="card-infos text-left">
                     <div className="flex flex-col flex-1 h-auto">
                       <h1 className="title-card">{project.titulo}</h1>
-                      <p className="text-sm mb-2">
+                      <p className="text-sm mb-3">
                         {project.descricao.length > 75
                           ? `${project.descricao.slice(0, 50)}...`
                           : project.descricao}
                       </p>
                       <div className="flex flex-row justify-between mt-auto mb-5 items-center">
-                        <div className="flex flex-row gap-1 items-center  flex-wrap">
+                        <div className="flex flex-row gap-2  items-center  flex-wrap pr-6">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
+                            {project.linguagem3}
+                          </p>
                           <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm">
                             {project.linguagem1}
                           </p>
@@ -229,7 +232,7 @@ const Projects = () => {
                       </div>
                       <div className="mb-5">
                         <div className="flex flex-row justify-between items-center">
-                          <h3 className="text-2xl font-bold mb-1">
+                          <h3 className="text-2xl font-bold mb-2">
                             {project.titulo}
                           </h3>
                           <Link
@@ -248,6 +251,9 @@ const Projects = () => {
                           Linguagens Utilizadas
                         </p>
                         <div className="flex flex-row gap-2">
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
+                            {project.linguagem3}
+                          </p>
                           <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
                             {project.linguagem1}
                           </p>
