@@ -55,14 +55,7 @@ const Navbar = () => {
                 Yuri <span className="span-color">Alves</span>
               </h1>
             </motion.a>
-            <motion.a
-              href="https://github.com/yurizzxz"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <i className="devicon-github-original text-2xl"></i>
-            </motion.a>
+
           </div>
 
           <button
