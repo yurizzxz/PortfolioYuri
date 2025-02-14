@@ -43,17 +43,27 @@ const Navbar = () => {
     <header className="navbar">
       <nav className="navbar-container">
         <div className="container mx-auto max-w-7xl flex flex-row justify-between items-center">
-          <motion.a
-            href="/"
-            className="logo"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1>
-              Yuri <span className="span-color">Alves</span>
-            </h1>
-          </motion.a>
+          <div className="flex items-center gap-8">
+            <motion.a
+              href="/"
+              className="logo"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1>
+                Yuri <span className="span-color">Alves</span>
+              </h1>
+            </motion.a>
+            <motion.a
+              href="https://github.com/yurizzxz"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <i className="devicon-github-original text-2xl"></i>
+            </motion.a>
+          </div>
 
           <button
             className="toggle-btn"
