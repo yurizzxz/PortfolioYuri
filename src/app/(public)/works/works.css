@@ -1,5 +1,5 @@
 .services-section {
-  @apply bg-[var(--background)] flex flex-row py-6 md:py-0 min-h-screen w-full px-4 md:px-0 items-center;
+  @apply flex bg-[var(--background)] flex-row min-h-screen px-4 md:px-0 pt-2 md:pt-28;
 }
 
 .services-header {
