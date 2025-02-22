@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "./projects.css";
 import Link from "next/link";
-import CategoryFilter from "./category-filter";
-import ProjectCard from "./project-card";
+import CategoryFilter from "../../_components/category-filter";
+import ProjectCard from "../../_components/project-card";
 import { useFetchProjects } from "@/hooks/useFetchProjects";
 
 

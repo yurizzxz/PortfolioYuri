@@ -5,7 +5,7 @@ import Image from "next/image";
 import img1 from "@/app/_assets/img/img1.png";
 import { motion } from "framer-motion";
 import "./about.css";
-import SocialNetwork from "./social-network";
+import SocialNetwork from "../../_components/social-network";
 
 const AboutSection = () => {
   const [isVisibleAbout, setIsVisibleAbout] = useState(false);
