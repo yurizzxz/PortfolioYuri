@@ -15,7 +15,7 @@ const Hero = () => {
         className="hero-section"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.5 }}
       >
 
         <section className="hero" id="home">
@@ -23,21 +23,21 @@ const Hero = () => {
             className="hero-text"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <header>
               <motion.h2
                 className="hero-mini"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
               >
                 <span className="span-color">Olá!</span> Meu nome é
               </motion.h2>
               <motion.h1
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
               >
                 Yuri <span className="span-color">Alves</span>
               </motion.h1>
@@ -47,7 +47,7 @@ const Hero = () => {
               className="hero-desc"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
             >
               Sou um <span className="span-color">Desenvolvedor Front-End</span>{" "}
               e <span className="span-color">Designer Gráfico</span> apaixonado
@@ -59,7 +59,7 @@ const Hero = () => {
               className="icons"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
             >
               <div className="icon-content">
                 <i className="fas fa-check-circle icon"></i>
@@ -82,7 +82,7 @@ const Hero = () => {
           <motion.figure
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <Image
               className="hero-image"

@@ -7,40 +7,45 @@ import RedirectButton from "../Button";
 import "./navbar.css";
 
 const Navbar = () => {
-  const [navbarState, setNavbarState] = useState({
-    mobileMenuOpen: false,
-    isScrolled: false,
-    activeLink: "#home",
-  });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
 
   const toggleMobileMenu = () => {
-    setNavbarState((prevState) => ({
-      ...prevState,
-      mobileMenuOpen: !prevState.mobileMenuOpen,
-    }));
+    setMobileMenuOpen((prev) => !prev);
   };
 
   const handleLinkClick = (link: string) => {
-    setNavbarState((prevState) => ({
-      ...prevState,
-      activeLink: link,
-    }));
+    setActiveLink(link);
+    setMobileMenuOpen(false); 
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      setNavbarState((prevState) => ({
-        ...prevState,
-        isScrolled: window.scrollY > 40,
-      }));
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        event.target instanceof HTMLElement &&
+        !event.target.closest(".navbar-container")
+      ) {
+        setMobileMenuOpen(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <nav className="navbar-container">
         <div className="container mx-auto max-w-7xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
@@ -55,7 +60,6 @@ const Navbar = () => {
                 Yuri <span className="span-color">Alves</span>
               </h1>
             </motion.a>
-
           </div>
 
           <button
@@ -67,9 +71,7 @@ const Navbar = () => {
           </button>
 
           <motion.ul
-            className={`navbar-links ${
-              navbarState.mobileMenuOpen ? "active" : ""
-            }`}
+            className={`navbar-links ${mobileMenuOpen ? "active" : ""}`}
             role="navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -89,17 +91,14 @@ const Navbar = () => {
               >
                 <Link
                   href={href}
-                  className={navbarState.activeLink === href ? "active" : ""}
+                  className={activeLink === href ? "active" : ""}
                   onClick={() => handleLinkClick(href)}
                 >
                   {label}
                 </Link>
               </motion.li>
             ))}
-            <motion.li
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
+            <motion.li whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <RedirectButton
                 href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
                 target="_blank"

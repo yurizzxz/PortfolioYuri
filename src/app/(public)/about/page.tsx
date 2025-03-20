@@ -56,9 +56,7 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             animate={isVisibleAbout ? { opacity: 1, x: 0, scale: 1 } : {}}
-            transition={{
-              duration: 1,
-            }}
+            transition={{ duration: 0.8 }}
             className="about-header"
           >
             <h1 className="about-title">

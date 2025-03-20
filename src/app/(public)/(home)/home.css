@@ -7,7 +7,7 @@
 }
 
 .hero-text {
-  @apply flex flex-col justify-center p-[3vw] max-w-[45rem] max-h-[32rem] rounded-[30px] bg-[var(--heroBg)];
+  @apply flex flex-col justify-center p-[3vw] max-w-[40rem] max-h-[32rem] rounded-[30px] bg-[var(--heroBg)];
 }
 
 .hero h2 {
@@ -23,7 +23,7 @@
 }
 
 .hero-image {
-  @apply max-w-[500px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
+  @apply max-w-[525px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
 }
 
 .hero .icons {
