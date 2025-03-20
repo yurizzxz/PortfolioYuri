@@ -76,7 +76,7 @@ const Projects = () => {
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg shadow-lg  w-full max-w-xl"
+                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg h-[42rem]  w-full max-w-xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -118,7 +118,8 @@ const Projects = () => {
                             <i className="devicon-github-original text-2xl"></i>
                           </Link>
                         </div>
-                        <p className="text-md mt-2">{project.descricao}</p>
+                        <p className="text-sm mt-2 max-h-20 overflow-y-scroll">{project.descricao}</p>
+
                       </div>
                       <hr className="opacity-5" />
                       <div className="flex flex-col gap-3 mt-4">
