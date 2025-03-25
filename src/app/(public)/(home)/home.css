@@ -7,7 +7,7 @@
 }
 
 .hero-text {
-  @apply flex flex-col justify-center p-[3vw] max-w-[40rem] max-h-[32rem] rounded-[30px] bg-[var(--heroBg)];
+  @apply flex flex-col justify-center p-[3vw] max-w-[40rem] max-h-[35rem] rounded-[30px] bg-[var(--heroBg)];
 }
 
 .hero h2 {
@@ -15,11 +15,11 @@
 }
 
 .hero h1 {
-  @apply text-7xl font-bold my-[1.3rem];
+  @apply text-7xl font-bold my-[1rem];
 }
 
 .hero .hero-desc {
-  @apply text-base mb-[2.5rem];
+  @apply text-base mb-[2rem];
 }
 
 .hero-image {
@@ -27,7 +27,7 @@
 }
 
 .hero .icons {
-  @apply flex flex-col gap-[2rem] mb-[2rem] text-[20px];
+  @apply flex flex-col gap-[2rem] mb-[1.7rem] text-[20px];
 }
 
 .hero .icon-content {
