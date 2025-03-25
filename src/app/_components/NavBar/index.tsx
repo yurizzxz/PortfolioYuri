@@ -82,7 +82,7 @@ const Navbar = () => {
               { href: "/about", label: "Sobre" },
               { href: "/works", label: "Serviços" },
               { href: "/projects", label: "Projetos" },
-              { href: "/contact", label: "Contato" },
+              //{ href: "/contact", label: "Contato" },
             ].map(({ href, label }) => (
               <motion.li
                 key={href}
@@ -100,7 +100,7 @@ const Navbar = () => {
             ))}
             <motion.li whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <RedirectButton
-                href="https://drive.google.com/file/d/1oKVGSoL_gXY5dwLRZdoSmLsWvfNdMavg/view"
+                href="https://drive.google.com/file/d/1x9HWRTn_48CBSbGrdWmX20Rm5HDtfSxh/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >

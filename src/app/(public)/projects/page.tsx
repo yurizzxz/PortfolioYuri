@@ -127,14 +127,18 @@ const Projects = () => {
                           Linguagens Utilizadas
                         </p>
                         <div className="flex flex-row gap-2">
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
-                            {project.linguagem3}
-                          </p>
+                          
                           <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
                             {project.linguagem1}
                           </p>
                           <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
                             {project.linguagem2}
+                          </p>
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
+                            {project.linguagem3}
+                          </p>
+                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
+                            {project.linguagem4}
                           </p>
                         </div>
                       </div>
