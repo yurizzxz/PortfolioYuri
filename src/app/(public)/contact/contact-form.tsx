@@ -1,75 +1,25 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import useContactForm from "@/hooks/useContactForm";
+import { InputField, InputRoot, InputIcon, TextField } from "@/components/input";
+import { User, Mail, MessageSquare } from "lucide-react";
 
-const ContactForm = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const formRef = useRef<HTMLFormElement | null>(null);
+interface ContactFormProps {
+  isVisible: boolean;
+}
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        root: null,
-        threshold: 0.1,
-      }
-    );
+function FormGroup({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <div className="flex flex-col gap-2">{children}</div>;
+}
 
-    const formElement = formRef.current;
-
-    if (formElement) {
-      observer.observe(formElement);
-    }
-
-    return () => {
-      if (formElement) {
-        observer.unobserve(formElement);
-      }
-    };
-  }, []);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-
-    try {
-      const response = await fetch(
-        `https://backendportfolioyuri.onrender.com/send-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        alert("E-mail enviado com sucesso!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Erro ao enviar o e-mail.");
-      }
-    } catch (error) {
-      alert("Erro ao enviar o e-mail.");
-      console.error(error);
-    }
-  };
+export default function ContactForm({ isVisible }: ContactFormProps) {
+  const { formData, handleChange, handleSubmit } = useContactForm();
 
   return (
     <motion.div
@@ -78,74 +28,56 @@ const ContactForm = () => {
       animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
       transition={{ duration: 1 }}
     >
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <motion.input
-            type="text"
-            className="form-row"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          />
-          <motion.label
-            htmlFor="name"
-            initial={{ opacity: 0, x: -100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Nome
-          </motion.label>
-        </div>
+      <form className="contact-form flex flex-col gap-4" onSubmit={handleSubmit}>
+        <FormGroup>
+          <InputRoot>
+            <InputIcon>
+              <User />
+            </InputIcon>
+            <InputField
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Seu nome"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </InputRoot>
+        </FormGroup>
 
-        <div className="form-group">
-          <motion.input
-            type="email"
-            className="form-row"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          />
-          <motion.label
-            htmlFor="email"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Email
-          </motion.label>
-        </div>
+        <FormGroup>
+          <InputRoot>
+            <InputIcon>
+              <Mail />
+            </InputIcon>
+            <InputField
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Seu email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </InputRoot>
+        </FormGroup>
 
-        <div className="form-group">
-          <motion.textarea
-            id="message"
-            className="form-row message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          ></motion.textarea>
-          <motion.label
-            htmlFor="message"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            Mensagem
-          </motion.label>
-        </div>
+        <FormGroup>
+          <InputRoot className="w-full pt-8 px-4 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-start gap-3">
+            <InputIcon>
+              <MessageSquare />
+            </InputIcon>
+            <TextField
+              id="message"
+              name="message"              
+              placeholder="Mensagem"
+              value={formData.message} 
+              onChange={handleChange}
+              required
+            />
+          </InputRoot>
+        </FormGroup>
 
         <motion.button
           type="submit"
@@ -159,6 +91,4 @@ const ContactForm = () => {
       </form>
     </motion.div>
   );
-};
-
-export default ContactForm;
+}

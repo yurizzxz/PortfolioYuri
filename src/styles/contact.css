@@ -59,17 +59,7 @@
      position: relative;
    }
    
-   .contact-form input,
-   .contact-form textarea {
-     width: 100%;
-     padding: 2.2rem 1.3rem 1rem;
-     border-radius: 8px;
-     font-size: 1rem;
-     background-color: var(--cardColor);
-     transform: translateY(-50%);
-     border: 1px solid var(--border);
-   }
-   
+  
    .form-group label {
      display: block;
      font-size: 1rem;
