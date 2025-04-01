@@ -71,13 +71,13 @@ const Projects = () => {
           {openModal && (
             <div
               onClick={handleCloseModal}
-              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50"
+              className="fixed inset-0 flex px-3 items-center justify-center bg-black bg-opacity-90 z-[99]"
             >
               <motion.div
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg h-[40rem] md:h-[42rem]  w-full max-w-xl"
+                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg   w-full max-w-xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
