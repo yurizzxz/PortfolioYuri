@@ -1,5 +1,5 @@
 "use client";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import "./projects.css";
@@ -8,11 +8,12 @@ import CategoryFilter from "../../_components/category-filter";
 import ProjectCard from "../../_components/project-card";
 import { useFetchProjects } from "@/hooks/useFetchProjects";
 
-
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [openModal, setOpenModal] = useState(false);
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
+    null
+  );
 
   const { projects, loading } = useFetchProjects(selectedCategory);
 
@@ -31,9 +32,9 @@ const Projects = () => {
   };
 
   return (
-    <main className="container mx-auto max-w-7xl">
+    <main className="container mx-auto max-w-7xl px-4 lg:px-0">
       <div className="projects-section" id="projects">
-      <motion.section
+        <motion.section
           className="projects"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +46,7 @@ const Projects = () => {
             className="projects-header"
           >
             <h1 className="projects-title">Meus Projetos</h1>
-            <div className="picks" style={{ marginTop: '0rem'}}>
+            <div className="picks" style={{ marginTop: "0rem" }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onCategoryChange={handleCategoryChange}
@@ -76,7 +77,7 @@ const Projects = () => {
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg h-[42rem]  w-full max-w-xl"
+                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg h-[40rem] md:h-[42rem]  w-full max-w-xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -118,28 +119,31 @@ const Projects = () => {
                             <i className="devicon-github-original text-2xl"></i>
                           </Link>
                         </div>
-                        <p className="text-sm mt-2 max-h-20 overflow-y-scroll">{project.descricao}</p>
-
+                        <p className="text-sm mt-2 max-h-20 overflow-y-scroll">
+                          {project.descricao}
+                        </p>
                       </div>
                       <hr className="opacity-5" />
                       <div className="flex flex-col gap-3 mt-4">
                         <p className="text-xl font-semibold">
                           Linguagens Utilizadas
                         </p>
-                        <div className="flex flex-row gap-2">
-                          
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
-                            {project.linguagem1}
-                          </p>
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
-                            {project.linguagem2}
-                          </p>
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
-                            {project.linguagem3}
-                          </p>
-                          <p className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md">
-                            {project.linguagem4}
-                          </p>
+                        <div className="flex flex-row flex-wrap gap-2">
+                          {[
+                            project.linguagem1,
+                            project.linguagem2,
+                            project.linguagem3,
+                            project.linguagem4,
+                          ]
+                            .filter(Boolean)
+                            .map((linguagem, index) => (
+                              <p
+                                key={index}
+                                className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md"
+                              >
+                                {linguagem}
+                              </p>
+                            ))}
                         </div>
                       </div>
                     </div>

@@ -1,5 +1,5 @@
 .services-section {
-  @apply flex bg-[var(--background)] flex-row min-h-screen px-4 md:px-0 pt-2 md:pt-28;
+  @apply flex bg-[var(--background)] flex-row min-h-screen md:px-0 pt-2 md:pt-28;
 }
 
 .services-header {
@@ -11,22 +11,21 @@
 }
 
 .services-cards {
-  @apply grid gap-4 pl-1 pr-2;
+  @apply grid gap-4 ;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
 }
 
 .service-card {
-  @apply p-5 w-full bg-[var(--cardColor)] h-80 rounded-lg flex flex-col justify-center gap-12 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-gray-500;
+  @apply p-5 w-full bg-[var(--cardColor)] h-[17rem] rounded-lg flex flex-col justify-center gap-12 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-gray-500;
 }
 
 .service-card:hover {
   @apply border-[var(--spanhover)] transition-all ease-in-out;
-  scale: 1.01;
 }
 
 .title-card {
-  @apply text-2xl font-bold mb-3;
+  @apply text-2xl font-bold mb-2;
 }
 
 .card-infos {

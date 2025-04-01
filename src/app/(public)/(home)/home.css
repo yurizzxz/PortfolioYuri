@@ -1,5 +1,5 @@
 .hero-section {
-  @apply flex flex-row min-h-screen md:px-0 bg-[var(--background)];
+  @apply flex flex-row min-h-screen  bg-[var(--background)];
 }
 
 .hero {
@@ -23,7 +23,7 @@
 }
 
 .hero-image {
-  @apply max-w-[525px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
+  @apply max-w-[505px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
 }
 
 .hero .icons {
@@ -55,7 +55,7 @@
 
 @media (max-width: 1280px) {
   .hero {
-    @apply px-0;
+    @apply px-3.5;
   }
 }
 
