@@ -15,7 +15,7 @@
 }
 
 .projects-card {
-  @apply bg-[var(--cardColor)] border border-[var(--border)] h-96 rounded-t-2xl rounded-lg flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;
+  @apply bg-[var(--cardColor)] border border-[var(--border)] h-[23.5rem] rounded-xl flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;
 }
 
 .projects-card:hover {
@@ -31,7 +31,7 @@
 }
 
 .card-icon .image-card {
-  @apply max-w-full rounded-2xl object-cover h-48;
+  @apply max-w-full rounded-xl object-fill h-[10rem];
 }
 
 .picks {

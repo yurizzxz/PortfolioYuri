@@ -55,19 +55,22 @@
 
 @media (max-width: 1280px) {
   .hero {
-    @apply px-3.5;
+    @apply px-3.5 ;
   }
 }
 
 @media (max-width: 992px) {
   .hero {
-    @apply flex-col text-left px-[2rem];
+    @apply flex-col w-full text-left px-[2rem];
   }
   .hero-image {
     @apply mt-[1.5rem];
   }
   .hero p {
     @apply text-base;
+  }
+  .hero-text {
+    @apply max-w-full
   }
 }
 
