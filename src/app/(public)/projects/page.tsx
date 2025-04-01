@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import "./projects.css";
+import "@/styles/projects.css";
 import Link from "next/link";
 import CategoryFilter from "../../_components/category-filter";
 import ProjectCard from "../../_components/project-card";
@@ -77,7 +77,7 @@ const Projects = () => {
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg mt-12 shadow-lg   w-full max-w-xl"
+                className="bg-cardcolor p-6 rounded-lg  shadow-lg   w-full max-w-xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -107,8 +107,8 @@ const Projects = () => {
                         />
                       </div>
                       <div className="mb-5">
-                        <div className="flex flex-row justify-between items-center">
-                          <h3 className="text-2xl font-bold mb-2">
+                        <div className="flex flex-row justify-between items-center mb-3">
+                          <h3 className="text-2xl font-bold">
                             {project.titulo}
                           </h3>
                           <Link
@@ -119,7 +119,7 @@ const Projects = () => {
                             <i className="devicon-github-original text-2xl"></i>
                           </Link>
                         </div>
-                        <p className="text-sm mt-2 max-h-20 overflow-y-scroll">
+                        <p className="text-sm mt-2 max-h-24 overflow-y-scroll">
                           {project.descricao}
                         </p>
                       </div>

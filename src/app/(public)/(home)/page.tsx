@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import HeroFooter from "@/app/(public)/(home)/heroFooter";
+import HeroFooter from "./heroFooter";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
-import Foto from "@/app/_assets/img/foto.png";
 import { motion } from "framer-motion";
-import "./home.css";
+import "@/styles/home.css";
 
 const Hero = () => {
   return (
@@ -86,7 +85,9 @@ const Hero = () => {
           >
             <Image
               className="hero-image"
-              src={Foto}
+              src="/foto.png"
+              width={400}
+              height={400}
               alt="Foto de Perfil"
               loading="lazy"
             />

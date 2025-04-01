@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import img1 from "@/app/_assets/img/img1.png";
 import { motion } from "framer-motion";
-import "./about.css";
+import "@/styles/about.css";
 import SocialNetwork from "../../_components/social-network";
 
 const AboutSection = () => {

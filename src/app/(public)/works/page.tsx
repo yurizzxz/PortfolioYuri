@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import "./works.css";
+import "@/styles/works.css";
 
 const services = [
   {

@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 const HeroFooter = () => {
   return (
     <motion.footer
-      className="hero-footer"
+      className="flex gap-[20px] mt-[20px]"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
     >
       <motion.div
-        className="footer-icon"
+        className="flex justify-center items-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
