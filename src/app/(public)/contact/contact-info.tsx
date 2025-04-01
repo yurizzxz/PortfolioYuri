@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import "./contact.css";
+import "@/styles/contact.css";
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);

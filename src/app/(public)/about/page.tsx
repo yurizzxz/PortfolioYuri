@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import img1 from "@/app/_assets/img/img1.png";
 import { motion } from "framer-motion";
 import "@/styles/about.css";
-import SocialNetwork from "../../_components/social-network";
+import SocialNetwork from "@/components/social-network";
 
 const AboutSection = () => {
   const [isVisibleAbout, setIsVisibleAbout] = useState(false);
@@ -47,8 +46,10 @@ const AboutSection = () => {
             className="about-image"
           >
             <Image
-              src={img1}
-              alt="Minha foto"
+              src="/img1.png"
+              alt="Foto Dev"
+              width={1000}
+              height={1000}
               loading="lazy"
               className="image-style"
             />
