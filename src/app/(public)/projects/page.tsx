@@ -32,7 +32,7 @@ const Projects = () => {
   };
 
   return (
-    <main className="container mx-auto max-w-7xl px-4 lg:px-0">
+    <main className="container mx-auto max-w-6xl px-4 xl:px-0">
       <div className="projects-section" id="projects">
         <motion.section
           className="projects"

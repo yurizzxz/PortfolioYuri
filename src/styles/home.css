@@ -1,5 +1,5 @@
 .hero-section {
-  @apply flex flex-row min-h-screen  bg-[var(--background)];
+  @apply flex flex-row min-h-screen ;
 }
 
 .hero {
@@ -7,7 +7,7 @@
 }
 
 .hero-text {
-  @apply flex flex-col justify-center p-[3vw] max-w-[40rem] max-h-[35rem] rounded-[30px] bg-[var(--heroBg)];
+  @apply flex flex-col justify-center p-[3vw] max-w-[41rem] max-h-[35rem] rounded-[30px] bg-[var(--heroBg)];
 }
 
 .hero h2 {
@@ -23,7 +23,7 @@
 }
 
 .hero-image {
-  @apply max-w-[505px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
+  @apply max-w-[445px] md:min-w-[400px] w-full rounded-full shadow-md object-cover;
 }
 
 .hero .icons {
@@ -72,9 +72,7 @@
 }
 
 @media (max-width: 900px) and (max-height: 1300px) {
-  .hero {
-    @apply px-[1.5rem];
-  }
+
   .hero-text {
     @apply px-[3rem] h-[570px];
   }
@@ -82,7 +80,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    @apply px-[1.5rem];
+    @apply px-0;
   }
   .hero-text {
     @apply px-[2rem] max-w-[650px] h-[550px];
@@ -110,7 +108,7 @@
 
 @media (max-width: 568px) {
   .hero {
-    @apply px-[1rem];
+    @apply px-0;
   }
   .hero-text {
     @apply px-[20px] max-w-[40rem];

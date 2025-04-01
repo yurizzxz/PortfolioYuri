@@ -27,7 +27,7 @@ export default function Form() {
   }, []);
 
   return (
-    <main className="container max-w-7xl">
+    <main className="container max-w-6xl">
       <section className="contact-section" id="contact" ref={formRef}>
         <div className="contact-hero">
           <ContactInfo />

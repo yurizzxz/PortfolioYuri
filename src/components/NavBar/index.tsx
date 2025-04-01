@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <nav className="navbar-container">
-        <div className="container mx-auto max-w-7xl flex flex-row justify-between items-center">
+        <div className="container mx-auto max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"

@@ -41,7 +41,7 @@ export function TextField({ ...props }: TextFieldProps) {
     <textarea
       className="bg-transparent resize-none placeholder-gray-400 transition-all outline-0  text-gray-200 px-2"
       {...props}
-      rows={3}
+      rows={4}
     />
   );
 }
