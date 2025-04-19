@@ -13,9 +13,7 @@ export function InputRoot({ error = false, ...props }: InputRootProps) {
   );
 }
 
-interface InputIconProps extends ComponentProps<"span"> {}
-
-export function InputIcon({ ...props }: InputIconProps) {
+export function InputIcon(props: ComponentProps<"span">) {
   return (
     <span
       className="text-gray-400 transition-all group-focus-within:text-gray-400 group-[&:not(:has(input:placeholder-shown))]:text-gray-400 group-data-[error=true]:text-red-500"
@@ -24,9 +22,7 @@ export function InputIcon({ ...props }: InputIconProps) {
   );
 }
 
-interface InputFieldProps extends ComponentProps<"input"> {}
-
-export function InputField({ ...props }: InputFieldProps) {
+export function InputField(props: ComponentProps<"input">) {
   return (
     <input
       className="bg-transparent placeholder-gray-400 transition-all outline-0 flex-1 text-gray-200 p-2"
@@ -35,8 +31,7 @@ export function InputField({ ...props }: InputFieldProps) {
   );
 }
 
-interface TextFieldProps extends ComponentProps<"textarea"> {}
-export function TextField({ ...props }: TextFieldProps) {
+export function TextField(props: ComponentProps<"textarea">) {
   return (
     <textarea
       className="bg-transparent resize-none placeholder-gray-400 transition-all outline-0  text-gray-200 px-2"

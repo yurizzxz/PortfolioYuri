@@ -50,9 +50,6 @@
   @apply flex justify-center items-center;
 }
 
-
-
-
 @media (max-width: 1280px) {
   .hero {
     @apply px-3.5 ;
@@ -114,7 +111,7 @@
     @apply px-0;
   }
   .hero-text {
-    @apply px-[20px] max-w-[40rem];
+    @apply px-0 max-w-[40rem] max-h-[32rem] bg-inherit;
   }
   .hero h1 {
     @apply text-[3.5rem];

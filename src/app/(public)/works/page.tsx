@@ -3,37 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "@/styles/works.css";
+import { Services } from "@/data/services";
 
-const services = [
-  {
-    id: 1,
-    title: "Identidade Visual",
-    description:
-      "Desenvolvo identidades visuais únicas e marcantes que comunicam os valores e a essência da sua marca.",
-    icon: "palette",
-  },
-  {
-    id: 2,
-    title: "Sistemas Web",
-    description:
-      "Crio sistemas web com visuais modernos e responsivos, garantindo uma experiência fluida em qualquer dispositivo.",
-    icon: "desktop_windows",
-  },
-  {
-    id: 3,
-    title: "UI/UX Design",
-    description:
-      "Desenvolvo interfaces atraentes e experiências intuitivas que tornam a navegação fluida e intuitiva para o usuário.",
-    icon: "touch_app",
-  },
-  {
-    id: 4,
-    title: "Apps Modernos",
-    description:
-      "Crio interfaces de aplicativos modernas e intuitivas, garantindo uma experiência visual atraente e funcional.",
-    icon: "smartphone",
-  },
-];
 
 const ServicesSection = () => {
   const [isVisibleServices, setIsVisibleServices] = useState(false);
@@ -88,16 +59,16 @@ const ServicesSection = () => {
             </p>
           </motion.div>
           <div className="services-cards">
-            {services.map((service) => (
+            {Services.map((Service) => (
               <motion.div
                 animate={{ opacity: 1, y: 0 }}
-                key={service.id}
+                key={Service.id}
                 className="service-card"
               >
                 <div className="card-icon">
-                  <span className="material-icons icon-card">{service.icon}</span>
-                  <h1 className="title-card">{service.title}</h1>
-                  <p>{service.description}</p>
+                  <span className="material-icons icon-card">{Service.icon}</span>
+                  <h1 className="title-card">{Service.title}</h1>
+                  <p>{Service.description}</p>
                 </div>
               </motion.div>
             ))}
