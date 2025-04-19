@@ -7,6 +7,7 @@ import Link from "next/link";
 import CategoryFilter from "@/components/category-filter";
 import ProjectCard from "@/components/project-card";
 import { useFetchProjects } from "@/hooks/useFetchProjects";
+import { X } from "lucide-react";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
@@ -86,7 +87,7 @@ const Projects = () => {
                     Visualizar Projeto
                   </h2>
                   <button className="text-xl" onClick={handleCloseModal}>
-                    ✕
+                    <X/>
                   </button>
                 </div>
                 {projects
@@ -151,20 +152,6 @@ const Projects = () => {
               </motion.div>
             </div>
           )}
-
-          <motion.div
-            transition={{ duration: 0.5 }}
-            initial={{ opacity: 0, y: -100 }}
-            className="projectsCta"
-          >
-            <Link
-              href="https://github.com/yurizzxz?tab=repositories"
-              target="_blank"
-              className="greenButton"
-            >
-              Acesse meu GitHub
-            </Link>
-          </motion.div>
         </motion.section>
       </div>
     </main>
