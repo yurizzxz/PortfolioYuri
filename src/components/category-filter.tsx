@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  Select,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+} from "./ui/select";
 
 interface CategoryFilterProps {
   selectedCategory: string;
@@ -11,28 +18,20 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
 }) => {
   return (
     <div className="picks">
-      <button
-        className={`pickFilter ${selectedCategory === "Todos" ? "active" : ""}`}
-        onClick={() => onCategoryChange("Todos")}
+      <Select
+        value={selectedCategory}
+        onValueChange={onCategoryChange}
+        defaultValue={selectedCategory}
       >
-        Todos
-      </button>
-      <button
-        className={`pickFilter ${
-          selectedCategory === "frontend" ? "active" : ""
-        }`}
-        onClick={() => onCategoryChange("frontend")}
-      >
-        Front-End
-      </button>
-      <button
-        className={`pickFilter ${
-          selectedCategory === "fullstack" ? "active" : ""
-        }`}
-        onClick={() => onCategoryChange("fullstack")}
-      >
-        FullStack
-      </button>
+        <SelectTrigger className="w-[130px]">
+          <SelectValue placeholder="Select a category" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="Todos">Todos</SelectItem>
+          <SelectItem value="frontend">Frontend</SelectItem>
+          <SelectItem value="fullstack">Fullstack</SelectItem>
+        </SelectContent>
+      </Select>
     </div>
   );
 };

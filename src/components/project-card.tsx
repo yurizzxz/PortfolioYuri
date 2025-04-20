@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 .map((linguagem, index) => (
                   <p
                     key={index}
-                    className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm"
+                    className="linguagens bg-[var(--accent)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm"
                   >
                     {linguagem}
                   </p>

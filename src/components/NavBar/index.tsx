@@ -57,7 +57,7 @@ const Navbar = () => {
               transition={{ duration: 0.8 }}
             >
               <h1>
-                Yuri <span className="span-color">Alves</span>
+                Yuri <span className="text-[var(--primary)]">Alves</span>
               </h1>
             </motion.a>
           </div>
