@@ -33,6 +33,9 @@ body {
 
 @layer base {
   :root {
+    --heroBg: #05010a;
+    --cardColor: rgb(6, 0, 10);--spancolor: #7f15f8;
+    --spanhover: #8320f5;
     --background: #040007;
     --foreground: #e7d9ff;
     --popover: #050007;
@@ -46,7 +49,7 @@ body {
     --accent-foreground: #e7d9ff;         
     --destructive: #a31f1f;               
     --destructive-foreground: #fafafa;    
-    --border: #232323;
+    --border: #13002b;
     --input: #171717;
   }
 }
