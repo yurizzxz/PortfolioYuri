@@ -4,31 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --spancolor: #7f15f8;
-  --spanhover: #8700e0;
-  --heroBg: #f9f9f9;
-  --cardColor: #fafafa;
-  --border: #e5e5e5;
-}
-
-/** @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #040404;
-    --foreground: #ededed;
-    --textcolor: #fff;
-    --spancolor: #7f15f8;
-    --spanhover: #8320f5;
-    --heroBg: #060606;
-    --cardColor: #070707;
-    --border: #171717;
-  }
-}
-**/
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #040007;
@@ -64,9 +39,39 @@ html {
 }
 
 body {
-  color: var(--foreground);
   box-sizing: border-box;
-  background: var(--background);
   font-family: space grotesk, sans-serif;
+}
+
+
+@layer base {
+  :root {
+    --background: #040007;
+    --foreground: #e7d9ff;
+    --popover: #040007;
+    --primary: #8320f5;
+    --primary-foreground: #171717;        
+    --secondary: #05010a;                 
+    --secondary-foreground: #e7d9ff;      
+    --muted: #05010a;                     
+    --muted-foreground: #a3a3a3;         
+    --accent: #05010a;            
+    --accent-foreground: #e7d9ff;         
+    --destructive: #a31f1f;               
+    --destructive-foreground: #fafafa;    
+    --border: #13002b;
+    --input: #06000a;
+    --ring: #13002b;                     
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 

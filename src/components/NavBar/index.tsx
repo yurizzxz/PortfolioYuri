@@ -84,10 +84,8 @@ const Navbar = () => {
               { href: "/projects", label: "Projetos" },
               //{ href: "/contact", label: "Contato" },
             ].map(({ href, label }) => (
-              <motion.li
+              <li
                 key={href}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
               >
                 <Link
                   href={href}
@@ -96,17 +94,18 @@ const Navbar = () => {
                 >
                   {label}
                 </Link>
-              </motion.li>
+              </li>
             ))}
-            <motion.li whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+            <li>
               <RedirectButton
                 href="https://drive.google.com/file/d/1x9HWRTn_48CBSbGrdWmX20Rm5HDtfSxh/view?usp=sharing"
                 target="_blank"
+                variant="default"
                 rel="noopener noreferrer"
               >
                 Download CV
               </RedirectButton>
-            </motion.li>
+            </li>
           </motion.ul>
         </div>
       </nav>

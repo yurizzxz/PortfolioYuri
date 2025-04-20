@@ -1,5 +1,5 @@
 .projects-section {
-  @apply flex bg-[var(--background)] flex-row min-h-screen md:px-0 pt-2 md:pt-28;
+  @apply flex bg-[var(--background)] flex-row min-h-screen md:px-0 pt-2 pb-16 md:pt-28;
 }
 
 .projects-header {
@@ -15,11 +15,7 @@
 }
 
 .projects-card {
-  @apply bg-[var(--cardColor)] border border-[var(--border)] h-[23.5rem] rounded-xl flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;
-}
-
-.projects-card:hover {
-  scale: 1.02;
+  @apply bg-[var(--cardColor)] border border-[var(--border)] rounded-xl flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;
 }
 
 .projects-card .title-card {
@@ -31,7 +27,7 @@
 }
 
 .card-icon .image-card {
-  @apply max-w-full rounded-xl object-fill h-[10rem];
+  @apply max-w-full rounded-xl object-fill h-[10rem] ;
 }
 
 .picks {
@@ -70,8 +66,9 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .projects-cards {
-      @apply grid-cols-1;
+      @apply grid-cols-1 ;
+      
   }
 }

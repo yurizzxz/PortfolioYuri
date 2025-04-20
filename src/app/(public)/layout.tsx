@@ -80,7 +80,7 @@ export default function RootLayout({
         <div>
           <Navbar />
         </div>
-        <div className="flex justify-center">{children}</div>
+        <div className="flex justify-center bg-background">{children}</div>
       </body>
     </html>
   );
