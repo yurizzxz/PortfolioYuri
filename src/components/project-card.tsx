@@ -8,11 +8,13 @@ interface Project {
   titulo: string;
   descricao: string;
   imagemUrl?: string;
+  linguagens: string[];
   stack: string;
   linguagem1?: string;
   linguagem2?: string;
   linguagem3?: string;
   linguagem4?: string;
+  linguagem5?: string;
   link: string;
 }
 
@@ -50,25 +52,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           </p>
           <div className="flex flex-row justify-between mt-auto mb-5 items-center">
             <div className="flex flex-row flex-wrap gap-2">
-              {[
-                project.linguagem1,
-                project.linguagem2,
-                project.linguagem3,
-                project.linguagem4,
-              ]
-                .filter(Boolean)
-                .map((linguagem, index) => (
-                  <p
-                    key={index}
-                    className="linguagens bg-[var(--accent)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-sm"
-                  >
-                    {linguagem}
-                  </p>
-                ))}
+              {project.linguagens.map((linguagem, index) => (
+                <p
+                  key={index}
+                  className="linguagens bg-[var(--accent)] w-fit px-2 rounded-lg py-1.5 flex flex-row text-xs"
+                >
+                  {linguagem}
+                </p>
+              ))}
             </div>
-            <Link href={project.link} rel="noopener noreferrer" target="_blank">
-              <i className="devicon-github-original text-2xl"></i>
-            </Link>
           </div>
         </div>
       </div>
