@@ -87,7 +87,7 @@ const Projects = () => {
                     Visualizar Projeto
                   </h2>
                   <button className="text-xl" onClick={handleCloseModal}>
-                    <X/>
+                    <X />
                   </button>
                 </div>
                 {projects
@@ -130,21 +130,14 @@ const Projects = () => {
                           Linguagens Utilizadas
                         </p>
                         <div className="flex flex-row flex-wrap gap-2">
-                          {[
-                            project.linguagem1,
-                            project.linguagem2,
-                            project.linguagem3,
-                            project.linguagem4,
-                          ]
-                            .filter(Boolean)
-                            .map((linguagem, index) => (
-                              <p
-                                key={index}
-                                className="linguagens bg-[var(--border)] w-fit px-2.5 rounded-lg py-1.5 flex flex-row text-md"
-                              >
-                                {linguagem}
-                              </p>
-                            ))}
+                          {project.linguagens.map((linguagem, index) => (
+                            <p
+                              key={index}
+                              className="linguagens bg-[var(--accent)] w-fit px-2 rounded-lg py-1.5 flex flex-row text-sm"
+                            >
+                              {linguagem}
+                            </p>
+                          ))}
                         </div>
                       </div>
                     </div>

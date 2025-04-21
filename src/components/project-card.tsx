@@ -8,13 +8,8 @@ interface Project {
   titulo: string;
   descricao: string;
   imagemUrl?: string;
-  linguagens: string[];
+  linguagens?: string[];
   stack: string;
-  linguagem1?: string;
-  linguagem2?: string;
-  linguagem3?: string;
-  linguagem4?: string;
-  linguagem5?: string;
   link: string;
 }
 
@@ -24,6 +19,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+  const linguagens = project.linguagens || [];
+
   return (
     <motion.button
       key={project.id}
@@ -52,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           </p>
           <div className="flex flex-row justify-between mt-auto mb-5 items-center">
             <div className="flex flex-row flex-wrap gap-2">
-              {project.linguagens.map((linguagem, index) => (
+              {linguagens.map((linguagem, index) => (
                 <p
                   key={index}
                   className="linguagens bg-[var(--accent)] w-fit px-2 rounded-lg py-1.5 flex flex-row text-xs"
@@ -67,5 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     </motion.button>
   );
 };
+
+
 
 export default ProjectCard;

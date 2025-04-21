@@ -8,10 +8,7 @@ interface Project {
   descricao: string;
   imagemUrl?: string;
   stack: string;
-  linguagem1?: string;
-  linguagem2?: string;
-  linguagem3?: string;
-  linguagem4?: string;
+  linguagens: string[];
   link: string;
 }
 
@@ -29,10 +26,19 @@ export const useFetchProjects = (category = "Todos") => {
       }
 
       const querySnapshot = await getDocs(q);
-      const projectsData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as Project[];
+      const projectsData = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          titulo: data.titulo,
+          descricao: data.descricao,
+          imagemUrl: data.imagemUrl,
+          stack: data.stack,
+          linguagens: data.linguagens,
+          link: data.link,
+        };
+      }) as Project[];
+      
       setProjects(projectsData);
       setLoading(false);
     } catch (error) {
