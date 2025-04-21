@@ -7,7 +7,7 @@ interface InputRootProps extends ComponentProps<"div"> {
 export function InputRoot({ error = false, ...props }: InputRootProps) {
   return (
     <div
-      className="w-full p-4 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-center gap-3"
+      className="w-full p-4 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-center gap-2"
       {...props}
     />
   );
@@ -34,7 +34,7 @@ export function InputField(props: ComponentProps<"input">) {
 export function TextField(props: ComponentProps<"textarea">) {
   return (
     <textarea
-      className="bg-transparent resize-none placeholder-gray-400 transition-all outline-0  text-gray-200 px-2"
+      className="bg-transparent resize-none placeholder-gray-400 transition-all outline-0  text-gray-200 px-1"
       {...props}
       rows={4}
     />

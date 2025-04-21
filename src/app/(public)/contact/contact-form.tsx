@@ -1,25 +1,43 @@
-"use client";
+'use client';
 
 import React from "react";
 import { motion } from "framer-motion";
 import useContactForm from "@/hooks/useContactForm";
 import { InputField, InputRoot, InputIcon, TextField } from "@/components/input";
 import { User, Mail, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast"; 
 
 interface ContactFormProps {
   isVisible: boolean;
 }
 
-function FormGroup({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function FormGroup({ children }: { children: React.ReactNode }) {
   return <div className="flex flex-col gap-2">{children}</div>;
 }
 
 export default function ContactForm({ isVisible }: ContactFormProps) {
   const { formData, handleChange, handleSubmit } = useContactForm();
+  const { toast } = useToast();
+
+  const onSubmit = async (event: React.FormEvent) => {
+    try {
+      await handleSubmit(event);
+      toast({
+        title: "Mensagem enviada com sucesso!",
+      });
+      setTimeout(() => {
+        
+      }, 3000)
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar a mensagem.",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+      console.error(error);
+    }
+  };
 
   return (
     <motion.div
@@ -28,7 +46,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
       animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
       transition={{ duration: 1 }}
     >
-      <form className="contact-form flex flex-col gap-4" onSubmit={handleSubmit}>
+      <form className="contact-form flex flex-col gap-4" onSubmit={onSubmit}>
         <FormGroup>
           <InputRoot>
             <InputIcon>
@@ -70,24 +88,18 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
             </InputIcon>
             <TextField
               id="message"
-              name="message"              
+              name="message"
               placeholder="Mensagem"
-              value={formData.message} 
+              value={formData.message}
               onChange={handleChange}
               required
             />
           </InputRoot>
         </FormGroup>
 
-        <motion.button
-          type="submit"
-          className="bg-spancolor hover:bg-spanhover text-white font-bold py-4 px-7 transition-all rounded-lg"
-          initial={{ opacity: 0, x: 100 }}
-          animate={isVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.25 }}
-        >
+        <Button type="submit" className="text-foreground h-12">
           Enviar
-        </motion.button>
+        </Button>
       </form>
     </motion.div>
   );

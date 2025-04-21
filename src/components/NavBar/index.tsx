@@ -82,7 +82,7 @@ const Navbar = () => {
               { href: "/about", label: "Sobre" },
               { href: "/works", label: "Serviços" },
               { href: "/projects", label: "Projetos" },
-              //{ href: "/contact", label: "Contato" },
+              { href: "/contact", label: "Contato" },
             ].map(({ href, label }) => (
               <li
                 key={href}

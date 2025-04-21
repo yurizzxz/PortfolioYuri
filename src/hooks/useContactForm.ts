@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from "react";
+import { setDoc, doc, Timestamp } from "firebase/firestore";
+import { db } from "@/app/firebaseconfig";
 
 export default function useContactForm() {
   const [formData, setFormData] = useState({
@@ -16,23 +18,14 @@ export default function useContactForm() {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    try {
-      const response = await fetch(`https://backendportfolioyuri.onrender.com/send-email`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    const documentId = `${formData.name}-${formData.email}`.replace(/\s+/g, '_');
 
-      if (response.ok) {
-        alert("E-mail enviado com sucesso!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Erro ao enviar o e-mail.");
-      }
-    } catch (error) {
-      alert("Erro ao enviar o e-mail.");
-      console.error(error);
-    }
+    await setDoc(doc(db, "messages", documentId), {
+      ...formData,
+      createdAt: Timestamp.now(),
+    });
+
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return { formData, handleChange, handleSubmit };
