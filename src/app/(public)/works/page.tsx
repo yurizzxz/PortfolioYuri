@@ -37,7 +37,7 @@ const ServicesSection = () => {
   return (
     <main className="container mx-auto max-w-6xl overflow-hidden">
       <motion.main
-        className="flex bg-[var(--background)] flex-row py-20"
+        className="flex bg-[var(--background)] flex-row pt-28 pb-24"
         id="services"
         ref={servicesRef}
         initial={{ opacity: 0, y: 100 }}

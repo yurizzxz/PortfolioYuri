@@ -27,5 +27,17 @@ export const Services = [
       "Crio interfaces de aplicativos modernas e intuitivas, garantindo uma experiência visual atraente e funcional.",
     icon: "smartphone",
   },
+  {
+    id: 5,
+    title: "Landing Pages",
+    description: "Crio landing pages otimizadas para conversão, com design estratégico e foco em resultados.",
+    icon: "rocket_launch",
+  },
+  {
+    id: 6,
+    title: "Design de Marca",
+    description: "Construo marcas fortes com logo, tipografia e paleta de cores que refletem sua identidade única.",
+    icon: "branding_watermark",
+  }
 ];
 
