@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator";
 import AboutSection from "./about/page";
 import Contact from "./contact/page";
 import Hero from "./home/page";
@@ -9,8 +10,11 @@ export default function Home() {
     <div className="flex flex-col justify-center items-center">
       <Hero />
       <AboutSection />
+      <Separator />
       <ServicesSection />
+      <Separator />
       <Projects />
+      <Separator />
       <Contact />
     </div>
   );

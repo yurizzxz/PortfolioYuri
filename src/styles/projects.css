@@ -1,5 +1,5 @@
 .projects-section {
-  @apply flex bg-[var(--background)] flex-row min-h-screen md:px-0 pt-2 pb-16 md:pt-28;
+  @apply flex bg-[var(--background)] flex-row py-20;
 }
 
 .projects-header {
