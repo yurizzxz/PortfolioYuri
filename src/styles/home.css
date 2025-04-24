@@ -67,7 +67,7 @@
     @apply text-base;
   }
   .hero-text {
-    @apply max-w-full
+    @apply max-w-full p-0 bg-inherit
   }
 }
 
@@ -108,7 +108,7 @@
 
 @media (max-width: 568px) {
   .hero {
-    @apply px-0;
+    @apply px-0 justify-normal gap-8;
   }
   .hero-text {
     @apply px-0 max-w-[40rem] max-h-[32rem] bg-inherit;

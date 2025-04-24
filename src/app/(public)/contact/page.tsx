@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ContactInfo from "./contact-info";
 import ContactForm from "./contact-form";
 
-export default function Form() {
+export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
 

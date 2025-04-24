@@ -6,6 +6,7 @@
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    line-height: 3.5rem
   }
   
   .about-content {
@@ -30,16 +31,16 @@
   .about-text {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 0.5rem;
     font-size: 1.05rem;
     color: var(--textcolor);
   }
   
   .aboutFooter {
-    margin-top: 2.2rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 1.5rem;
   }
   
   .aboutLink {
