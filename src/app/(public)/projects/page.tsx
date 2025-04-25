@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import "@/styles/projects.css";
 import Link from "next/link";
 import CategoryFilter from "@/components/category-filter";
 import ProjectCard from "@/components/project-card";
@@ -34,7 +33,7 @@ const Projects = () => {
 
   return (
     <main className="container mx-auto max-w-6xl px-4 xl:px-0">
-      <div className="projects-section" id="projects">
+      <div className="flex bg-[var(--background)] flex-row pb-24 pt-20" id="projects">
         <motion.section
           className="projects"
           initial={{ opacity: 0, y: 100 }}
@@ -44,10 +43,10 @@ const Projects = () => {
           <motion.div
             transition={{ duration: 0.5 }}
             animate={{ opacity: 1, y: 0 }}
-            className="projects-header"
+            className="mb-10"
           >
-            <h1 className="projects-title">Meus Projetos</h1>
-            <div className="picks" style={{ marginTop: "0rem" }}>
+            <h1 className="text-4xl font-bold">Meus Projetos</h1>
+            <div className="mt-6 flex gap-3 flex-wrap" style={{ marginTop: "0rem" }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onCategoryChange={handleCategoryChange}
@@ -55,7 +54,7 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          <div className="projects-cards">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
             {projects.length > 0 ? (
               projects.map((project) => (
                 <ProjectCard

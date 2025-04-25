@@ -45,9 +45,9 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`navbar px-4 ${isScrolled ? "scrolled bg-cardcolor transition-all" : ""}`}>
+    <header className={`navbar bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${isScrolled ? "scrolled bg-cardcolor transition-all" : ""}`}>
       <nav className="navbar-container">
-        <div className="container mx-auto bg-cardcolor py-4 md:py-4 md:px-7 rounded-xl max-w-6xl flex flex-row justify-between items-center">
+        <div className="container mx-auto py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"
