@@ -34,7 +34,7 @@ export default function SocialNetwork() {
             scale: 1.1,
           }}
         >
-          <i className={link.iconClass} ></i>
+          <i className={link.iconClass} style={{ fontSize: "1.75rem" }}></i>
         </motion.a>
       ))}
     </>

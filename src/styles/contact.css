@@ -1,5 +1,5 @@
 .contact-section {
-  @apply flex flex-col overflow-hidden py-16 md:py-32 w-full justify-center;
+  @apply flex flex-col overflow-hidden py-16 md:py-48 w-full justify-center;
 }
 
 .contact-hero {

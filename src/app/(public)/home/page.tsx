@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import HeroFooter from "./heroFooter";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -77,7 +76,7 @@ const Hero = () => {
 
             {/* footer */}
             {/*<HeroFooter />*/}
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-6 items-center">
               <RedirectButton href="#contact" className="gap-4">
                 Vamos Conversar
                 <i className="fas fa-arrow-down"></i>
