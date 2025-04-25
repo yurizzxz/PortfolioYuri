@@ -12,7 +12,7 @@ export const links = [
   {
     id: 3,
     name: "Serviços",
-    href: "#works",
+    href: "#services",
   },
   {
     id: 4,

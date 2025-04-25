@@ -25,7 +25,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
       await handleSubmit(event);
       toast({
         title: "Mensagem enviada com sucesso!",
-        description: "Em breve entraremos em contato.",
+        description: "Em breve eu entrarei em contato.",
       });
       setTimeout(() => {
         

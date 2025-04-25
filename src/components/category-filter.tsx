@@ -19,12 +19,12 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
   return (
     <div className="picks">
       <Select
-        value={selectedCategory}
+        value={selectedCategory || undefined}
         onValueChange={onCategoryChange}
         defaultValue={selectedCategory}
       >
-        <SelectTrigger className="w-[130px]">
-          <SelectValue placeholder="Select a category" />
+        <SelectTrigger className="w-[230px]">
+          <SelectValue placeholder="Selecione uma categoria" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="Todos">Todos</SelectItem>
