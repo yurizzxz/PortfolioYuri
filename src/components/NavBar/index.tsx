@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import RedirectButton from "../Button";
 import "./navbar.css";
+import { links } from "@/data/links";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -77,20 +78,14 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {[
-              { href: "/", label: "Home" },
-              { href: "#about", label: "Sobre" },
-              { href: "#services", label: "Serviços" },
-              { href: "#projects", label: "Projetos" },
-              { href: "#contact", label: "Contato" },
-            ].map(({ href, label }) => (
+            {links.map(({ href, name }) => (
               <li key={href}>
                 <Link
                   href={href}
                   className={activeLink === href ? "active" : ""}
                   onClick={() => handleLinkClick(href)}
                 >
-                  {label}
+                  {name}
                 </Link>
               </li>
             ))}

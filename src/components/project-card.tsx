@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       <div className="px-4 flex flex-col gap-1 flex-grow text-left">
         <div className="flex flex-col flex-1 h-auto">
           <h1 className="text-[1.20rem] font-bold mb-1">{project.titulo}</h1>
-          <p className="text-sm mb-3">
+          <p className="text-sm mb-3 text-zinc-300">
             {project.descricao.length > 40
               ? `${project.descricao.slice(0, 30)}...`
               : project.descricao}

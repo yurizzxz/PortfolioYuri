@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Navbar from "../../components/NavBar";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Yuri Alves // Desenvolvedor Front-End",
@@ -78,10 +79,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div>
-          <Navbar />
-        </div>
+        <Navbar />
         <div className="flex justify-center bg-background">{children}</div>
+        <Footer />
         <Toaster />
       </body>
     </html>
