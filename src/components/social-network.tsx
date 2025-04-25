@@ -1,49 +1,42 @@
 import { motion } from "framer-motion";
+
+const socialLinks = [
+  {
+    href: "https://github.com/yurizzxz",
+    iconClass: "fab fa-github",
+    hoverY: -3,
+  },
+  {
+    href: "https://www.linkedin.com/in/yurizzxz/",
+    iconClass: "fab fa-linkedin",
+    hoverY: -5,
+  },
+  {
+    href: "https://behance.net/yurizzxz",
+    iconClass: "fab fa-behance",
+    hoverY: -5,
+  },
+];
+
 export default function SocialNetwork() {
   return (
     <>
-      <motion.a
-        href="https://github.com/yurizzxz"
-        className="aboutLink"
-        target="_blank"
-        transition={{
-          delay: -1,
-        }}
-        whileHover={{
-          y: -3,
-          scale: 1.1,
-        }}
-      >
-        <i className="fab fa-github"></i>
-      </motion.a>
-      <motion.a
-        href="https://www.linkedin.com/in/yurizzxz/"
-        className="aboutLink"
-        target="_blank"
-        transition={{
-          delay: -1,
-        }}
-        whileHover={{
-          y: -5,
-          scale: 1.1,
-        }}
-      >
-        <i className="fab fa-linkedin"></i>
-      </motion.a>
-      <motion.a
-        href="https://behance.net/yurizzxz"
-        className="aboutLink"
-        target="_blank"
-        transition={{
-          delay: -1,
-        }}
-        whileHover={{
-          y: -5,
-          scale: 1.1,
-        }}
-      >
-        <i className="fab fa-behance"></i>
-      </motion.a>
+      {socialLinks.map((link, index) => (
+        <motion.a
+          key={index}
+          href={link.href}
+          className="hover:text-spanhover transition-all"
+          target="_blank"
+          rel="noopener noreferrer"
+          transition={{ delay: -1 }}
+          whileHover={{
+            y: link.hoverY,
+            scale: 1.1,
+          }}
+        >
+          <i className={link.iconClass} ></i>
+        </motion.a>
+      ))}
     </>
   );
 }

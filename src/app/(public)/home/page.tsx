@@ -6,6 +6,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import "@/styles/home.css";
+import RedirectButton from "@/components/Button";
+import SocialNetwork from "@/components/social-network";
 
 const Hero = () => {
   return (
@@ -16,7 +18,6 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-
         <section className="hero" id="home">
           <motion.div
             className="hero-text"
@@ -75,7 +76,16 @@ const Hero = () => {
             </motion.div>
 
             {/* footer */}
-            <HeroFooter />
+            {/*<HeroFooter />*/}
+            <div className="flex gap-4 items-center">
+              <RedirectButton href="#contact" className="gap-4">
+                Vamos Conversar
+                <i className="fas fa-arrow-down"></i>
+              </RedirectButton>
+              <div className="space-x-4">
+                <SocialNetwork />
+              </div>
+            </div>
           </motion.div>
 
           <motion.figure

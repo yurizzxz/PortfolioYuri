@@ -1,5 +1,5 @@
 .about {
-    @apply flex flex-col items-center min-h-screen justify-center ;
+    @apply flex flex-col items-center min-h-screen justify-center pt-24 md:py-0 ;
   }
   
   .about-title {

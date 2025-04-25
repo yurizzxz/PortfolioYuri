@@ -84,7 +84,7 @@ const AboutSection = () => {
               </p>
             </div>
             <div className="aboutFooter">
-             <SocialNetwork />
+             
             </div>
           </motion.div>
         </div>

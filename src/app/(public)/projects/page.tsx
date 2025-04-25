@@ -54,7 +54,7 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
             {projects.length > 0 ? (
               projects.map((project) => (
                 <ProjectCard
