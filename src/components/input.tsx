@@ -7,7 +7,7 @@ interface InputRootProps extends ComponentProps<"div"> {
 export function InputRoot({ error = false, ...props }: InputRootProps) {
   return (
     <div
-      className="w-full p-4 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-center gap-2"
+      className="w-full px-4 py-2.5 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-center gap-2"
       {...props}
     />
   );

@@ -1,130 +1,129 @@
 .contact-section {
-    @apply flex flex-col overflow-hidden py-32 w-full justify-center ;
-   }
-   
-   .contact-hero {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     gap: 2rem;
-     flex-wrap: wrap;
-   }
-   
-   .email-icon {
-     display: flex;
-     flex-direction: row;
-     gap: 10px;
-     margin-bottom: 2rem;
-   }
-   
-   .email-icon i {
-     top: 1px;
-     position: relative;
-     color: var(--spancolor);
-     font-size: 25px;
-   }
-   
-   .contact-info {
-     flex: 1;
-     max-width: 50%;
-   }
-   
-   .contact-info h1 {
-     @apply text-4xl font-bold leading-none mb-4;
-   }
-   
-   .contact-info p {
-     font-size: 1rem;
-     margin-bottom: 3rem;
-   }
-   
-   .form-container {
-     flex: 1;
-     max-width: 50rem;
-     display: flex;
-     justify-content: center;
-   }
-   
-   .contact-form {
-     width: 100%;
-     max-width: 75vh;
-     border-radius: 8px;
-     display: flex;
-     flex-direction: column;
-     gap: 1rem;
-     padding-right: .2rem;
-   }
-   
-   .form-group {
-     position: relative;
-   }
-   
-  
-   .form-group label {
-     display: block;
-     font-size: 1rem;
-     position: absolute;
-     top: 35%;
-     transform: translateY(-50%);
-     left: 1.3rem;
-     font-size: 1rem;
-   }
-   
-   .form-group input:focus ~ label,
-   .form-group input:valid ~ label {
-     top: 20%;
-     font-size: 0.8rem;
-   }
-   
-   .form-group textarea:focus ~ label,
-   .form-group textarea:valid ~ label {
-     top: 8%;
-     font-size: 0.8rem;
-   }
-   
-   .message {
-     resize: none;
-   }
-   
-   .form-button {
-     padding: 15px;
-     width: 100%;
-     margin-bottom: 2rem;
-   }
-   
-   @media (max-width: 900px) and (max-height: 1300px) {
-     .contact-section {
-       padding-inline: 1rem;
-     }
-   }
-   
-   @media (max-width: 768px) {
-     .contact-section {
-       padding: 1rem;
-     }
-     .contact-hero {
-       flex-direction: column;
-       padding: 0rem;
-     }
-   
-     .contact-info,
-     .form-container {
-       max-width: 25rem;
-       width: 100%;
-     }
+  @apply flex flex-col overflow-hidden py-16 md:py-32 w-full justify-center;
+}
 
-   
-     .contact-form {
-       padding: 0rem;
-     }
-   
-     .name-container {
-       flex-direction: column;
-     }
-   
-     .name-field {
-       flex: none;
-       width: 100%;
-     }
-   }
-   
+.contact-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.email-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.email-icon i {
+  top: 1px;
+  position: relative;
+  color: var(--spancolor);
+  font-size: 25px;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 50%;
+}
+
+.contact-info h1 {
+  @apply text-4xl font-bold leading-none mb-4;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.form-container {
+  flex: 1;
+  max-width: 50rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 75vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 0.2rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  left: 1.3rem;
+  font-size: 1rem;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: 20%;
+  font-size: 0.8rem;
+}
+
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: 8%;
+  font-size: 0.8rem;
+}
+
+.message {
+  resize: none;
+}
+
+.form-button {
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) and (max-height: 1300px) {
+  .contact-section {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    flex-direction: column;
+    align-items: start;
+    padding: 0rem;
+  }
+
+  .contact-info {
+    max-width: 100%;
+  }
+
+  .contact-info,
+  .form-container {
+    max-width: auto;
+    width: 100%;
+  }
+
+  .contact-form {
+    padding: 0rem;
+  }
+
+  .name-container {
+    flex-direction: column;
+  }
+
+  .name-field {
+    flex: none;
+    width: 100%;
+  }
+}

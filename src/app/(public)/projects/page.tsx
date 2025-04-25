@@ -46,7 +46,7 @@ const Projects = () => {
             className="mb-10"
           >
             <h1 className="text-4xl font-bold">Meus Projetos</h1>
-            <div className="mt-6 flex gap-3 flex-wrap" style={{ marginTop: "0rem" }}>
+            <div className="mt-6 flex gap-3 flex-wrap" >
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onCategoryChange={handleCategoryChange}

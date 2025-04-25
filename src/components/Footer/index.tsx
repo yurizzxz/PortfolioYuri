@@ -5,8 +5,8 @@ import { links } from "@/data/links";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--cardColor)] border-t border-[var(--accent)] py-10 ">
-      <div className="max-w-6xl  mx-auto flex flex-col md:flex-row justify-between gap-10">
+    <footer className="bg-[var(--cardColor)] px-4 md:px-0 border-t border-[var(--accent)] py-10 ">
+      <div className="max-w-6xl  mx-auto flex flex-col md:flex-row justify-between gap-16">
         <div className="flex-1">
           <h1 className="text-[1.5rem] font-bold ">
             Yuri <span className="text-[var(--primary)]">Alves</span>

@@ -1,5 +1,5 @@
 .hero-section {
-  @apply flex flex-row min-h-screen pt-16 lg:pt-0 ;
+  @apply flex flex-row min-h-screen pt-20 lg:pt-0 ;
 }
 
 .hero {

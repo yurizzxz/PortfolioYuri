@@ -46,9 +46,9 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`navbar bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${isScrolled ? "scrolled bg-cardcolor transition-all" : ""}`}>
+    <header className={`navbar bg-background lg:bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${isScrolled ? "scrolled bg-cardcolor transition-all" : ""}`}>
       <nav className="navbar-container">
-        <div className="container mx-auto py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
+        <div className="container mx-auto py-3 md:py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"
@@ -72,7 +72,7 @@ const Navbar = () => {
           </button>
 
           <motion.ul
-            className={`navbar-links bg-heroBg border-b border-[var(--border)] lg:border-none ${mobileMenuOpen ? "active" : ""}`}
+            className={`navbar-links bg-background border-b border-[var(--border)] lg:border-none ${mobileMenuOpen ? "active" : ""}`}
             role="navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
