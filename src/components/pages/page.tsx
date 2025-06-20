@@ -105,7 +105,7 @@ const Projects: React.FC<ProjectProps> = ({
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg  shadow-lg   w-full max-w-xl"
+                className="bg-cardcolor p-6 rounded-lg  shadow-lg   w-full max-w-2xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -124,13 +124,12 @@ const Projects: React.FC<ProjectProps> = ({
                       key={project.id}
                       className="flex flex-col justify-center pb-4"
                     >
-                      <div className="mb-7 max-w-xl">
+                      <div className="mb-7 relative aspect-[16/9]">
                         <Image
-                          src={project.imagemUrl ? project.imagemUrl : ""}
+                          src={project.imagemUrl || ""}
                           alt={project.titulo}
-                          className="image-card w-full h-auto"
-                          width={510}
-                          height={0}
+                          className="object-cover "
+                          fill
                           loading="lazy"
                         />
                       </div>
@@ -143,11 +142,12 @@ const Projects: React.FC<ProjectProps> = ({
                             href={project.link}
                             rel="noopener noreferrer"
                             target="_blank"
+                            className="hover:text-spanhover transition-all"
                           >
-                            <i className="devicon-github-original text-2xl"></i>
+                            <i className="devicon-github-original text-3xl"></i>
                           </Link>
                         </div>
-                        <p className="text-sm mt-2 max-h-24 overflow-y-scroll">
+                        <p className="text-md mt-2 max-h-24 overflow-y-scroll">
                           {project.descricao}
                         </p>
                       </div>
