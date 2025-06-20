@@ -1,0 +1,55 @@
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { StarRating } from "./star-rating";
+
+export interface FeedbackCardProps {
+  id: string;
+  name: string;
+  role: string;
+  stars: number;
+  feedback: string;
+  href?: string;
+}
+
+export function FeedbackCard({
+  id,
+  name,
+  role,
+  feedback,
+  href,
+  stars,
+}: FeedbackCardProps) {
+  return (
+    <div className="flex flex-col gap-2">
+      <Card className="hover:border-[var(--spanhover)] transition-all duration-300 border border-[var(--border)]">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            {href && (
+              <Image
+                className="w-12 h-12 rounded-full"
+                src={href}
+                alt={name}
+                width={100}
+                height={100}
+              />
+            )}
+            <div>
+              <CardTitle className="text-lg font-semibold">{name}</CardTitle>
+              <CardDescription>{role}</CardDescription>
+            </div>
+          </div>
+          <div>
+            <StarRating rating={stars} />
+          </div>
+        </CardHeader>
+        <CardContent>{feedback}</CardContent>
+      </Card>
+    </div>
+  );
+}
