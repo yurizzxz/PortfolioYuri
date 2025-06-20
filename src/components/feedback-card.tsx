@@ -44,10 +44,11 @@ export function FeedbackCard({
               <CardDescription>{role}</CardDescription>
             </div>
           </div>
-          <div>
-            <StarRating rating={stars} />
-          </div>
         </CardHeader>
+        <div className="px-4 pb-4">
+          <StarRating rating={stars} />
+        </div>
+
         <CardContent>{feedback}</CardContent>
       </Card>
     </div>

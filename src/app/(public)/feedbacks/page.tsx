@@ -23,7 +23,7 @@ export default function Feedbacks() {
         <motion.div
           transition={{ duration: 0.5 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-10"
+          className="mb-10 flex items-center flex-col"
         >
           <h1 className="text-4xl font-bold">Vozes sobre meu trabalho</h1>
           <p className="mt-2"> Algumas pessoas que já trabalharam comigo.</p>
@@ -33,13 +33,14 @@ export default function Feedbacks() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col gap-10"
+            className="flex flex-col items-center relative overflow-hidden max-w-full gap-10"
           >
             <Carousel
               opts={{
                 align: "start",
                 loop: true,
               }}
+              className="w-full"
             >
               <CarouselContent>
                 {feedbacks.map((feedback) => (
