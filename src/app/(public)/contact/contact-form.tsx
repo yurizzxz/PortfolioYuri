@@ -1,19 +1,20 @@
-'use client';
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 import useContactForm from "@/hooks/useContactForm";
-import { InputField, InputRoot, InputIcon, TextField } from "@/components/input";
-import { User, Mail, MessageSquare } from "lucide-react";
+import {
+  InputField,
+  InputRoot,
+  InputIcon,
+  TextField,
+} from "@/components/input";
+import { User, Mail, MessageSquare, Edit3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast"; 
+import { useToast } from "@/hooks/use-toast";
 
 interface ContactFormProps {
   isVisible: boolean;
-}
-
-function FormGroup({ children }: { children: React.ReactNode }) {
-  return <div className="flex flex-col gap-2">{children}</div>;
 }
 
 export default function ContactForm({ isVisible }: ContactFormProps) {
@@ -25,11 +26,9 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
       await handleSubmit(event);
       toast({
         title: "Mensagem enviada com sucesso!",
-        description: "Em breve eu entrarei em contato.",
+        description: "Em breve você receberá uma resposta.",
       });
-      setTimeout(() => {
-        
-      }, 3000)
+      setTimeout(() => {}, 3000);
     } catch (error) {
       toast({
         title: "Erro ao enviar a mensagem.",
@@ -48,7 +47,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
       transition={{ duration: 1 }}
     >
       <form className="contact-form flex flex-col gap-4" onSubmit={onSubmit}>
-        <FormGroup>
+        <div className="grid gap-2 md:grid-cols-2">
           <InputRoot>
             <InputIcon>
               <User />
@@ -61,11 +60,10 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="off"
             />
           </InputRoot>
-        </FormGroup>
 
-        <FormGroup>
           <InputRoot>
             <InputIcon>
               <Mail />
@@ -80,23 +78,37 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               required
             />
           </InputRoot>
-        </FormGroup>
+        </div>
 
-        <FormGroup>
-          <InputRoot className="w-full pt-8 px-4 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-start gap-3">
-            <InputIcon>
-              <MessageSquare />
-            </InputIcon>
-            <TextField
-              id="message"
-              name="message"
-              placeholder="Mensagem"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </InputRoot>
-        </FormGroup>
+        <InputRoot>
+          <InputIcon>
+            <Edit3 />
+          </InputIcon>
+          <InputField
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Assunto"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+            autoComplete="off"
+          />
+        </InputRoot>
+
+        <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-start gap-3">
+          <InputIcon>
+            <MessageSquare />
+          </InputIcon>
+          <TextField
+            id="message"
+            name="message"
+            placeholder="Mensagem"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </InputRoot>
 
         <Button type="submit" className="text-foreground h-12">
           Enviar

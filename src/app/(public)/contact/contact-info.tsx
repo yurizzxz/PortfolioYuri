@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import "@/styles/contact.css";
@@ -23,13 +22,13 @@ export default function ContactInfo() {
         formulário ao lado e eu entrarei em contato o mais breve possível.
       </p>
       <div className="email-icon">
-        <Mail />
+        <Mail className="text-spancolor"  />
         <Link href="mailto:yuri.designer.07@gmail.com">
           yuri.designer.07@gmail.com
         </Link>
       </div>
       <div className="email-icon">
-        <Instagram />
+        <Instagram className="text-spancolor" />
         <Link href={instaLink} target="_blank" rel="noopener noreferrer">
           @yurinsights
         </Link>

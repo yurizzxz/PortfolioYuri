@@ -7,7 +7,7 @@ interface InputRootProps extends ComponentProps<"div"> {
 export function InputRoot({ error = false, ...props }: InputRootProps) {
   return (
     <div
-      className="w-full px-4 py-2.5 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-center gap-2"
+      className="w-full px-4 py-2.5 rounded-lg text-base bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-zinc-400 data-[error=true]:border-red-500 flex items-center gap-2"
       {...props}
     />
   );
@@ -16,7 +16,7 @@ export function InputRoot({ error = false, ...props }: InputRootProps) {
 export function InputIcon(props: ComponentProps<"span">) {
   return (
     <span
-      className="text-gray-400 transition-all group-focus-within:text-gray-400 group-[&:not(:has(input:placeholder-shown))]:text-gray-400 group-data-[error=true]:text-red-500"
+      className="text-zinc-400 transition-all group-focus-within:text-zinc-400 group-[&:not(:has(input:placeholder-shown))]:text-zinc-400 group-data-[error=true]:text-red-500"
       {...props}
     />
   );
@@ -25,7 +25,7 @@ export function InputIcon(props: ComponentProps<"span">) {
 export function InputField(props: ComponentProps<"input">) {
   return (
     <input
-      className="bg-transparent placeholder-gray-400 transition-all outline-0 flex-1 text-gray-200 p-2"
+      className="bg-transparent text-sm placeholder-zinc-400 transition-all outline-0 flex-1 text-zinc-200 px-1 py-2"
       {...props}
     />
   );
@@ -34,7 +34,7 @@ export function InputField(props: ComponentProps<"input">) {
 export function TextField(props: ComponentProps<"textarea">) {
   return (
     <textarea
-      className="bg-transparent resize-none placeholder-gray-400 transition-all outline-0  text-gray-200 px-1"
+      className="bg-transparent resize-none placeholder-zinc-400 transition-all outline-0  text-zinc-200"
       {...props}
       rows={4}
     />

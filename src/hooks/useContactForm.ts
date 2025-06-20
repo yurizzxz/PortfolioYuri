@@ -9,6 +9,8 @@ export default function useContactForm() {
     name: "",
     email: "",
     message: "",
+    createdAt: Timestamp.now(),
+    subject: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -18,14 +20,14 @@ export default function useContactForm() {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const documentId = `${formData.name}-${formData.email}`.replace(/\s+/g, '_');
+    const documentId = `${formData.subject}-${formData.name}-${formData.email}`.replace(/\s+/g, '_');
 
     await setDoc(doc(db, "messages", documentId), {
       ...formData,
       createdAt: Timestamp.now(),
     });
 
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", message: "", createdAt: Timestamp.now(), subject: "" });
   };
 
   return { formData, handleChange, handleSubmit };
