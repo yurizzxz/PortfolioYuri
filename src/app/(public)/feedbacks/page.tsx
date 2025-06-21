@@ -14,11 +14,10 @@ import { useFeedbacks } from "@/hooks/useFeedbacks";
 export default function Feedbacks() {
   const { feedbacks, loading, error } = useFeedbacks();
 
-  if (loading) return <p>Carregando feedbacks...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <main className="container mx-auto max-w-6xl px-4 pt-10 xl:px-0" id="feedbacks">
+      {loading && <p>Carregando feedbacks...</p>}
+      {error && <p>Erro: {error}</p>}
       <div className="flex flex-col px-4 md:px-0 pb-24 pt-20">
         <motion.div
           transition={{ duration: 0.5 }}

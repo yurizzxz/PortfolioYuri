@@ -4,15 +4,16 @@ export const links = [
     name: "Home",
     href: "#",
   },
-  {
-    id: 2,
-    name: "Sobre",
-    href: "#about",
-  },
+
   {
     id: 3,
     name: "Serviços",
     href: "#services",
+  },
+  {
+    id: 2,
+    name: "Carreira",
+    href: "#carrer",
   },
   {
     id: 4,
