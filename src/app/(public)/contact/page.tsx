@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <main className="container max-w-6xl mx-auto">
       <section className="contact-section" id="contact" ref={formRef}>
-        <div className="contact-hero">
+        <div className="flex flex-col md:grid grid-cols-2">
           <ContactInfo />
           <ContactForm isVisible={isVisible} />
         </div>

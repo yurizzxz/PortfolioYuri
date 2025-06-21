@@ -21,6 +21,11 @@ export const links = [
   },
   {
     id: 5,
+    name: "Feedbacks",
+    href: "#feedbacks",
+  },
+  {
+    id: 6,
     name: "Contato",
     href: "#contact",
   },

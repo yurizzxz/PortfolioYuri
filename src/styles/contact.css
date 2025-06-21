@@ -1,13 +1,5 @@
 .contact-section {
-  @apply flex flex-col overflow-hidden py-16 md:py-48 w-full justify-center;
-}
-
-.contact-hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  @apply flex flex-col px-5 md:px-1.5 overflow-hidden py-16 md:py-48 w-full justify-center;
 }
 
 .email-icon {
@@ -26,7 +18,7 @@
 
 .contact-info {
   flex: 1;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .contact-info h1 {

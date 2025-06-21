@@ -13,25 +13,27 @@ export default function ContactInfo() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="contact-info"
+      className="flex gap-4 flex-col justify-center"
     >
-      <h1>Vamos Conversar!</h1>
-      <p>
+      <h1 className="text-4xl leading-none font-bold">Vamos Conversar!</h1>
+      <p className="max-w-lg">
         Gostou do meu trabalho?{" "}
         <span className="span-color">Vamos conversar!</span> Preencha o
         formulário ao lado e eu entrarei em contato o mais breve possível.
       </p>
-      <div className="email-icon">
-        <Mail className="text-spancolor"  />
-        <Link href="mailto:yuri.designer.07@gmail.com">
-          yuri.designer.07@gmail.com
-        </Link>
-      </div>
-      <div className="email-icon">
-        <Instagram className="text-spancolor" />
-        <Link href={instaLink} target="_blank" rel="noopener noreferrer">
-          @yurinsights
-        </Link>
+      <div className="flex flex-col gap-5 mt-3">
+        <div className="flex gap-3 flex-row">
+          <Mail className="text-spancolor" />
+          <Link href="mailto:yuri.designer.07@gmail.com">
+            yuri.designer.07@gmail.com
+          </Link>
+        </div>
+        <div className="flex gap-3 flex-row ">
+          <Instagram className="text-spancolor" />
+          <Link href={instaLink} target="_blank" rel="noopener noreferrer">
+            @yurinsights
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

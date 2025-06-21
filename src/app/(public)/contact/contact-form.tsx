@@ -41,12 +41,11 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
 
   return (
     <motion.div
-      className="form-container"
       initial={{ opacity: 0, x: 100, scale: 0.8 }}
       animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
       transition={{ duration: 1 }}
     >
-      <form className="contact-form flex flex-col gap-4" onSubmit={onSubmit}>
+      <form className="w-full flex flex-col gap-4" onSubmit={onSubmit}>
         <div className="grid gap-2 md:grid-cols-2">
           <InputRoot>
             <InputIcon>
