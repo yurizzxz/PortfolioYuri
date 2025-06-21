@@ -9,10 +9,10 @@ import { works, study } from "@/data/experiences";
 
 export default function Experiences() {
   return (
-    <div className="max-w-6xl mx-auto w-full px-4 py-28 xl:px-0" id="carrer">
+    <div className="max-w-6xl mx-auto w-full px-4 py-20 md:py-28 xl:px-0" id="carrer">
       <div className="mb-12">
-        <h1 className="text-4xl text-center font-bold">Minha Trajetória</h1>
-        <p className="mt-3 text-center">
+        <h1 className="text-4xl md:text-center font-bold">Minha Trajetória</h1>
+        <p className="mt-3 md:text-center">
           Ao longo da minha carreira, desenvolvi habilidades técnicas por meio
           de experiências profissionais e formações.
         </p>

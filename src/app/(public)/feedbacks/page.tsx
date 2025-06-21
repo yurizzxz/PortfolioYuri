@@ -18,7 +18,7 @@ export default function Feedbacks() {
     <main className="container mx-auto max-w-6xl px-4 pt-10 xl:px-0" id="feedbacks">
       {loading && <p>Carregando feedbacks...</p>}
       {error && <p>Erro: {error}</p>}
-      <div className="flex flex-col px-4 md:px-0 pb-24 pt-20">
+      <div className="flex flex-col pb-24 pt-20">
         <motion.div
           transition={{ duration: 0.5 }}
           animate={{ opacity: 1, y: 0 }}
