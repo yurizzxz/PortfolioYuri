@@ -23,7 +23,7 @@ export default function Feedbacks() {
         <motion.div
           transition={{ duration: 0.5 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-10 flex items-center flex-col"
+          className="mb-10 flex md:items-center flex-col"
         >
           <h1 className="text-4xl font-bold">Vozes sobre meu trabalho</h1>
           <p className="mt-2"> Algumas pessoas que já trabalharam comigo.</p>

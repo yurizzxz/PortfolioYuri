@@ -9,7 +9,7 @@ import Feedbacks from "./feedbacks/page";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center ">
       <Hero />
       <Separator />
       <AboutSection />
@@ -20,7 +20,7 @@ export default function Home() {
       <Separator />
       <Projects maxProjects={3} showLoadMore />
       <Separator />
-      {/* <Feedbacks /> */}
+      <Feedbacks />
       <Separator />
       <Contact />
     </div>

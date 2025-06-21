@@ -12,7 +12,7 @@ export interface FeedbackCardProps {
   id: string;
   name: string;
   role: string;
-  stars: number;
+  stars?: number;
   feedback: string;
   href?: string;
 }
@@ -26,7 +26,7 @@ export function FeedbackCard({
   stars,
 }: FeedbackCardProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="gap-2">
       <Card className="hover:border-[var(--spanhover)] transition-all duration-300 border border-[var(--border)]">
         <CardHeader>
           <div className="flex items-center gap-3">
@@ -46,7 +46,7 @@ export function FeedbackCard({
           </div>
         </CardHeader>
         <div className="px-4 pb-4">
-          <StarRating rating={stars} />
+          <StarRating rating={stars || 0} />
         </div>
 
         <CardContent>{feedback}</CardContent>
