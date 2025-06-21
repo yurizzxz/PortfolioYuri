@@ -20,7 +20,7 @@ export default function Home() {
       <Separator />
       <Projects maxProjects={3} showLoadMore />
       <Separator />
-      <Feedbacks />
+      {/* <Feedbacks /> */}
       <Separator />
       <Contact />
     </div>

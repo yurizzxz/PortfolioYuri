@@ -15,24 +15,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
     <motion.button
       key={project.id}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.1 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-[var(--cardColor)] border-[0.5px] border-[var(--accent)] rounded-xl flex flex-col gap-5 flex-shrink-0 transition-all duration-300 ease-in-out;"
+      whileHover={{ scale: 1.01 }}
+      className="bg-[var(--cardColor)] overflow-hidden sm:overflow-visible border border-[var(--border)] rounded-lg flex flex-col gap-5 transition-all duration-300 ease-in-out"
       onClick={onClick}
     >
       <div className="card-icon relative aspect-[16/9] overflow-hidden">
         <Image
           src={project.imagemUrl || ""}
           alt={project.titulo}
-          className="object-cover rounded-xl"
+          className="object-cover rounded-lg"
           fill
           loading="lazy"
         />
       </div>
-      <div className="px-4 flex flex-col gap-1 flex-grow text-left">
+      <div className="px-5 flex flex-col gap-1 flex-grow text-left">
         <div className="flex flex-col flex-1 h-auto">
-          <h1 className="text-[1.20rem] font-bold mb-1">{project.titulo}</h1>
-          <p className="text-sm mb-3 text-zinc-300">
+          <h1 className="text-2xl font-bold mb-1">{project.titulo}</h1>
+          <p className="text-sm mb-3">
             {project.descricao.length > 90
               ? `${project.descricao.slice(0, 89)}...`
               : project.descricao}

@@ -35,7 +35,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <main className="container mx-auto max-w-6xl overflow-hidden">
+    <main className="container mx-auto max-w-6xl overflow-hidden sm:overflow-visible">
       <motion.main
         className="flex bg-[var(--background)] px-4 md:px-0 flex-row pt-28 pb-24"
         id="services"
@@ -62,6 +62,7 @@ const ServicesSection = () => {
               <motion.div
                 animate={{ opacity: 1, y: 0 }}
                 key={Service.id}
+                whileHover={{ scale: 1.01 }}
                 className="p-5 w-full bg-[var(--cardColor)] h-[17rem] rounded-lg flex flex-col justify-center gap-12 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-[var(--spanhover)]"
               >
                 <div className="card-icon flex flex-col">
