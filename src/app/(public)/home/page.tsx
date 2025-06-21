@@ -10,7 +10,7 @@ import SocialNetwork from "@/components/social-network";
 
 const Hero = () => {
   return (
-    <main className="container px-5 md:px-0 max-w-6xl overflow-hidden mb-12 md:mb-0">
+    <main className="container mx-auto px-5 md:px-0 max-w-6xl overflow-hidden mb-12 md:mb-0">
       <motion.div
         className="hero-section"
         initial={{ opacity: 0, y: 100 }}

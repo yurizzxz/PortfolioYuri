@@ -18,7 +18,7 @@ export default function Feedbacks() {
   if (error) return <p>{error}</p>;
 
   return (
-    <main className="container mx-auto max-w-6xl px-4 xl:px-0">
+    <main className="container mx-auto max-w-6xl px-4 pt-10 xl:px-0" id="feedbacks">
       <div className="flex flex-col px-4 md:px-0 pb-24 pt-20">
         <motion.div
           transition={{ duration: 0.5 }}

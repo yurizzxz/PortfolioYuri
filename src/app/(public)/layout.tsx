@@ -80,7 +80,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <div className="bg-background">{children}</div>
+        <div className="bg-background pt-4">{children}</div>
         <Footer />
         <Toaster />
       </body>
