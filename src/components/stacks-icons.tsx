@@ -41,7 +41,7 @@ const StacksIcons = () => {
       >
         <CarouselContent>
           {icons.map((icon, index) => (
-            <CarouselItem key={index} className="basis-1/4 lg:basis-1/7">
+            <CarouselItem key={index} className="basis-1/2 xs:basis-1/3 md:basis-1/5 lg:basis-1/7">
               <motion.div
                 className="flex flex-col mt-3 items-center justify-center text-center shadow-lg rounded-lg hover:scale-105 transition-transform duration-300"
                 initial={{ opacity: 0, scale: 0.8 }}

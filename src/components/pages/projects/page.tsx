@@ -96,6 +96,7 @@ const Projects: React.FC<ProjectProps> = ({
               </Button>
             )}
           </div>
+          
           {openModal && (
             <div
               onClick={handleCloseModal}

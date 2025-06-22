@@ -13,7 +13,7 @@ export default function ContactInfo() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex gap-4 flex-col justify-center"
+      className="flex gap-4 flex-col justify-center mb-8"
     >
       <h1 className="text-4xl leading-none font-bold">Vamos Conversar!</h1>
       <p className="max-w-lg">
