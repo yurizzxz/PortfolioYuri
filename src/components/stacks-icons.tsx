@@ -2,6 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 const icons = [
   { iconClass: "devicon-html5-plain", name: "HTML5", delay: 0.2 },
@@ -16,30 +23,42 @@ const icons = [
   { iconClass: "devicon-angularjs-plain", name: "Angular", delay: 1.8 },
 ];
 
-
 const StacksIcons = () => {
   return (
-
     <motion.div
-      className="flex gap-8 mt-[20px] flex-wrap w-full max-w-5xl justify-center"
+      className="flex gap-8 mt-[20px] justify-center relative max-w-full"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
     >
-      {icons.map((icon, index) => (
-        <motion.div
-          key={index}
-          className="flex flex-col items-center justify-center text-center shadow-lg rounded-lg hover:scale-105 transition-transform duration-300"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: icon.delay }}
-        >
-          <i
-            className={`${icon.iconClass} hover:scale-110 text-primary bg-cardcolor p-6 border border-[var(--border)] cursor-default transition-all hover:border-[var(--spanhover)] rounded-full hover:text-spanhover duration-300 text-5xl mb-2`}
-          ></i>
-          <span className="text-lg font-semibold">{icon.name}</span>
-        </motion.div>
-      ))}
+
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {icons.map((icon, index) => (
+            <CarouselItem key={index} className="basis-1/4 lg:basis-1/7">
+              <motion.div
+                className="flex flex-col mt-3 items-center justify-center text-center shadow-lg rounded-lg hover:scale-105 transition-transform duration-300"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: icon.delay }}
+              >
+                <i
+                  className={`${icon.iconClass} hover:scale-110 text-primary bg-cardcolor p-6 border border-[var(--border)] cursor-default transition-all hover:border-[var(--spanhover)] rounded-full hover:text-spanhover duration-300 text-5xl mb-2`}
+                ></i>
+                <span className="text-lg font-semibold">{icon.name}</span>
+              </motion.div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </motion.div>
   );
 };
