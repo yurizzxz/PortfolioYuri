@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "@/styles/home.css";
 import { RedirectButton } from "@/components/ui/button";
-import SocialNetwork from "@/components/social-network";
+import SocialNetwork from "@/components/ui/social-network";
 
 const Hero = () => {
   return (

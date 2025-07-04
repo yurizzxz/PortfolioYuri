@@ -5,7 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
   SelectContent,
-} from "./ui/select";
+} from "./select";
 
 interface CategoryFilterProps {
   selectedCategory: string;

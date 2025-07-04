@@ -8,7 +8,7 @@ import {
   InputRoot,
   InputIcon,
   TextField,
-} from "@/components/input";
+} from "@/components/ui/input";
 import { User, Mail, MessageSquare, Edit3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";

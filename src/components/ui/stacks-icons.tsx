@@ -8,7 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel";
+} from "./carousel";
 
 const icons = [
   { iconClass: "devicon-html5-plain", name: "HTML5", delay: 0.2 },

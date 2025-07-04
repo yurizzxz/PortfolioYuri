@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/common/navbar";
 import { Toaster } from "@/components/ui/toaster";
-import Footer from "@/components/Footer";
+import Footer from "@/components/common/footer";
 
 export const metadata: Metadata = {
   title: "Yuri Alves // Desenvolvedor Front-End",

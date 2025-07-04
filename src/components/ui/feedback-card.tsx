@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "./card";
 import { StarRating } from "./star-rating";
 
 export interface FeedbackCardProps {

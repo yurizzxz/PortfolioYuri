@@ -1,4 +1,4 @@
-import StacksIcons from "@/components/stacks-icons";
+import StacksIcons from "@/components/ui/stacks-icons";
 
 export default function Skills() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { FeedbackCard, FeedbackCardProps } from "@/components/feedback-card";
+import { FeedbackCard, FeedbackCardProps } from "@/components/ui/feedback-card";
 import {
   Carousel,
   CarouselContent,
