@@ -52,7 +52,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="navbar-container" aria-label="Menu principal">
-        <div className="container mx-auto py-2 md:py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
+        <div className="container mx-auto py-1.5 md:py-4 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"
@@ -61,8 +61,8 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1>
-                Yuri <span className="text-[var(--primary)]">Alves</span>
+              <h1 className="text-2xl font-semibold">
+                Yuri <span className="text-[var(--primary)] ">Alves</span>
               </h1>
             </motion.a>
           </div>
