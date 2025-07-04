@@ -105,7 +105,7 @@ const Projects: React.FC<ProjectProps> = ({
                 initial={{ opacity: 0.5, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-cardcolor p-6 rounded-lg  shadow-lg   w-full max-w-2xl"
+                className="bg-cardgradient p-6 rounded-lg shadow-lg w-full max-w-2xl"
                 style={{ border: "1px solid var(--border)" }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -160,7 +160,7 @@ const Projects: React.FC<ProjectProps> = ({
                           {project.linguagens.map((linguagem, index) => (
                             <p
                               key={index}
-                              className="linguagens bg-[var(--accent)] w-fit px-2 rounded-lg py-1.5 flex flex-row text-sm"
+                              className="linguagens border w-fit px-2 rounded-md py-1.5 flex flex-row text-sm"
                             >
                               {linguagem}
                             </p>

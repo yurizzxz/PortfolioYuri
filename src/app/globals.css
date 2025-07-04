@@ -31,26 +31,31 @@ body {
   font-family: space grotesk, sans-serif;
 }
 
+
+
 @layer base {
   :root {
-    --heroBg: #05010a;
-    --cardColor: rgb(6, 0, 10);--spancolor: #7f15f8;
+    --heroBg: #0F0F0F;
+    --cardColor: rgb(6, 0, 10);
+    --spancolor: #7f15f8;
     --spanhover: #8320f5;
-    --background: #040007;
-    --foreground: #e7d9ff;
+    --background: #020202;
+    --common: #030302;
+    --foreground: #dedede;
     --popover: #050007;
-    --primary: #8320f5;
+    --primary: #7f15f8;
     --primary-foreground: #171717;        
     --secondary: #050007;                 
     --secondary-foreground: #e7d9ff;      
     --muted: #13002b;                     
-    --muted-foreground: #a3a3a3;         
+    --muted-foreground: #e7d9ff;         
     --accent: #13002b;            
     --accent-foreground: #e7d9ff;         
     --destructive: #a31f1f;               
     --destructive-foreground: #fafafa;    
-    --border: #13002b;
-    --input: #171717;
+    --border: #101010;
+    --borderHover: #1a0d30;
+    --input: #060606;
   }
 }
 

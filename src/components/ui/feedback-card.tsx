@@ -27,7 +27,7 @@ export function FeedbackCard({
 }: FeedbackCardProps) {
   return (
     <div className="gap-2">
-      <Card className="hover:border-[var(--spanhover)] transition-all duration-300 border border-[var(--border)]">
+      <Card className="hover:border-[var(--borderHover)] cursor-default transition-all duration-300 border border-[var(--border)]">
         <CardHeader>
           <div className="flex items-center gap-3">
             {href && (

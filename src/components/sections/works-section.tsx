@@ -63,7 +63,7 @@ const ServicesSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 key={Service.id}
                 whileHover={{ scale: 1.01 }}
-                className="p-5 w-full bg-[var(--cardColor)] h-[17rem] rounded-lg flex flex-col justify-center gap-12 border border-[var(--border)] cursor-default transition-all duration-300 hover:scale-105 hover:border-[var(--spanhover)]"
+                className="p-5 w-full bg-cardgradient h-[15rem] rounded-lg flex flex-col justify-center gap-12 border hover:border-[var(--borderHover)] cursor-default transition-all duration-300 hover:scale-105"
               >
                 <div className="card-icon flex flex-col">
                   <span className="material-icons icon-card">

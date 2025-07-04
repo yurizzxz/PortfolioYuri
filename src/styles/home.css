@@ -7,7 +7,7 @@
 }
 
 .hero-text {
-  @apply flex flex-col justify-center p-[3vw] max-w-[41rem] max-h-[35rem] rounded-[30px] bg-[var(--heroBg)];
+  @apply flex flex-col justify-center max-w-[40rem] max-h-[35rem];
 }
 
 .hero h2 {

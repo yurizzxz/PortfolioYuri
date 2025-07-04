@@ -23,14 +23,14 @@ export default function Experiences() {
           <h1 className="text-xl text-left font-bold">
             Experiências Profissionais
           </h1>
-          <div className="relative border-l border-primary pl-10">
+          <div className="relative border-l border-zinc-800 pl-10">
             {works.map((work) => (
               <Card
                 key={work.id}
-                className="mb-6 relative p-4 transition-all hover:border-spanhover"
+                className="mb-6 relative p-4 transition-all cursor-default"
               >
-                <span className="absolute -left-[46px] top-6 w-3 h-3 bg-primary rounded-full" />
-                <span className="absolute -left-[35px] top-7 w-9 h-0.5 bg-primary rounded-full" />
+                <span className="absolute -left-[46px] top-6 w-3 h-3 bg-zinc-800 rounded-full" />
+                <span className="absolute -left-[35px] top-7 w-9 h-0.5 bg-zinc-800 rounded-full" />
 
                 <CardHeader className="pb-2">
                   <CardTitle className="text-2xl font-semibold">
@@ -46,7 +46,7 @@ export default function Experiences() {
                   )}
 
                   {work.duration && (
-                    <p className="text-sm text-zinc-400">{work.duration}</p>
+                    <p className="text-sm text-purple-600">{work.duration}</p>
                   )}
                 </CardHeader>
 
@@ -62,14 +62,14 @@ export default function Experiences() {
         <div className="flex flex-col gap-8">
           <h1 className="text-xl text-left font-bold">Acadêmico</h1>
 
-          <div className="relative border-l border-primary pl-10">
+          <div className="relative border-l border-zinc-800 pl-10">
             {study.map((study) => (
               <Card
                 key={study.id}
-                className="mb-6 relative p-4 transition-all hover:border-spanhover"
+                className="mb-6 relative p-4 transition-all cursor-default"
               >
-                <span className="absolute -left-[46px] top-6 w-3 h-3 bg-primary rounded-full" />
-                <span className="absolute -left-[35px] top-7 w-9 h-0.5 bg-primary rounded-full" />
+                <span className="absolute -left-[46px] top-6 w-3 h-3 bg-zinc-800 rounded-full" />
+                <span className="absolute -left-[35px] top-7 w-9 h-0.5 bg-zinc-800 rounded-full" />
 
                 <CardHeader className="pb-2">
                   <CardTitle className="text-2xl font-semibold">
@@ -83,7 +83,7 @@ export default function Experiences() {
                   )}
 
                   {study.duration && (
-                    <p className="text-sm text-zinc-400">{study.duration}</p>
+                    <p className="text-sm text-purple-600">{study.duration}</p>
                   )}
                   
                 </CardHeader>

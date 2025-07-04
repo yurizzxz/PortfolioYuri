@@ -111,7 +111,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           />
         </InputRoot>
 
-        <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-start gap-3">
+        <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
           <InputIcon>
             <MessageSquare aria-hidden="true" />
           </InputIcon>
@@ -129,7 +129,11 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           />
         </InputRoot>
 
-        <Button type="submit" className="text-foreground h-12">
+        <Button
+          aria-label="Enviar Mensagem"
+          type="submit"
+          className="text-foreground h-12"
+        >
           Enviar
         </Button>
       </form>

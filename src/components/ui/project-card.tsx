@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       animate={{ opacity: 1, y: 0 }}
       aria-label={`Abrir detalhes do projeto ${project.titulo}`}
       whileHover={{ scale: 1.01 }}
-      className="bg-[var(--cardColor)] overflow-hidden sm:overflow-visible border border-[var(--border)] rounded-lg flex flex-col gap-5 transition-all duration-300 ease-in-out"
+      className="bg-cardgradient overflow-hidden sm:overflow-visible border border-[var(--border)] hover:border-[var(--borderHover)] rounded-lg flex flex-col gap-5 transition-all duration-300 ease-in-out"
       onClick={onClick}
     >
       <div className="card-icon relative aspect-[16/9] overflow-hidden">
@@ -44,8 +44,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               {linguagens.map((linguagem, index) => (
                 <p
                   key={index}
-                  className="linguagens bg-[var(--accent)] w-fit px-2 rounded-lg py-1.5 flex flex-row text-xs"
+                  className="linguagens border w-fit px-2 rounded-md py-1.5 flex flex-row text-xs"
                 >
+
                   {linguagem}
                 </p>
               ))}

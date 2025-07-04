@@ -47,12 +47,12 @@ const Navbar = () => {
 
   return (
     <header
-      className={`navbar bg-background lg:bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${
-        isScrolled ? "scrolled bg-cardcolor transition-all" : ""
+      className={`navbar bg-common border-b-[0.01px]  border-[var(--border)] px-4 ${
+        isScrolled ? "scrolled transition-all" : ""
       }`}
     >
       <nav className="navbar-container" aria-label="Menu principal">
-        <div className="container mx-auto py-3 md:py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
+        <div className="container mx-auto py-2 md:py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"
