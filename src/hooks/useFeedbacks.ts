@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "@/app/firebaseconfig";
-
-export interface Feedback {
-  id: string;
-  name: string;
-  role: string;
-  stars?: number;
-  feedback: string;
-  href?: string;
-}
+import { db } from "@/lib/firebaseconfig";
+import { Feedback } from "@/types/feedback";
 
 export function useFeedbacks() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
@@ -20,9 +12,9 @@ export function useFeedbacks() {
     async function fetchFeedbacks() {
       try {
         setLoading(true);
-        const q = query(collection(db, "avaliacoes"), orderBy("stars")); 
+        const q = query(collection(db, "avaliacoes"), orderBy("stars"));
         const querySnapshot = await getDocs(q);
-        const data = querySnapshot.docs.map(doc => {
+        const data = querySnapshot.docs.map((doc) => {
           const raw = doc.data();
           return {
             id: doc.id,

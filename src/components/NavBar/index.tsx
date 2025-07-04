@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import RedirectButton from "../Button";
+import {RedirectButton} from "@/components/ui/button";
 import "./navbar.css";
-import { links } from "@/data/links";
+import { links } from "@/constants/links";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

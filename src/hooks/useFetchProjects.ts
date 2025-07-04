@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
-import { db } from "@/app/firebaseconfig";
+import { db } from "@/lib/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
-
-interface Project {
-  id: string;
-  titulo: string;
-  descricao: string;
-  imagemUrl?: string;
-  stack: string;
-  linguagens: string[];
-  link: string;
-}
+import { Project } from "@/types/project";
 
 export const useFetchProjects = (category = "Todos") => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -38,7 +29,7 @@ export const useFetchProjects = (category = "Todos") => {
           link: data.link,
         };
       }) as Project[];
-      
+
       setProjects(projectsData);
       setLoading(false);
     } catch (error) {

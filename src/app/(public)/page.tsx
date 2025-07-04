@@ -1,11 +1,11 @@
 import { Separator } from "@/components/ui/separator";
-import AboutSection from "./about/page";
-import Contact from "./contact/page";
-import Hero from "./home/page";
-import Projects from "@/components/pages/projects/page";
-import ServicesSection from "./works/page";
-import Skills from "./skills/page";
-import Feedbacks from "./feedbacks/page";
+import Contact from "@/components/sections/contact-section";
+import Hero from "@/components/sections/home-section";
+import Projects from "@/components/sections/project-section";
+import ServicesSection from "@/components/sections/works-section";
+import Skills from "@/components/sections/skills-section";
+import Feedbacks from "@/components/sections/feedbacks-section";
+import Experiences from "@/components/sections/experiences-section";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Separator />
       <Skills />
       <Separator />
-      <AboutSection />
+      <Experiences />
       <Separator />
       <Projects maxProjects={3} showLoadMore />
       <Separator />

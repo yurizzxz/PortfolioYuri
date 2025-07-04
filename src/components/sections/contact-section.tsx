@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import ContactInfo from "./contact-info";
-import ContactForm from "./contact-form";
+import ContactInfo from "../ui/contact-info";
+import ContactForm from "../ui/contact-form";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);

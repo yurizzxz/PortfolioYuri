@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "@/styles/works.css";
-import { Services } from "@/data/services";
+import { Services } from "@/constants/services";
 
 const ServicesSection = () => {
   const [isVisibleServices, setIsVisibleServices] = useState(false);

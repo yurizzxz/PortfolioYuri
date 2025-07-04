@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Github } from "lucide-react";
-import { links } from "@/data/links";
+import { links } from "@/constants/links";
 
 export default function Footer() {
   return (

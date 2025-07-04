@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { setDoc, doc, Timestamp } from "firebase/firestore";
-import { db } from "@/app/firebaseconfig";
-
+import { db } from "@/lib/firebaseconfig";
 export default function useContactForm() {
   const [formData, setFormData] = useState({
     name: "",

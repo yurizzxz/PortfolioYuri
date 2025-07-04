@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { works, study } from "@/data/experiences";
+import { works, study } from "@/constants/experiences";
 
 export default function Experiences() {
   return (

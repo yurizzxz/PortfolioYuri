@@ -7,7 +7,7 @@ import CategoryFilter from "@/components/category-filter";
 import ProjectCard from "@/components/project-card";
 import { useFetchProjects } from "@/hooks/useFetchProjects";
 import { X } from "lucide-react";
-import Button from "@/components/Button";
+import { RedirectButton } from "@/components/ui/button";
 
 type ProjectProps = {
   maxProjects?: number;
@@ -89,14 +89,10 @@ const Projects: React.FC<ProjectProps> = ({
 
           <div className="flex mt-6 justify-center">
             {showLoadMore && visibleCount < projects.length && (
-              <Button
-                href="/projects"
-              >
-                Ver Todos os Projetos
-              </Button>
+              <RedirectButton href="/projects">Ver Todos os Projetos</RedirectButton>
             )}
           </div>
-          
+
           {openModal && (
             <div
               onClick={handleCloseModal}
