@@ -18,7 +18,7 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ isVisible }: ContactFormProps) {
-  const { formData, handleChange, handleSubmit } = useContactForm();
+  const { formData, handleChange, handleSubmit, resetForm } = useContactForm();
   const { toast } = useToast();
 
   const onSubmit = async (event: React.FormEvent) => {
@@ -129,13 +129,26 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           />
         </InputRoot>
 
-        <Button
-          aria-label="Enviar Mensagem"
-          type="submit"
-          className="text-foreground h-12"
-        >
-          Enviar
-        </Button>
+        <div className="grid md:grid-cols-3 gap-2">
+          <Button
+            aria-label="Enviar Mensagem"
+            type="submit"
+            className="text-foreground h-10 md:col-span-2"
+          >
+            Enviar
+          </Button>
+          <Button
+            aria-label="Enviar Mensagem"
+            type="button"
+            onClick={() => {
+              resetForm();
+            }}
+            variant="secondary"
+            className="text-foreground h-10"
+          >
+            Limpar Campos
+          </Button>
+        </div>
       </form>
     </motion.div>
   );

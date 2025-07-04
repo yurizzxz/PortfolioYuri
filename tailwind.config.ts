@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  // darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -59,8 +59,20 @@ export default {
           hsla(0, 0%, 3%, 1) 48%,
           hsla(0, 0%, 1.2%, 1) 100%
         )`,
+        gradienthover: `linear-gradient(
+          135deg,
+          hsla(0, 0%, 5%, 1) 0%,
+          hsla(0, 0%, 5%, 1) 48%,
+          hsla(0, 0%, 5%, 1) 100%
+        )`,
+        buttongradient: `linear-gradient(
+          135deg,
+          hsla(0, 0%, 3.4%, 1) 0%,
+          hsla(0, 0%, 3%, 1) 48%,
+          hsla(0, 0%, 1.5%, 1) 100%
+        )`,
         purplegradient:
-          "linear-gradient(135deg, hsla(268, 100%, 58%, 1) 0%, hsla(268, 91%, 54%, 1) 39%, hsla(268, 82%, 50%, 1) 100%)",
+          "linear-gradient(135deg, hsla(268, 100%, 58%, 1) 0%, hsla(268, 91%, 54%, 1) 39%, hsla(268, 82%, 48%, 1) 100%)",
         purplehover:
           "linear-gradient(135deg, hsla(268, 82%, 45%, 1) 0%, hsla(268, 82%, 45%, 1) 39%, hsla(268, 82%, 45%, 1) 100%)",
         

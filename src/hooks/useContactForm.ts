@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { setDoc, doc, Timestamp } from "firebase/firestore";
@@ -12,22 +12,44 @@ export default function useContactForm() {
     subject: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const documentId = `${formData.subject}-${formData.name}-${formData.email}`.replace(/\s+/g, '_');
+    const documentId =
+      `${formData.subject}-${formData.name}-${formData.email}`.replace(
+        /\s+/g,
+        "_"
+      );
 
     await setDoc(doc(db, "messages", documentId), {
       ...formData,
       createdAt: Timestamp.now(),
     });
 
-    setFormData({ name: "", email: "", message: "", createdAt: Timestamp.now(), subject: "" });
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      createdAt: Timestamp.now(),
+      subject: "",
+    });
   };
 
-  return { formData, handleChange, handleSubmit };
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      createdAt: Timestamp.now(),
+      subject: "",
+    });
+  };
+
+  return { formData, handleChange, handleSubmit, resetForm };
 }
