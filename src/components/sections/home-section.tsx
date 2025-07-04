@@ -77,9 +77,13 @@ const Hero = () => {
             {/* footer */}
             {/*<HeroFooter />*/}
             <div className="flex gap-6 items-center">
-              <RedirectButton href="#contact" className="gap-4">
+              <RedirectButton
+                href="#contact"
+                className="gap-4"
+                aria-label="Ir para a seção contato"
+              >
                 Vamos Conversar
-                <i className="fas fa-arrow-down"></i>
+                <i className="fas fa-arrow-down" aria-hidden="true"></i>
               </RedirectButton>
               <div className="space-x-4">
                 <SocialNetwork />

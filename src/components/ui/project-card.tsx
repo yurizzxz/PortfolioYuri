@@ -17,6 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       key={project.id}
       transition={{ duration: 0.1 }}
       animate={{ opacity: 1, y: 0 }}
+      aria-label={`Abrir detalhes do projeto ${project.titulo}`}
       whileHover={{ scale: 1.01 }}
       className="bg-[var(--cardColor)] overflow-hidden sm:overflow-visible border border-[var(--border)] rounded-lg flex flex-col gap-5 transition-all duration-300 ease-in-out"
       onClick={onClick}
@@ -32,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       </div>
       <div className="px-5 flex flex-col gap-1 flex-grow text-left">
         <div className="flex flex-col flex-1 h-auto">
-          <h1 className="text-2xl font-bold mb-1">{project.titulo}</h1>
+          <h2 className="text-2xl font-bold mb-1">{project.titulo}</h2>
           <p className="text-sm mb-3">
             {project.descricao.length > 90
               ? `${project.descricao.slice(0, 89)}...`

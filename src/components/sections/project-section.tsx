@@ -89,13 +89,16 @@ const Projects: React.FC<ProjectProps> = ({
 
           <div className="flex mt-6 justify-center">
             {showLoadMore && visibleCount < projects.length && (
-              <RedirectButton href="/projects">Ver Todos os Projetos</RedirectButton>
+              <RedirectButton aria-label="Ver todos os projetos" href="/projects">Ver Todos os Projetos</RedirectButton>
             )}
           </div>
 
           {openModal && (
             <div
               onClick={handleCloseModal}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
               className="fixed inset-0 flex px-3 items-center justify-center bg-black bg-opacity-90 z-[99]"
             >
               <motion.div
@@ -110,7 +113,7 @@ const Projects: React.FC<ProjectProps> = ({
                   <h2 className="text-[1.7rem] font-semibold">
                     Visualizar Projeto
                   </h2>
-                  <button className="text-xl" onClick={handleCloseModal}>
+                  <button aria-label="Fechar modal" className="text-xl" onClick={handleCloseModal}>
                     <X />
                   </button>
                 </div>

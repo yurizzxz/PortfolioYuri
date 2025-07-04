@@ -45,12 +45,19 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
       animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
       transition={{ duration: 1 }}
     >
-      <form className="w-full flex flex-col gap-4" onSubmit={onSubmit}>
+      <form
+        className="w-full flex flex-col gap-4"
+        onSubmit={onSubmit}
+        noValidate
+      >
         <div className="grid gap-2 md:grid-cols-2">
           <InputRoot>
             <InputIcon>
-              <User />
+              <User aria-hidden="true" />
             </InputIcon>
+            <label htmlFor="name" className="sr-only">
+              Nome
+            </label>
             <InputField
               type="text"
               id="name"
@@ -60,13 +67,17 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               onChange={handleChange}
               required
               autoComplete="off"
+              aria-required="true"
             />
           </InputRoot>
 
           <InputRoot>
             <InputIcon>
-              <Mail />
+              <Mail aria-hidden="true" />
             </InputIcon>
+            <label htmlFor="email" className="sr-only">
+              Email
+            </label>
             <InputField
               type="email"
               id="email"
@@ -75,14 +86,18 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               value={formData.email}
               onChange={handleChange}
               required
+              aria-required="true"
             />
           </InputRoot>
         </div>
 
         <InputRoot>
           <InputIcon>
-            <Edit3 />
+            <Edit3 aria-hidden="true" />
           </InputIcon>
+          <label htmlFor="subject" className="sr-only">
+            Assunto
+          </label>
           <InputField
             type="text"
             id="subject"
@@ -92,13 +107,17 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
             onChange={handleChange}
             required
             autoComplete="off"
+            aria-required="true"
           />
         </InputRoot>
 
         <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-[var(--cardColor)] border border-[var(--border)] focus-within:border-gray-400 data-[error=true]:border-red-500 flex items-start gap-3">
           <InputIcon>
-            <MessageSquare />
+            <MessageSquare aria-hidden="true" />
           </InputIcon>
+          <label htmlFor="message" className="sr-only">
+            Mensagem
+          </label>
           <TextField
             id="message"
             name="message"
@@ -106,6 +125,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
             value={formData.message}
             onChange={handleChange}
             required
+            aria-required="true"
           />
         </InputRoot>
 

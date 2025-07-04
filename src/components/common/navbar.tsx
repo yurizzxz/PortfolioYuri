@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {RedirectButton} from "@/components/ui/button";
+import { RedirectButton } from "@/components/ui/button";
 import "@/styles/navbar.css";
 import { links } from "@/constants/links";
 
@@ -46,8 +46,12 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`navbar bg-background lg:bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${isScrolled ? "scrolled bg-cardcolor transition-all" : ""}`}>
-      <nav className="navbar-container">
+    <header
+      className={`navbar bg-background lg:bg-cardcolor border-b-[0.01px]  border-[#0d001c] px-4 ${
+        isScrolled ? "scrolled bg-cardcolor transition-all" : ""
+      }`}
+    >
+      <nav className="navbar-container" aria-label="Menu principal">
         <div className="container mx-auto py-3 md:py-5 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
@@ -66,14 +70,18 @@ const Navbar = () => {
           <button
             className="toggle-btn"
             onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
+            aria-label="Alternar menu mobile"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="navbar-links"
           >
             &#9776;
           </button>
 
           <motion.ul
-            className={`navbar-links bg-background border-b border-[var(--border)] lg:border-none ${mobileMenuOpen ? "active" : ""}`}
-            role="navigation"
+            id="navbar-links"
+            className={`navbar-links bg-background border-b border-[var(--border)] lg:border-none ${
+              mobileMenuOpen ? "active" : ""
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -84,6 +92,7 @@ const Navbar = () => {
                   href={href}
                   className={activeLink === href ? "active" : ""}
                   onClick={() => handleLinkClick(href)}
+                  aria-current={activeLink === href ? "page" : undefined}
                 >
                   {name}
                 </Link>
@@ -93,6 +102,7 @@ const Navbar = () => {
               href="https://drive.google.com/file/d/1x9HWRTn_48CBSbGrdWmX20Rm5HDtfSxh/view?usp=sharing"
               target="_blank"
               variant="default"
+              aria-label="Baixar Currículo"
               rel="noopener noreferrer"
             >
               Download CV
