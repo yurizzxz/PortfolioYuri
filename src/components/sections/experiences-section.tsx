@@ -11,16 +11,16 @@ export default function Experiences() {
   return (
     <div className="max-w-6xl mx-auto w-full px-4 py-20 md:py-28 xl:px-0" id="carrer">
       <div className="mb-12">
-        <h1 className="text-4xl md:text-center font-bold">Minha Trajetória</h1>
-        <p className="mt-3 md:text-center">
+        <h1 className="text-4xl font-bold">Minha Trajetória</h1>
+        {/* <p className="mt-3">
           Ao longo da minha carreira, desenvolvi habilidades técnicas por meio
           de experiências profissionais e formações.
-        </p>
+        </p> */}
       </div>
 
       <div className="grid gap-10 md:grid-cols-2">
         <div className="flex flex-col gap-8">
-          <h1 className="text-2xl text-left font-bold">
+          <h1 className="text-xl text-left font-bold">
             Experiências Profissionais
           </h1>
           <div className="relative border-l border-primary pl-10">
@@ -60,7 +60,7 @@ export default function Experiences() {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h1 className="text-2xl text-left font-bold">Acadêmico</h1>
+          <h1 className="text-xl text-left font-bold">Acadêmico</h1>
 
           <div className="relative border-l border-primary pl-10">
             {study.map((study) => (
