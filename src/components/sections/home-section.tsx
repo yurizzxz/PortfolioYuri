@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import "@/styles/home.css";
 import { RedirectButton } from "@/components/ui/button";
 import SocialNetwork from "@/components/ui/social-network";
+import { CheckCircle, ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -25,21 +25,22 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <header>
-              <motion.h2
-                className="hero-mini"
+              <motion.h1
+                className="text-xl mb-0 md:mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
               >
                 <span className="span-color">Olá!</span> Meu nome é
-              </motion.h2>
-              <motion.h1
+              </motion.h1>
+              <motion.h2
+                className="text-7xl font-bold my-[1rem]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
               >
                 Yuri <span className="span-color">Alves</span>
-              </motion.h1>
+              </motion.h2>
             </header>
 
             <motion.p
@@ -61,13 +62,13 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="icon-content">
-                <i className="fas fa-check-circle icon"></i>
+                <CheckCircle aria-hidden="true" className="text-primary" />
                 <p className="text-sm">
                   Técnico em Desenvolvimento de Sistemas na ETEC Itu.
                 </p>
               </div>
               <div className="icon-content">
-                <i className="fas fa-check-circle icon"></i>
+                <CheckCircle aria-hidden="true" className="text-primary" />
                 <p className="text-sm">
                   Cursando Análise e Desenvolvimento de Sistemas na Fatec Itu.
                 </p>
@@ -83,7 +84,7 @@ const Hero = () => {
                 aria-label="Ir para a seção contato"
               >
                 Vamos Conversar
-                <i className="fas fa-arrow-down" aria-hidden="true"></i>
+                <ArrowDown aria-hidden="true" />
               </RedirectButton>
               <div className="space-x-4">
                 <SocialNetwork />

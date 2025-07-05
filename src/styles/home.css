@@ -7,16 +7,9 @@
 }
 
 .hero-text {
-  @apply flex flex-col justify-center max-w-[40rem] max-h-[35rem];
+  @apply flex flex-col justify-center p-[2vw] max-w-[41rem] max-h-[35rem] rounded-3xl bg-common;
 }
 
-.hero h2 {
-  @apply text-xl mb-0 md:mb-4;
-}
-
-.hero h1 {
-  @apply text-7xl font-bold my-[1rem];
-}
 
 .hero .hero-desc {
   @apply text-base mb-[2rem];
