@@ -17,13 +17,20 @@ interface ContactFormProps {
   isVisible: boolean;
 }
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export default function ContactForm({ isVisible }: ContactFormProps) {
   const { register, handleSubmit, onSubmit, reset, errors, isSubmitting } =
     useContactForm();
 
   const { toast } = useToast();
 
-  const handleFormSubmit = async (data: any) => {
+  const handleFormSubmit = async (data: FormData) => {
     try {
       await onSubmit(data);
       toast({
@@ -91,51 +98,57 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               />
             </InputRoot>
             {errors.email && (
-              <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
+              <p className="text-red-500 text-sm mt-2">
+                {errors.email.message}
+              </p>
             )}
           </div>
         </div>
 
         <div>
           <InputRoot>
-          <InputIcon>
-            <Edit3 aria-hidden="true" />
-          </InputIcon>
-          <label htmlFor="subject" className="sr-only">
-            Assunto
-          </label>
-          <InputField
-            type="text"
-            id="subject"
-            placeholder="Assunto"
-            {...register("subject")}
-            autoComplete="off"
-            aria-required="true"
-          />
-        </InputRoot>
-        {errors.subject && (
-          <p className="text-red-500 text-sm mt-2">{errors.subject.message}</p>
-        )}
+            <InputIcon>
+              <Edit3 aria-hidden="true" />
+            </InputIcon>
+            <label htmlFor="subject" className="sr-only">
+              Assunto
+            </label>
+            <InputField
+              type="text"
+              id="subject"
+              placeholder="Assunto"
+              {...register("subject")}
+              autoComplete="off"
+              aria-required="true"
+            />
+          </InputRoot>
+          {errors.subject && (
+            <p className="text-red-500 text-sm mt-2">
+              {errors.subject.message}
+            </p>
+          )}
         </div>
 
         <div>
           <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
-          <InputIcon>
-            <MessageSquare aria-hidden="true" />
-          </InputIcon>
-          <label htmlFor="message" className="sr-only">
-            Mensagem
-          </label>
-          <TextField
-            id="message"
-            placeholder="Mensagem"
-            {...register("message")}
-            aria-required="true"
-          />
-        </InputRoot>
-        {errors.message && (
-          <p className="text-red-500 text-sm mt-2">{errors.message.message}</p>
-        )}
+            <InputIcon>
+              <MessageSquare aria-hidden="true" />
+            </InputIcon>
+            <label htmlFor="message" className="sr-only">
+              Mensagem
+            </label>
+            <TextField
+              id="message"
+              placeholder="Mensagem"
+              {...register("message")}
+              aria-required="true"
+            />
+          </InputRoot>
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-2">
+              {errors.message.message}
+            </p>
+          )}
         </div>
 
         <div className="grid md:grid-cols-3 gap-2">
