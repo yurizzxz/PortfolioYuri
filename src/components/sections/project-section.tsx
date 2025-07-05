@@ -71,7 +71,7 @@ const Projects: React.FC<ProjectProps> = ({
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
             {projects.length > 0 ? (
               projects
                 .slice(0, visibleCount)
