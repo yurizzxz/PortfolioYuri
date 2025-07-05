@@ -31,7 +31,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="span-color">Olá!</span> Meu nome é
+                <span className="bg-purplegradient bg-clip-text text-transparent">Olá!</span> Meu nome é
               </motion.h1>
               <motion.h2
                 className="text-7xl font-bold my-[1rem]"
@@ -39,7 +39,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                Yuri <span className="span-color">Alves</span>
+                Yuri <span className="bg-purplegradient bg-clip-text text-transparent">Alves</span>
               </motion.h2>
             </header>
 
@@ -49,8 +49,8 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              Sou um <span className="span-color">Desenvolvedor Front-End</span>{" "}
-              e <span className="span-color">Designer Gráfico</span> apaixonado
+              Sou um <span className="bg-purplegradient bg-clip-text text-transparent">Desenvolvedor Front-End</span>{" "}
+              e <span className="bg-purplegradient bg-clip-text text-transparent">Designer Gráfico</span> apaixonado
               pela tecnologia. Tenho 2 anos de experiência em Desenvolvimento
               Web e sempre estou em busca de aprender cada vez
             </motion.p>

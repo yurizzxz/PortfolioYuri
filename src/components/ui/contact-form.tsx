@@ -18,17 +18,18 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ isVisible }: ContactFormProps) {
-  const { formData, handleChange, handleSubmit, resetForm } = useContactForm();
+  const { register, handleSubmit, onSubmit, reset, errors, isSubmitting } =
+    useContactForm();
+
   const { toast } = useToast();
 
-  const onSubmit = async (event: React.FormEvent) => {
+  const handleFormSubmit = async (data: any) => {
     try {
-      await handleSubmit(event);
+      await onSubmit(data);
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Em breve você receberá uma resposta.",
       });
-      setTimeout(() => {}, 3000);
     } catch (error) {
       toast({
         title: "Erro ao enviar a mensagem.",
@@ -47,51 +48,56 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
     >
       <form
         className="w-full flex flex-col gap-4"
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
         <div className="grid gap-2 md:grid-cols-2">
-          <InputRoot>
-            <InputIcon>
-              <User aria-hidden="true" />
-            </InputIcon>
-            <label htmlFor="name" className="sr-only">
-              Nome
-            </label>
-            <InputField
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Seu nome"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              autoComplete="off"
-              aria-required="true"
-            />
-          </InputRoot>
+          <div>
+            <InputRoot>
+              <InputIcon>
+                <User aria-hidden="true" />
+              </InputIcon>
+              <label htmlFor="name" className="sr-only">
+                Nome
+              </label>
+              <InputField
+                type="text"
+                id="name"
+                placeholder="Seu nome"
+                {...register("name")}
+                autoComplete="off"
+                aria-required="true"
+              />
+            </InputRoot>
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>
+            )}
+          </div>
 
-          <InputRoot>
-            <InputIcon>
-              <Mail aria-hidden="true" />
-            </InputIcon>
-            <label htmlFor="email" className="sr-only">
-              Email
-            </label>
-            <InputField
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Seu email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              aria-required="true"
-            />
-          </InputRoot>
+          <div>
+            <InputRoot>
+              <InputIcon>
+                <Mail aria-hidden="true" />
+              </InputIcon>
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <InputField
+                type="email"
+                id="email"
+                placeholder="Seu email"
+                {...register("email")}
+                aria-required="true"
+              />
+            </InputRoot>
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
+            )}
+          </div>
         </div>
 
-        <InputRoot>
+        <div>
+          <InputRoot>
           <InputIcon>
             <Edit3 aria-hidden="true" />
           </InputIcon>
@@ -101,17 +107,19 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           <InputField
             type="text"
             id="subject"
-            name="subject"
             placeholder="Assunto"
-            value={formData.subject}
-            onChange={handleChange}
-            required
+            {...register("subject")}
             autoComplete="off"
             aria-required="true"
           />
         </InputRoot>
+        {errors.subject && (
+          <p className="text-red-500 text-sm mt-2">{errors.subject.message}</p>
+        )}
+        </div>
 
-        <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
+        <div>
+          <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
           <InputIcon>
             <MessageSquare aria-hidden="true" />
           </InputIcon>
@@ -120,29 +128,29 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           </label>
           <TextField
             id="message"
-            name="message"
             placeholder="Mensagem"
-            value={formData.message}
-            onChange={handleChange}
-            required
+            {...register("message")}
             aria-required="true"
           />
         </InputRoot>
+        {errors.message && (
+          <p className="text-red-500 text-sm mt-2">{errors.message.message}</p>
+        )}
+        </div>
 
         <div className="grid md:grid-cols-3 gap-2">
           <Button
             aria-label="Enviar Mensagem"
             type="submit"
             className="text-foreground h-10 md:col-span-2"
+            disabled={isSubmitting}
           >
-            Enviar
+            {isSubmitting ? "Enviando..." : "Enviar"}
           </Button>
           <Button
-            aria-label="Enviar Mensagem"
+            aria-label="Limpar Campos"
             type="button"
-            onClick={() => {
-              resetForm();
-            }}
+            onClick={() => reset()}
             variant="secondary"
             className="text-foreground h-10"
           >

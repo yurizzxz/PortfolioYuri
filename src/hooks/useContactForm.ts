@@ -1,55 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { setDoc, doc, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebaseconfig";
+import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema } from "@/schema/contactSchema";
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export default function useContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    createdAt: Timestamp.now(),
-    subject: "",
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-
-    const documentId =
-      `${formData.subject}-${formData.name}-${formData.email}`.replace(
-        /\s+/g,
-        "_"
-      );
+  const onSubmit = async (data: ContactFormData) => {
+    const documentId = `${data.subject}-${data.name}-${data.email}`.replace(
+      /\s+/g,
+      "_"
+    );
 
     await setDoc(doc(db, "messages", documentId), {
-      ...formData,
+      ...data,
       createdAt: Timestamp.now(),
     });
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      createdAt: Timestamp.now(),
-      subject: "",
-    });
+    reset();
   };
 
-  const resetForm = () => {
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      createdAt: Timestamp.now(),
-      subject: "",
-    });
-  };
-
-  return { formData, handleChange, handleSubmit, resetForm };
+  return { register, handleSubmit, onSubmit, reset, errors, isSubmitting };
 }
