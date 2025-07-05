@@ -1,7 +1,7 @@
 export const works = [
   {
     id: 1,
-    title: "Desenvolvedor Front-End UX/UI Designer",
+    title: "Desenvolvedor Front-End & UX/UI Designer",
     description:
       "Trabalhei na criação de interfaces interativas, utilizando HTML, CSS, JS e BOOTSTRAP dentro do ASPNET. Respeitando boas práticas de usabilidade e acessibilidade, correção de responsividade em páginas existentes dentro do projeto.",
     costummer: "Gold Integrated Solutions",
@@ -19,12 +19,12 @@ export const works = [
   },
   {
     id: 3,
-    title: "Designer Gráfico",
+    title: "Desenvolvedor Front-End & UX/UI Designer",
     description:
-      "Elaborei flyers digitais para um fã-clube de Lionel Messi, com foco em uma estética leve, criativa e emocional. Utilizando o Adobe Photoshop, realizei manipulação de imagem detalhada, como reconstrução de cenários, fusões criativas entre camadas, correção de cores e sobreposição de texturas suaves.",
-    costummer: "Central Messi Brasil",
-    duration: "Junho 2022 - Dezembro 2022",
-    type: "Freelance",
+      "Desenvolvi interfaces intuitivas utilizando boas práticas de UX/UI Design desenvolvidos por mim, além de integrações com APIs e otimizações de performance para melhorar a experiência do usuário.",
+    costummer: "Laboratório Fábrica de Software",
+    duration: "Maio 2025 - Agora",
+    type: "Estágio",
   },
 ];
 
