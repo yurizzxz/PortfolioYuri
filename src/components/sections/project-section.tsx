@@ -89,7 +89,12 @@ const Projects: React.FC<ProjectProps> = ({
 
           <div className="flex mt-6 justify-center">
             {showLoadMore && visibleCount < projects.length && (
-              <RedirectButton aria-label="Ver todos os projetos" href="/projects">Ver Todos os Projetos</RedirectButton>
+              <RedirectButton
+                aria-label="Ver todos os projetos"
+                href="/projects"
+              >
+                Ver Todos os Projetos
+              </RedirectButton>
             )}
           </div>
 
@@ -113,7 +118,11 @@ const Projects: React.FC<ProjectProps> = ({
                   <h2 className="text-[1.7rem] font-semibold">
                     Visualizar Projeto
                   </h2>
-                  <button aria-label="Fechar modal" className="text-xl" onClick={handleCloseModal}>
+                  <button
+                    aria-label="Fechar modal"
+                    className="text-xl"
+                    onClick={handleCloseModal}
+                  >
                     <X />
                   </button>
                 </div>
@@ -138,14 +147,16 @@ const Projects: React.FC<ProjectProps> = ({
                           <h3 className="text-2xl font-bold">
                             {project.titulo}
                           </h3>
-                          <Link
-                            href={project.link}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            className="hover:text-spanhover transition-all"
-                          >
-                            <i className="devicon-github-original text-3xl"></i>
-                          </Link>
+                          {project.link && (
+                            <Link
+                              href={project.link}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              className="hover:text-spanhover transition-all"
+                            >
+                              <i className="devicon-github-original text-3xl"></i>
+                            </Link>
+                          )}
                         </div>
                         <p className="text-md mt-2 max-h-24 overflow-y-scroll">
                           {project.descricao}
