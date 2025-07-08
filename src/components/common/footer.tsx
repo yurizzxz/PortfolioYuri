@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Instagram, Linkedin, Github } from "lucide-react";
 import { links } from "@/constants/links";
+import { SocialIcons } from "../ui/social-icons";
 
 export default function Footer() {
   return (
@@ -32,16 +33,8 @@ export default function Footer() {
 
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-3">Redes sociais</h3>
-          <div className="flex gap-4 text-zinc-300">
-            <Link className="duration-300 hover:text-spanhover" href="https://github.com/yurizzxz" target="_blank" rel="noopener noreferrer">
-              <Github />
-            </Link>
-            <Link className="duration-300 hover:text-spanhover" href="https://linkedin.com/in/yurizzxz" target="_blank" rel="noopener noreferrer">
-              <Linkedin />
-            </Link>
-            <Link className="duration-300 hover:text-spanhover" href="https://instagram.com/yurinsights" target="_blank" rel="noopener noreferrer">
-              <Instagram />
-            </Link>
+          <div className="flex flex-row gap-4 text-zinc-300">
+           <SocialIcons />
           </div>
         </div>
       </div>

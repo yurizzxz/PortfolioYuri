@@ -85,9 +85,7 @@
   .hero-section {
     @apply min-h-[100vh];
   }
-  .hero h1 {
-    @apply text-5xl; 
-  }
+
   .hero-text {
     @apply  max-w-full;
   }
@@ -106,9 +104,7 @@
   .hero-text {
     @apply px-0 max-w-[40rem] max-h-[32rem] bg-inherit;
   }
-  .hero h1 {
-    @apply text-[3.5rem];
-  }
+
   .hero-footer {
     @apply flex gap-[20px] my-[1rem] mb-[0.7rem];
   }
@@ -121,9 +117,7 @@
   .hero-footer {
     @apply flex gap-3 my-[1rem] mb-[0.7rem];
   }
-  .hero h1 {
-    @apply text-[3rem] leading-[3.7rem] my-[0.5rem] mb-[1rem];
-  }
+
   .hero .hero-desc {
     @apply text-[0.952rem];
   }
@@ -133,9 +127,7 @@
   .hero-footer {
     @apply flex gap-3 my-[1rem] mb-[0.7rem];
   }
-  .hero h1 {
-    @apply text-[2.7rem] leading-[3.7rem] my-[0.5rem] mb-[1rem];
-  }
+
   .hero .hero-desc {
     @apply text-[0.952rem];
   }

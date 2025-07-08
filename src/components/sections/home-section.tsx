@@ -5,8 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "@/styles/home.css";
 import { RedirectButton } from "@/components/ui/button";
-import SocialNetwork from "@/components/ui/social-network";
 import { CheckCircle, ArrowDown } from "lucide-react";
+import { SocialIcons } from "../ui/social-icons";
 
 const Hero = () => {
   return (
@@ -87,7 +87,7 @@ const Hero = () => {
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
               <div className="space-x-4">
-                <SocialNetwork />
+                <SocialIcons />
               </div>
             </div>
           </motion.div>

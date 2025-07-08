@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "@/lib/firebaseconfig";
 import { Feedback } from "@/types/feedback";
@@ -36,5 +36,7 @@ export function useFeedbacks() {
     fetchFeedbacks();
   }, []);
 
-  return { feedbacks, loading, error };
+  const memoizedFeedbacks = useMemo(() => feedbacks, [feedbacks]);
+
+  return { feedbacks: memoizedFeedbacks, loading, error };
 }

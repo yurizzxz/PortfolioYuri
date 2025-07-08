@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { RedirectButton } from "@/components/ui/button";
 import "@/styles/navbar.css";
+import { Menu } from "lucide-react";
 import { links } from "@/constants/links";
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="navbar-container" aria-label="Menu principal">
-        <div className="container mx-auto py-1.5 md:py-4 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
+        <div className="container mx-auto py-4 md:px-1 rounded-xl max-w-6xl flex flex-row justify-between items-center">
           <div className="flex items-center gap-8">
             <motion.a
               href="/"
@@ -74,7 +75,7 @@ const Navbar = () => {
             aria-expanded={mobileMenuOpen}
             aria-controls="navbar-links"
           >
-            &#9776;
+            <Menu />
           </button>
 
           <motion.ul

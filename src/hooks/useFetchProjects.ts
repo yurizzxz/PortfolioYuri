@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { db } from "@/lib/firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { Project } from "@/types/project";
@@ -42,5 +42,7 @@ export const useFetchProjects = (category = "Todos") => {
     fetchProjects(category);
   }, [category]);
 
-  return { projects, loading };
+  const memorizedProjects = useMemo(() => projects, [projects]);
+
+  return { projects: memorizedProjects, loading };
 };
