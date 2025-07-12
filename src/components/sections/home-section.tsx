@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import "@/styles/home.css";
 import { RedirectButton } from "@/components/ui/button";
 import { CheckCircle, ArrowDown } from "lucide-react";
 import { SocialIcons } from "../ui/social-icons";
@@ -12,14 +11,17 @@ const Hero = () => {
   return (
     <main className="container mx-auto px-5 md:px-0 max-w-6xl overflow-hidden mb-12 md:mb-0">
       <motion.div
-        className="hero-section"
+        className="flex flex-row min-h-screen pt-20 -mt-4 lg:pt-0"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <section className="hero" id="home">
+        <section
+          id="home"
+          className="flex flex-row justify-between items-center w-full text-[var(--textcolor)] flex-grow px-0 2xl:px-3.5 max-[992px]:flex-col max-[992px]:w-full max-[992px]:text-left max-[992px]:px-[2rem] max-[768px]:px-0 max-[568px]:px-0 max-[568px]:justify-normal max-[568px]:gap-8"
+        >
           <motion.div
-            className="hero-text"
+            className="flex flex-col justify-center p-[2vw] max-w-[41rem] max-h-[35rem] rounded-3xl bg-common max-[992px]:max-w-full max-[992px]:p-0 max-[992px]:bg-inherit max-[900px]:px-[3rem] max-[900px]:h-[570px] max-[768px]:px-[2rem] max-[768px]:max-w-[650px] max-[768px]:h-[550px] max-[600px]:max-w-full max-[568px]:px-0 max-[568px]:max-w-[40rem] max-[568px]:max-h-[32rem] max-[425px]:max-w-full max-[359px]:max-h-[33rem]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -44,40 +46,37 @@ const Hero = () => {
             </header>
 
             <motion.p
-              className="hero-desc"
+              className="text-base mb-[2rem] max-[600px]:text-sm max-[568px]:text-base max-[425px]:text-[0.952rem] max-[360px]:text-[0.952rem]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
               Sou um <span className="bg-purplegradient bg-clip-text text-transparent">Desenvolvedor Front-End</span>{" "}
               e <span className="bg-purplegradient bg-clip-text text-transparent">Designer Gráfico</span> apaixonado
-              pela tecnologia. Tenho 2 anos de experiência em Desenvolvimento
-              Web e sempre estou em busca de aprender cada vez
+              pela tecnologia. Tenho 2 anos de experiência em Desenvolvimento Web e sempre estou em busca de aprender cada vez
             </motion.p>
 
             <motion.div
-              className="icons"
+              className="flex flex-col gap-[2rem] mb-[1.7rem] text-[20px]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="icon-content">
-                <CheckCircle aria-hidden="true" className="text-primary" />
-                <p className="text-sm">
+              <div className="flex flex-row items-center gap-[15px]">
+                <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
+                <p className="text-base max-[360px]:text-[0.9rem]">
                   Técnico em Desenvolvimento de Sistemas na ETEC Itu.
                 </p>
               </div>
-              <div className="icon-content">
-                <CheckCircle aria-hidden="true" className="text-primary" />
-                <p className="text-sm">
+              <div className="flex flex-row items-center gap-[15px]">
+                <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
+                <p className="text-base max-[360px]:text-[0.9rem]">
                   Cursando Análise e Desenvolvimento de Sistemas na Fatec Itu.
                 </p>
               </div>
             </motion.div>
 
-            {/* footer */}
-            {/*<HeroFooter />*/}
-            <div className="flex gap-6 items-center">
+            <div className="flex gap-[20px] mt-[20px] max-[568px]:my-[1rem] max-[568px]:mb-[0.7rem] max-[425px]:gap-3 max-[425px]:my-[1rem] max-[425px]:mb-[0.7rem] max-[360px]:gap-3 max-[360px]:my-[1rem] max-[360px]:mb-[0.7rem]">
               <RedirectButton
                 href="#contact"
                 className="gap-4"
@@ -86,7 +85,7 @@ const Hero = () => {
                 Vamos Conversar
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
-              <div className="space-x-4">
+              <div className="space-x-4 flex justify-center items-center">
                 <SocialIcons />
               </div>
             </div>
@@ -98,7 +97,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <Image
-              className="hero-image"
+              className="max-w-[445px] md:min-w-[400px] w-full rounded-full shadow-md object-cover mt-[1.5rem] max-[600px]:max-w-[100%] max-[600px]:h-auto"
               src="/foto.png"
               width={400}
               height={400}
