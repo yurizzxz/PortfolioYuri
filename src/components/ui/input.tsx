@@ -34,7 +34,7 @@ export function InputField(props: ComponentProps<"input">) {
 export function TextField(props: ComponentProps<"textarea">) {
   return (
     <textarea
-      className="bg-transparent w-full resize-none placeholder-zinc-800 transition-all outline-0  text-zinc-200"
+      className="bg-transparent w-full resize-none placeholder-zinc-800 transition-all outline-0 text-zinc-200"
       {...props}
       rows={4}
     />
