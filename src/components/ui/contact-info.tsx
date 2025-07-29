@@ -16,7 +16,7 @@ export default function ContactInfo() {
       className="flex gap-4 flex-col justify-center mb-8"
     >
       <h1 className="text-4xl leading-none font-bold">Vamos Conversar!</h1>
-      <p className="max-w-lg">
+      <p className="max-w-lg text-sm md:text-md">
         Gostou do meu trabalho?{" "}
         <span className="span-color">Vamos conversar!</span> Preencha o
         formulário ao lado e eu entrarei em contato o mais breve possível.

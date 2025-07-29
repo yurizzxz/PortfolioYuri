@@ -48,7 +48,7 @@ const Projects: React.FC<ProjectProps> = ({
   return (
     <main className="container mx-auto max-w-6xl px-4 xl:px-0">
       <div
-        className="flex bg-[var(--background)] flex-row pb-24 pt-20"
+        className="flex bg-[var(--background)] flex-row py-16 md:pb-24 md:pt-20"
         id="projects"
       >
         <motion.section
@@ -62,7 +62,7 @@ const Projects: React.FC<ProjectProps> = ({
             animate={{ opacity: 1, y: 0 }}
             className="mb-10"
           >
-            <h1 className="text-4xl font-bold">Meus Projetos</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">Meus Projetos</h1>
             <div className="mt-6 flex gap-3 flex-wrap">
               <CategoryFilter
                 selectedCategory={selectedCategory}

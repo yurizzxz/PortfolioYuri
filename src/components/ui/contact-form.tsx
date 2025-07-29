@@ -58,15 +58,12 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
         onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
-        <div className="grid gap-2 md:grid-cols-2">
+        <div className="grid gap-2.5 md:grid-cols-2">
           <div>
             <InputRoot>
               <InputIcon>
-                <User aria-hidden="true" />
+                <User className="size-5 " aria-hidden="true" />
               </InputIcon>
-              <label htmlFor="name" className="sr-only">
-                Nome
-              </label>
               <InputField
                 type="text"
                 id="name"
@@ -84,11 +81,8 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
           <div>
             <InputRoot>
               <InputIcon>
-                <Mail aria-hidden="true" />
+                <Mail className="size-5 " aria-hidden="true" />
               </InputIcon>
-              <label htmlFor="email" className="sr-only">
-                Email
-              </label>
               <InputField
                 type="email"
                 id="email"
@@ -103,40 +97,34 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
               </p>
             )}
           </div>
+
+          <div className="col-span-2">
+            <InputRoot>
+              <InputIcon>
+                <Edit3 className="size-5 " aria-hidden="true" />
+              </InputIcon>
+              <InputField
+                type="text"
+                id="subject"
+                placeholder="Assunto"
+                {...register("subject")}
+                autoComplete="off"
+                aria-required="true"
+              />
+            </InputRoot>
+            {errors.subject && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.subject.message}
+              </p>
+            )}
+          </div>
         </div>
 
         <div>
-          <InputRoot>
+          <InputRoot className="w-full text-sm pt-5 px-3 md:px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
             <InputIcon>
-              <Edit3 aria-hidden="true" />
+              <MessageSquare className="size-5 " aria-hidden="true" />
             </InputIcon>
-            <label htmlFor="subject" className="sr-only">
-              Assunto
-            </label>
-            <InputField
-              type="text"
-              id="subject"
-              placeholder="Assunto"
-              {...register("subject")}
-              autoComplete="off"
-              aria-required="true"
-            />
-          </InputRoot>
-          {errors.subject && (
-            <p className="text-red-500 text-sm mt-2">
-              {errors.subject.message}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <InputRoot className="w-full text-sm pt-8 px-4 rounded-lg bg-input border border-[var(--border)] focus-within:border-zinc-600 data-[error=true]:border-red-500 flex items-start gap-3">
-            <InputIcon>
-              <MessageSquare aria-hidden="true" />
-            </InputIcon>
-            <label htmlFor="message" className="sr-only">
-              Mensagem
-            </label>
             <TextField
               id="message"
               placeholder="Mensagem"

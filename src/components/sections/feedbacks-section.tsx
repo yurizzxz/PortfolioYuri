@@ -24,14 +24,14 @@ export default function Feedbacks() {
       >
         {loading && <p>Carregando feedbacks...</p>}
         {error && <p>Erro: {error}</p>}
-        <div className="flex flex-col pb-24 pt-20">
+        <div className="flex flex-col py-0 md:pb-24 md:pt-20">
           <motion.div
             transition={{ duration: 0.5 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-10 flex md:items-center flex-col"
           >
-            <h1 className="text-4xl font-bold">Vozes sobre meu trabalho</h1>
-            <p className="mt-2"> Algumas pessoas que já trabalharam comigo.</p>
+            <h1 className="text-3xl md:text-4xl font-bold">Vozes sobre meu trabalho</h1>
+            <p className="text-sm md:text-md mt-2">Veja o que algumas pessoas que já trabalharam comigo dizem.</p>
           </motion.div>
           <div>
             <motion.div

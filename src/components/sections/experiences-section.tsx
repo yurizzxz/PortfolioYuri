@@ -9,9 +9,9 @@ import { works, study } from "@/constants/experiences";
 
 export default function Experiences() {
   return (
-    <div className="max-w-6xl mx-auto w-full px-4 py-20 md:py-28 xl:px-0" id="carrer">
+    <div className="max-w-6xl mx-auto w-full px-4 py-16 md:py-28 xl:px-0" id="carrer">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold">Minha Trajetória</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">Minha Trajetória</h1>
         {/* <p className="mt-3">
           Ao longo da minha carreira, desenvolvi habilidades técnicas por meio
           de experiências profissionais e formações.

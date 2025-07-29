@@ -49,7 +49,7 @@ export function FeedbackCard({
           <StarRating rating={stars || 0} />
         </div>
 
-        <CardContent>{feedback}</CardContent>
+        <CardContent className="text-sm">{feedback}</CardContent>
       </Card>
     </div>
   );

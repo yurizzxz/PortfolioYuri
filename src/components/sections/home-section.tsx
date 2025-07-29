@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <main className="container mx-auto px-5 md:px-0 max-w-6xl overflow-hidden mb-12 md:mb-0">
       <motion.div
-        className="flex flex-row min-h-screen pt-20 -mt-4 lg:pt-0"
+        className="flex flex-row min-h-screen max-[430px]:pt-24 max-[420px]:pt-24 max-[340px]:pt-[8rem] max-[340px]:pb-[2rem] -mt-4 lg:pt-0"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -28,7 +28,7 @@ const Hero = () => {
           >
             <header>
               <motion.h1
-                className="text-xl mb-0 md:mb-4"
+                className="max-[395px]:text-lg text-xl mb-0 md:mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
@@ -36,7 +36,7 @@ const Hero = () => {
                 <span className="bg-purplegradient bg-clip-text text-transparent">Olá!</span> Meu nome é
               </motion.h1>
               <motion.h2
-                className="text-7xl font-bold my-[1rem]"
+                className="max-[395px]:text-6xl max-[340px]:text-[3.5rem] text-7xl font-bold my-[1rem]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
@@ -46,7 +46,7 @@ const Hero = () => {
             </header>
 
             <motion.p
-              className="text-base mb-[2rem] max-[600px]:text-sm max-[568px]:text-base max-[425px]:text-[0.952rem] max-[360px]:text-[0.952rem]"
+              className="text-base mb-[2rem] max-[600px]:text-sm max-[568px]:text-base max-[425px]:text-[0.952rem] max-[360px]:text-[0.952rem] max-[340px]:text-[0.92rem]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -64,22 +64,22 @@ const Hero = () => {
             >
               <div className="flex flex-row items-center gap-[15px]">
                 <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
-                <p className="text-base max-[360px]:text-[0.9rem]">
+                <p className="text-base max-[360px]:text-[0.9rem] max-[340px]:text-[0.92rem]">
                   Técnico em Desenvolvimento de Sistemas na ETEC Itu.
                 </p>
               </div>
               <div className="flex flex-row items-center gap-[15px]">
                 <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
-                <p className="text-base max-[360px]:text-[0.9rem]">
+                <p className="text-base max-[360px]:text-[0.9rem] max-[340px]:text-[0.92rem]">
                   Cursando Análise e Desenvolvimento de Sistemas na Fatec Itu.
                 </p>
               </div>
             </motion.div>
 
-            <div className="flex gap-[20px] mt-[20px] max-[568px]:my-[1rem] max-[568px]:mb-[0.7rem] max-[425px]:gap-3 max-[425px]:my-[1rem] max-[425px]:mb-[0.7rem] max-[360px]:gap-3 max-[360px]:my-[1rem] max-[360px]:mb-[0.7rem]">
+            <div className="max-[330px]:flex-col  flex gap-[20px] mt-[20px] max-[568px]:my-[1rem] max-[568px]:mb-[0.7rem] max-[425px]:gap-3 max-[425px]:my-[1rem] max-[425px]:mb-[0.7rem] max-[360px]:gap-3 max-[360px]:my-[1rem] max-[360px]:mb-[0.7rem]">
               <RedirectButton
                 href="#contact"
-                className="gap-4"
+                className="gap-2.5 max-[330px]:mb-3"
                 aria-label="Ir para a seção contato"
               >
                 Vamos Conversar
@@ -95,6 +95,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
+            className="hidden md:block"
           >
             <Image
               className="max-w-[445px] md:min-w-[400px] w-full rounded-full shadow-md object-cover mt-[1.5rem] max-[600px]:max-w-[100%] max-[600px]:h-auto"
@@ -102,7 +103,7 @@ const Hero = () => {
               width={400}
               height={400}
               alt="Foto de Perfil"
-              loading="lazy"
+              loading="eager"
             />
           </motion.figure>
         </section>

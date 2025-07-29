@@ -37,7 +37,7 @@ const ServicesSection = () => {
   return (
     <main className="container mx-auto max-w-6xl overflow-hidden sm:overflow-visible">
       <motion.main
-        className="flex bg-[var(--background)] px-4 md:px-0 flex-row pt-28 pb-24"
+        className="flex bg-[var(--background)] px-4 md:px-0 flex-row pt-16 pb-20"
         id="services"
         ref={servicesRef}
         initial={{ opacity: 0, y: 100 }}
@@ -51,8 +51,8 @@ const ServicesSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <h1 className="mb-3 text-4xl font-bold">Habilidades e Serviços</h1>
-            <p className="services-desc">
+            <h1 className="mb-3 text-3xl md:text-4xl font-bold">Habilidades e Serviços</h1>
+            <p className="text-sm md:text-md">
               Descubra como posso ajudar a transformar sua marca e presença
               digital com serviços sob medida para suas necessidades!
             </p>
@@ -70,7 +70,7 @@ const ServicesSection = () => {
                     {Service.icon}
                   </span>
                   <h1 className="text-2xl font-bold mb-2">{Service.title}</h1>
-                  <p className="text-md">{Service.description}</p>
+                  <p className="text-sm md:text-md">{Service.description}</p>
                 </div>
               </motion.div>
             ))}
