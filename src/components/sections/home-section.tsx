@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { RedirectButton } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { SocialIcons } from "../ui/social-icons";
 
 const Hero = () => {
   return (
@@ -15,12 +16,12 @@ const Hero = () => {
       ></div>
       <div className="relative ml-auto mr-auto px-5 md:px-0 max-w-6xl ">
         <motion.div
-          className="flex flex-row justify-center items-center min-h-[85dvh] md:min-h-[95dvh] xl:-mt-20 lg=:pt-0"
+          className="flex flex-row justify-center items-center min-h-[85dvh] md:min-h-[95dvh] xl:-mt-14 lg=:pt-0"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="md:text-center space-y-4">
+          <div className="md:text-center">
             <div className="flex md:justify-center mb-6">
               <div className="w-20 h-20 hidden rounded-full md:flex items-center justify-center overflow-hidden">
                 <Image
@@ -42,19 +43,19 @@ const Hero = () => {
                 e
               </p>
 
-              <h1 className="text-[40px] md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-[40px] md:text-5xl roboto lg:text-6xl font-bold leading-tight">
                 <span className="text-purple-600">Transformo</span> ideias em{" "}
                 <span className="text-purple-600">experiências</span> digitais{" "}
                 <span className="text-purple-600">criativas</span> e funcionais.
               </h1>
             </div>
 
-            <p className="text-zinc-400 md:text-[17px] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-400 my-6 md:text-[17px] max-w-2xl mx-auto leading-relaxed">
               Cada detalhe é pensado para capturar atenção, gerar engajamento e
               trazer resultados reais para o seu negócio.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:justify-center md:items-center ">
+            <div className="flex flex-col sm:flex-row gap-4 md:justify-center md:items-center">
               <RedirectButton
                 href="#projects"
                 aria-label="Ver meus projetos"
@@ -74,6 +75,9 @@ const Hero = () => {
                 Vamos Conversar
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
+            </div>
+            <div className="flex justify-center mt-6 p-4 bg-cardgradient rounded-full">
+              <SocialIcons />
             </div>
           </div>
         </motion.div>

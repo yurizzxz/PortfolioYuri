@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 html {
   scroll-behavior: smooth;
@@ -31,11 +30,9 @@ body {
   font-family: space grotesk, sans-serif;
 }
 
-
-
 @layer base {
   :root {
-    --heroBg: #0F0F0F;
+    --heroBg: #0f0f0f;
     --cardColor: rgb(6, 0, 10);
     --spancolor: #7f15f8;
     --spanhover: #8320f5;
@@ -44,15 +41,15 @@ body {
     --foreground: #dedede;
     --popover: #050007;
     --primary: #7f15f8;
-    --primary-foreground: #171717;        
-    --secondary: #050007;                 
-    --secondary-foreground: #e7d9ff;      
-    --muted: #13002b;                     
-    --muted-foreground: #e7d9ff;         
-    --accent: #13002b;            
-    --accent-foreground: #e7d9ff;         
-    --destructive: #a31f1f;               
-    --destructive-foreground: #fafafa;    
+    --primary-foreground: #171717;
+    --secondary: #050007;
+    --secondary-foreground: #e7d9ff;
+    --muted: #13002b;
+    --muted-foreground: #e7d9ff;
+    --accent: #13002b;
+    --accent-foreground: #e7d9ff;
+    --destructive: #a31f1f;
+    --destructive-foreground: #fafafa;
     --border: #101010;
     --borderHover: #1a0d30;
     --input: #060606;
@@ -68,3 +65,10 @@ body {
   }
 }
 
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

@@ -6,36 +6,9 @@ import { motion } from "framer-motion";
 import "@/styles/about.css";
 
 const AboutMe = () => {
-  const [isVisibleAbout, setIsVisibleAbout] = useState(false);
-  const aboutRef = useRef(null);
-
-  useEffect(() => {
-    const observerAbout = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisibleAbout(true);
-        }
-      },
-      {
-        root: null,
-        threshold: 0.1,
-      }
-    );
-
-    const aboutElement = aboutRef.current;
-    if (aboutElement) {
-      observerAbout.observe(aboutElement);
-    }
-
-    return () => {
-      if (aboutElement) {
-        observerAbout.unobserve(aboutElement);
-      }
-    };
-  }, []);
 
   return (
-    <main className="aboutMe" id="about" ref={aboutRef}>
+    <main className="aboutMe" id="about" >
       <section className="about">
         <div className="about-content">
           <motion.div
@@ -55,7 +28,7 @@ const AboutMe = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
-            animate={isVisibleAbout ? { opacity: 1, x: 0, scale: 1 } : {}}
+            animate={{opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="about-header"
           >
