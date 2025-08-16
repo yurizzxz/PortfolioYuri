@@ -16,7 +16,7 @@ const Hero = () => {
       ></div>
       <div className="relative ml-auto mr-auto px-5 md:px-0 max-w-6xl ">
         <motion.div
-          className="flex flex-row justify-center items-center min-h-[85dvh] md:min-h-[95dvh] xl:-mt-14 lg=:pt-0"
+          className="flex flex-row justify-center items-center min-h-[95dvh] xl:-mt-10 lg=:pt-0"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -43,7 +43,7 @@ const Hero = () => {
                 e
               </p>
 
-              <h1 className="text-[40px] md:text-5xl roboto lg:text-6xl font-bold leading-tight">
+              <h1 className="text-[40px] md:text-5xl roboto lg:text-[65px] font-bold leading-tight">
                 <span className="text-purple-600">Transformo</span> ideias em{" "}
                 <span className="text-purple-600">experiências</span> digitais{" "}
                 <span className="text-purple-600">criativas</span> e funcionais.
@@ -76,7 +76,7 @@ const Hero = () => {
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
             </div>
-            <div className="flex justify-center mt-6 p-4 bg-cardgradient rounded-full">
+            <div className="flex justify-center mt-6 p-4 bg-cardgradient border max-w-xs mx-auto items-center rounded-full">
               <SocialIcons />
             </div>
           </div>
