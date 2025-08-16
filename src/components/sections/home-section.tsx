@@ -76,7 +76,7 @@ const Hero = () => {
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
             </div>
-            <div className="flex justify-center mt-6 p-4 bg-cardgradient border max-w-xs mx-auto items-center rounded-full">
+            <div className="flex justify-center mt-6 p-4 bg-cardgradient border max-w-[11rem] mx-auto items-center rounded-lg">
               <SocialIcons />
             </div>
           </div>
