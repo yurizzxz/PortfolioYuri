@@ -6,11 +6,13 @@ import ServicesSection from "@/components/sections/works-section";
 import Skills from "@/components/sections/skills-section";
 import Feedbacks from "@/components/sections/feedbacks-section";
 import Experiences from "@/components/sections/experiences-section";
+import AboutSection from "@/components/sections/about-section";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center ">
       <Hero />
+      <AboutSection />
       <Separator />
       <ServicesSection />
       <Separator />

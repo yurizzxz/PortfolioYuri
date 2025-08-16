@@ -4,110 +4,81 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RedirectButton } from "@/components/ui/button";
-import { CheckCircle, ArrowDown } from "lucide-react";
-import { SocialIcons } from "../ui/social-icons";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <main className="container mx-auto px-5 md:px-0 max-w-6xl overflow-hidden mb-12 md:mb-0">
-      <motion.div
-        className="flex flex-row min-h-screen max-[430px]:pt-24 max-[420px]:pt-24 max-[340px]:pt-[8rem] max-[340px]:pb-[2rem] -mt-4 lg:pt-0"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <section
-          id="home"
-          className="flex flex-row justify-between items-center w-full text-[var(--textcolor)] flex-grow px-0 2xl:px-3.5 max-[992px]:flex-col max-[992px]:w-full max-[992px]:text-left max-[992px]:px-[2rem] max-[768px]:px-0 max-[568px]:px-0 max-[568px]:justify-normal max-[568px]:gap-8"
+    <main className="relative bg-[url('/background.png')] bg-cover bg-center overflow-hidden md:mb-0">
+      <div
+        className="absolute inset-0 bg-black bg-opacity-[0.98]"
+        aria-hidden="true"
+      ></div>
+      <div className="relative ml-auto mr-auto px-5 md:px-0 max-w-6xl ">
+        <motion.div
+          className="flex flex-row justify-center items-center min-h-[85dvh] md:min-h-[95dvh] xl:-mt-20 lg=:pt-0"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.div
-            className="flex flex-col justify-center p-[2vw] max-w-[41rem] max-h-[35rem] rounded-3xl bg-common max-[992px]:max-w-full max-[992px]:p-0 max-[992px]:bg-inherit max-[900px]:px-[3rem] max-[900px]:h-[570px] max-[768px]:px-[2rem] max-[768px]:max-w-[650px] max-[768px]:h-[550px] max-[600px]:max-w-full max-[568px]:px-0 max-[568px]:max-w-[40rem] max-[568px]:max-h-[32rem] max-[425px]:max-w-full max-[359px]:max-h-[33rem]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <header>
-              <motion.h1
-                className="max-[395px]:text-lg text-xl mb-0 md:mb-4"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="bg-purplegradient bg-clip-text text-transparent">Olá!</span> Meu nome é
-              </motion.h1>
-              <motion.h2
-                className="max-[395px]:text-6xl max-[340px]:text-[3.5rem] text-7xl font-bold my-[1rem]"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                Yuri <span className="bg-purplegradient bg-clip-text text-transparent">Alves</span>
-              </motion.h2>
-            </header>
-
-            <motion.p
-              className="text-base mb-[2rem] max-[600px]:text-sm max-[568px]:text-base max-[425px]:text-[0.952rem] max-[360px]:text-[0.952rem] max-[340px]:text-[0.92rem]"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              Sou um <span className="bg-purplegradient bg-clip-text text-transparent">Desenvolvedor Front-End</span>{" "}
-              e <span className="bg-purplegradient bg-clip-text text-transparent">Designer Gráfico</span> apaixonado
-              pela tecnologia. Tenho 2 anos de experiência em Desenvolvimento Web e sempre estou em busca de aprender cada vez
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col gap-[2rem] mb-[1.7rem] text-[20px]"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-row items-center gap-[15px]">
-                <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
-                <p className="text-base max-[360px]:text-[0.9rem] max-[340px]:text-[0.92rem]">
-                  Técnico em Desenvolvimento de Sistemas na ETEC Itu.
-                </p>
+          <div className="md:text-center space-y-4">
+            <div className="flex md:justify-center mb-6">
+              <div className="w-20 h-20 hidden rounded-full md:flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/foto.png"
+                  alt="Yuri Alves"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="flex flex-row items-center gap-[15px]">
-                <CheckCircle aria-hidden="true" className="text-[var(--spancolor)]" />
-                <p className="text-base max-[360px]:text-[0.9rem] max-[340px]:text-[0.92rem]">
-                  Cursando Análise e Desenvolvimento de Sistemas na Fatec Itu.
-                </p>
-              </div>
-            </motion.div>
+            </div>
 
-            <div className="max-[330px]:flex-col  flex gap-[20px] mt-[20px] max-[568px]:my-[1rem] max-[568px]:mb-[0.7rem] max-[425px]:gap-3 max-[425px]:my-[1rem] max-[425px]:mb-[0.7rem] max-[360px]:gap-3 max-[360px]:my-[1rem] max-[360px]:mb-[0.7rem]">
+            <div className="space-y-2 max-w-5xl">
+              <p className="text-zinc-300 text-lg">
+                Me chamo{" "}
+                <span className="text-purple-600 font-semibold">
+                  Yuri Alves
+                </span>{" "}
+                e
+              </p>
+
+              <h1 className="text-[40px] md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-purple-600">Transformo</span> ideias em{" "}
+                <span className="text-purple-600">experiências</span> digitais{" "}
+                <span className="text-purple-600">criativas</span> e funcionais.
+              </h1>
+            </div>
+
+            <p className="text-zinc-400 md:text-[17px] max-w-2xl mx-auto leading-relaxed">
+              Cada detalhe é pensado para capturar atenção, gerar engajamento e
+              trazer resultados reais para o seu negócio.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 md:justify-center md:items-center ">
+              <RedirectButton
+                href="#projects"
+                aria-label="Ver meus projetos"
+                size={"lg"}
+                className="text-md"
+              >
+                Conheça meu trabalho
+              </RedirectButton>
+
               <RedirectButton
                 href="#contact"
-                className="gap-2.5 max-[330px]:mb-3"
+                variant="outline"
+                size={"lg"}
                 aria-label="Ir para a seção contato"
+                className="text-md"
               >
                 Vamos Conversar
                 <ArrowDown aria-hidden="true" />
               </RedirectButton>
-              <div className="space-x-4 flex justify-center items-center">
-                <SocialIcons />
-              </div>
             </div>
-          </motion.div>
-
-          <motion.figure
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="hidden md:block"
-          >
-            <Image
-              className="max-w-[445px] md:min-w-[400px] w-full rounded-full shadow-md object-cover mt-[1.5rem] max-[600px]:max-w-[100%] max-[600px]:h-auto"
-              src="/foto.png"
-              width={400}
-              height={400}
-              alt="Foto de Perfil"
-              loading="eager"
-            />
-          </motion.figure>
-        </section>
-      </motion.div>
+          </div>
+        </motion.div>
+      </div>
+      <div className="absolute -bottom-10 z-20 right-0 w-full h-36 bg-background bg-opacity-[0.98] rounded-t-full blur-xl"></div>
     </main>
   );
 };
