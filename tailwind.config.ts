@@ -1,58 +1,59 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  // darkMode: ["class"],
+    darkMode: ["class"],
+    // darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      height: {
-        "128": "32rem",
-      },
-      colors: {
-        background: "var(--background)",
-        common: "var(--common)",
-        foreground: "var(--foreground)",
-        spancolor: "var(--spancolor)",
-        spanhover: "var(--spanhover)",
-        cardcolor: "var(--cardColor)",
-        bordercolor: "var(--border)",
-        card: {
-          DEFAULT: "var(--cardColor)",
-          foreground: "var(--card-foreground)",
-        },
-        popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
-        },
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
-        },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        accent: {
-          DEFAULT: "var(--accent)",
-          foreground: "var(--accent-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-      },
-      backgroundImage: {
+  	extend: {
+  		height: {
+  			'128': '32rem'
+  		},
+  		colors: {
+  			background: 'var(--background)',
+  			common: 'var(--common)',
+  			foreground: 'var(--foreground)',
+  			spancolor: 'var(--spancolor)',
+  			spanhover: 'var(--spanhover)',
+  			cardcolor: 'var(--cardColor)',
+  			bordercolor: 'var(--border)',
+  			card: {
+  				DEFAULT: 'var(--cardColor)',
+  				foreground: 'var(--card-foreground)'
+  			},
+  			popover: {
+  				DEFAULT: 'var(--popover)',
+  				foreground: 'var(--popover-foreground)'
+  			},
+  			primary: {
+  				DEFAULT: 'var(--primary)',
+  				foreground: 'var(--primary-foreground)'
+  			},
+  			secondary: {
+  				DEFAULT: 'var(--secondary)',
+  				foreground: 'var(--secondary-foreground)'
+  			},
+  			muted: {
+  				DEFAULT: 'var(--muted)',
+  				foreground: 'var(--muted-foreground)'
+  			},
+  			accent: {
+  				DEFAULT: 'var(--accent)',
+  				foreground: 'var(--accent-foreground)'
+  			},
+  			destructive: {
+  				DEFAULT: 'var(--destructive)',
+  				foreground: 'var(--destructive-foreground)'
+  			},
+  			border: 'var(--border)',
+  			input: 'var(--input)',
+  			ring: 'var(--ring)'
+  		},
+  		backgroundImage: {
         cardgradient: `linear-gradient(
           135deg,
           hsla(0, 0%, 3.4%, 1) 0%,
@@ -77,7 +78,29 @@ export default {
           "linear-gradient(135deg, hsla(268, 82%, 45%, 1) 0%, hsla(268, 82%, 45%, 1) 39%, hsla(268, 82%, 45%, 1) 100%)",
         
       },
-    },
+  		keyframes: {
+  			marquee: {
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			}
+  		},
+  		animation: {
+  			marquee: 'marquee var(--duration) infinite linear',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

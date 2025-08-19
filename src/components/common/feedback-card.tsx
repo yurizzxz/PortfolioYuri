@@ -5,8 +5,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./card";
-import { StarRating } from "./star-rating";
+} from "../ui/card";
+import { StarRating } from "../ui/star-rating";
 
 export interface FeedbackCardProps {
   id: string;
@@ -26,8 +26,8 @@ export function FeedbackCard({
   stars,
 }: FeedbackCardProps) {
   return (
-    <div className="gap-2">
-      <Card className="hover:border-[var(--borderHover)] cursor-default transition-all duration-300 border border-[var(--border)]">
+    <div className="grid grid-cols-1">
+      <Card className="hover:border-[var(--borderHover)] w-[400px] cursor-default transition-all duration-300 border border-[var(--border)]">
         <CardHeader>
           <div className="flex items-center gap-3">
             {href && (
@@ -49,7 +49,9 @@ export function FeedbackCard({
           <StarRating rating={stars || 0} />
         </div>
 
-        <CardContent className="text-sm">{feedback}</CardContent>
+        <CardContent className="text-sm">
+          <blockquote className="mt-2 text-sm">{feedback}</blockquote>
+        </CardContent>
       </Card>
     </div>
   );

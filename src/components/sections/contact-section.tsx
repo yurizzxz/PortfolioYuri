@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import ContactInfo from "../ui/contact-info";
-import ContactForm from "../ui/contact-form";
+import ContactInfo from "../common/contact-info";
+import ContactForm from "../common/contact-form";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +27,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <main className="container max-w-6xl mx-auto">
+    <main className="container max-w-6xl mx-auto px-4 xl:px-0">
       <section className="contact-section" id="contact" ref={formRef}>
         <div className="flex flex-col md:grid grid-cols-2">
           <ContactInfo />
