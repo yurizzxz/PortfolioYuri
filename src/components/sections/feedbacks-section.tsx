@@ -31,7 +31,7 @@ export default function Feedbacks() {
             </p>
           </motion.div>
           <div>
-            <Marquee pauseOnHover className="[--duration:20s]">
+            <Marquee pauseOnHover className="[--duration:10s]">
               {feedbacks.map((feedback) => (
                 <FeedbackCard
                   key={feedback.id}
