@@ -58,7 +58,7 @@ export default function ContactForm({ isVisible }: ContactFormProps) {
         onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
-        <div className="grid gap-2.5 md:grid-cols-2">
+        <div className="grid gap-2.5 grid-cols-2">
           <div>
             <InputRoot>
               <InputIcon>

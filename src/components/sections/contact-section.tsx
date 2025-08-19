@@ -27,7 +27,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <main className="container max-w-6xl mx-auto px-4 xl:px-0">
+    <main className="container max-w-6xl mx-auto">
       <section className="contact-section" id="contact" ref={formRef}>
         <div className="flex flex-col md:grid grid-cols-2">
           <ContactInfo />
