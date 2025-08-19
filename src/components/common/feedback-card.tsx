@@ -27,7 +27,7 @@ export function FeedbackCard({
 }: FeedbackCardProps) {
   return (
     <div className="grid grid-cols-1">
-      <Card className="hover:border-[var(--borderHover)] w-[400px] cursor-default transition-all duration-300 border border-[var(--border)]">
+      <Card className="hover:border-[var(--borderHover)] w-[300px] md:w-[400px] cursor-default transition-all duration-300 border border-[var(--border)]">
         <CardHeader>
           <div className="flex items-center gap-3">
             {href && (
