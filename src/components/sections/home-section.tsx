@@ -26,7 +26,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <header >
+            <header>
               <motion.h1
                 className="max-[395px]:text-lg text-xl mb-0 md:mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -98,11 +98,13 @@ const Hero = () => {
             <div className="max-[330px]:flex-col  flex gap-[20px] mt-[20px] max-[568px]:my-[1rem] max-[568px]:mb-[0.7rem] max-[425px]:gap-3 max-[425px]:my-[1rem] max-[425px]:mb-[0.7rem] max-[360px]:gap-3 max-[360px]:my-[1rem] max-[360px]:mb-[0.7rem]">
               <RedirectButton
                 href="#contact"
-                className="gap-3 text-md max-[330px]:mb-3"
+                className="group gap-3 text-md max-[330px]:mb-3 w-fit"
                 aria-label="Ir para a seção contato"
               >
                 Vamos Conversar
-                <ArrowDown aria-hidden="true" />
+                <div className="group-hover:-translate-y-0.5 scale-105 transition-all">
+                  <ArrowDown aria-hidden="true" />
+                </div>
               </RedirectButton>
               <div className="space-x-4 flex justify-center items-center">
                 <SocialIcons />
